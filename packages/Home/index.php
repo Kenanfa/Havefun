@@ -6,10 +6,8 @@
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="../../includes/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="../../includes/css/Home.css" rel="stylesheet">
-<script src="../../includes/Bootstrap/js/bootstrap.min.js"></script>
-<script src="../../includes/js/jquery-3.1.1.min.js"></script>
+
 <style>
 
     body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
