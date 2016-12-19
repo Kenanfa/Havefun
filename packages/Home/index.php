@@ -11,6 +11,7 @@
 <script src="../../includes/Bootstrap/js/bootstrap.min.js"></script>
 <script src="../../includes/js/jquery-3.1.1.min.js"></script>
 <style>
+
     body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 </style>
 <body>
@@ -20,7 +21,8 @@
     <li><a href="#" class="w3-black"></i>HaveFun</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li class="w3-right w3-light-grey"><a href="#contact">Sign in</a></li>
+    <li class="w3-right w3-light-grey"><a href="../Login/index1.php">Sign in</a></li>
+
 </ul>
 
 <div class="content" style="max-width: :1500px;">
