@@ -18,7 +18,6 @@
 <!-- Navigation Bar -->
 <ul class="w3-navbar w3-white w3-large">
     <li><a href="#" class="w3-black"></i>HaveFun</a></li>
-    <li><a href="#rooms">Rooms</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
     <li class="w3-right w3-light-grey"><a href="#contact">Sign in</a></li>
@@ -33,7 +32,7 @@
     <div class="w3-row-padding">
         <div class="w3-col m3">
             <label><i class="fa fa-calendar-o"></i>Event Date</label>
-            <input class="w3-input w3-border" type="text" placeholder="Date">
+            <input class="w3-input w3-border" type="text" placeholder="DD-MM-YY">
         </div>
         <div class="w3-col m3">
             <label><i class=""></i>City</label>
@@ -42,23 +41,28 @@
 
         <div class="w3-col m2">
             <label><i class=""></i>Place</label>
-            <input class="w3-input w3-border" type="number" placeholder="">
+            <input class="w3-input w3-border" type="number" placeholder="Place">
         </div>
 
-        <div class="input-group">
-            <select name="category" class="form-control">
-                <option value="0">All Categories</option>
-            </select>
-        </div>
+
 
         <div class="w3-col m2">
-            <label><i class="fa-search"></i> Search</label>
             <button class="w3-btn-block">Search</button>
         </div>
     </div>
 
+    <div class="mainselection">
+        <select name="State" id="inputs">
+            <option value="Category">Category</option>
+            <option value="Music">Music</option>
+            <option value="Wisconsin">Sports</option>
+            <option value="Wyoming">Theater</option>
+            <option value="Cinema">Cinema</option>
+        </select>
+    </div>
 
     <div class="footer">Havefun.com &copy; 2016</div>
 </body>
+
 </html>
 

@@ -43,11 +43,34 @@ h1 {
 .form-control
 {
     position: absolute;
-
     left: 200px;
 
 }
 .w3-btn-block{
-size: 50px;
-    width: 30%;
+    position: absolute !important;
+    top: 125px;
+    width: 10%;
+    right: 90px;
+}
+
+.mainselection {
+    overflow:hidden;
+    width:350px;
+    margin-left:35px;
+}
+select {
+    border:0;
+    background:transparent;
+    height:32px;
+    border:1px solid #d8d8d8;
+    width:350px;
+    -webkit-appearance: none;
+}
+
+.mainselection{
+    position: absolute;
+    right: 220px;
+    width: 120px;
+    height: 40px;
+    top: 120px ;
 }
