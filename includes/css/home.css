@@ -40,20 +40,14 @@ h1 {
     left:100px;
 
 }
-
-.combo-box{
+.form-control
+{
     position: absolute;
 
-    background-color: transparent;
-    top: 250px;
-    width: 100%;
+    left: 200px;
+
 }
-
 .w3-btn-block{
-    position: absolute;
-    left: 40%;
-    width: 150px !important;
-    top: 170px;
-    text-align: center;
-    right: 40%;
+size: 50px;
+    width: 30%;
 }

@@ -41,22 +41,18 @@
         </div>
 
         <div class="w3-col m2">
-            <select size="1px" style=""><i class="combo-box"></i>Category
-        <option value="select">Select</option>
-                <option value="Cinema">Cinema</option>
-                <option value="Theater">Theater</option>
-                <option value="Sports">Sports</option>
-                <option value="Music">Music</option>
-
-            </select>
-
-        </div>
-
-        <div class="w3-col m3">
             <label><i class=""></i>Place</label>
-            <input class="w3-input w3-border" type="text" placeholder="Place">
+            <input class="w3-input w3-border" type="number" placeholder="">
         </div>
+
+        <div class="input-group">
+            <select name="category" class="form-control">
+                <option value="0">All Categories</option>
+            </select>
+        </div>
+
         <div class="w3-col m2">
+            <label><i class="fa-search"></i> Search</label>
             <button class="w3-btn-block">Search</button>
         </div>
     </div>
