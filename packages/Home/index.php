@@ -39,18 +39,25 @@
             <label><i class=""></i>City</label>
             <input class="w3-input w3-border" type="text" placeholder="City">
         </div>
-        <div class="w3-col m2">
-            <label><i class=""></i>Category</label>
-            <input class="w3-input w3-border" type="number" placeholder="">
-        </div>
 
         <div class="w3-col m2">
+            <select size="1px" style=""><i class="combo-box"></i>Category
+        <option value="select">Select</option>
+                <option value="Cinema">Cinema</option>
+                <option value="Theater">Theater</option>
+                <option value="Sports">Sports</option>
+                <option value="Music">Music</option>
+
+            </select>
+
+        </div>
+
+        <div class="w3-col m3">
             <label><i class=""></i>Place</label>
-            <input class="w3-input w3-border" type="number" placeholder="">
+            <input class="w3-input w3-border" type="text" placeholder="Place">
         </div>
         <div class="w3-col m2">
-            <label><i class="fa fa-search"></i> Search</label>
-            <button class="w3-btn-block w3-padding-8">Search</button>
+            <button class="w3-btn-block">Search</button>
         </div>
     </div>
 
