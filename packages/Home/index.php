@@ -39,9 +39,17 @@
             <label><i class=""></i>City</label>
             <input class="w3-input w3-border" type="text" placeholder="City">
         </div>
-        <div class="w3-col m2">
-            <label><i class=""></i>Category</label>
-            <input class="w3-input w3-border" type="number" placeholder="">
+        <div class="input-group">
+            <input type="text" name="keyword" class="form-control input-xs" placeholder="Search.." />
+            <div class="input-group-btn">
+                <select name="category" class="form-control">
+                    <option value="0">All Categories</option>
+                    <?php include_once "DataObjects/Categories.php" ?>
+                </select>
+                <button value="search" class="btn btn-info btn-md" type="submit">
+                    <i class="glyphicon glyphicon-search"> Search</i>
+                </button>
+            </div>
         </div>
 
         <div class="w3-col m2">
