@@ -17,7 +17,7 @@
 <!-- Navigation Bar -->
 <ul class="w3-navbar w3-white w3-large">
     <li><a href="#" class="w3-black"></i>HaveFun</a></li>
-    <li><a href="#about">About</a></li>
+    <li class=><a href="../About/index.php">About</a></li>
     <li><a href="#contact">Contact</a></li>
     <li class="w3-right w3-light-grey"><a href="../Login/index1.php">Sign in</a></li>
 
