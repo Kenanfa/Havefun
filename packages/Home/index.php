@@ -10,6 +10,7 @@
 <?php
 include 'Database.php';
 $database = new Database();
+$list_catgs_query = "Select Category from Event group by Category";
 ?>
 
 <style>
@@ -57,11 +58,11 @@ $database = new Database();
 
     <div class="mainselection">
         <select name="State" id="inputs">
-            <option value="Category">Category</option>
-            <option value="Music">Music</option>
-            <option value="Wisconsin">Sports</option>
-            <option value="Wyoming">Theater</option>
-            <option value="Cinema">Cinema</option>
+            <option value="Category">All Categories</option>
+            <?php $result = $database->selectQuery($list_catgs_query);
+            while($row = $result->fetch_assoc()) { ?>
+            <option value="Music"> <?php echo $row["Category"]; ?></option>
+            <?php } ?>
         </select>
     </div>
 
