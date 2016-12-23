@@ -29,5 +29,10 @@ class Database{
         $this->conn->query($query);
     }
 
+    public function printx()
+    {
+       return "It works";
+        
+    }
     
 }
