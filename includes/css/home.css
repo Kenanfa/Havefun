@@ -11,6 +11,13 @@ h1 {
     color: white;
 }
 
+h2 {
+    font-family: "Roboto", sans-serif;
+    font-kerning: auto;
+    font-feature-settings: normal;
+    font-size-adjust: inherit;
+
+}
 .jumbotron {
     background-color: rgba(52,73,94,0.7);
     margin-left: -40px;
@@ -22,7 +29,7 @@ h1 {
 }
 
 .footer {
-    position: absolute;
+    position: absolute !important;
     right: 0;
     bottom: 0;
     left: 0;
@@ -35,6 +42,7 @@ h1 {
     right: 50px;
     padding: 0.5rem;
     background-color:darkblue;
+    position: absolute; !important;
 }
 .search_3{
     left:100px;
