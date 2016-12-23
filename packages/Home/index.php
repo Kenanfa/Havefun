@@ -58,10 +58,10 @@ $list_catgs_query = "Select Category from Event group by Category";
 
     <div class="mainselection">
         <select name="State" id="inputs">
-            <option value="Category">All Categories</option>
+            <option value="">All Categories</option>
             <?php $result = $database->selectQuery($list_catgs_query);
             while($row = $result->fetch_assoc()) { ?>
-            <option value="Music"> <?php echo $row["Category"]; ?></option>
+            <option value=<?php echo $row["Category"]; ?>> <?php echo $row["Category"]; ?></option>
             <?php } ?>
         </select>
     </div>

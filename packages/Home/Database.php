@@ -19,11 +19,6 @@ class Database{
     public function insertQuery($query){
         $this->conn->query($query);
     }
-
-    public function printx()
-    {
-       return "It works";
-        
-    }
+    
     
 }
