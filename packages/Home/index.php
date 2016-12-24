@@ -11,6 +11,7 @@
 <?php
 include 'Database.php';
 $database = new Database();
+$randomEvents = $database->getRandomEvents();
 $list_catgs_query = "Select Category from Event group by Category";
 ?>
 
@@ -58,28 +59,32 @@ $list_catgs_query = "Select Category from Event group by Category";
     <div class="content padding" >
 
         <div class="w3-row-padding">
+            <?php $row = $randomEvents->fetch_assoc(); ?>
             <div class="w3-col l3 m6 w3-margin-bottom">
                 <div class="w3-display-container">
-                    <div class="w3-display-topleft w3-black w3-padding"> Istanbul Concert</div>
-                    <img src="../img/Concert.jpg" alt="Concert" style="width:100%">
+                    <div class="w3-display-topleft w3-black w3-padding"> <?php echo $row["Name"]; ?></div>
+                    <img src=<?php echo $row["Picture"]; ?> alt=<?php echo $row["Category"]; ?> style="width:100%">
                 </div>
             </div>
+            <?php $row = $randomEvents->fetch_assoc(); ?>
             <div class="w3-col l3 m6 w3-margin-bottom">
                 <div class="w3-display-container">
-                    <div class="w3-display-topleft w3-black w3-padding">Arsenal-Chelsea</div>
-                    <img src="../img/Sport.jpg" alt="Sport" style="width:100%">
+                    <div class="w3-display-topleft w3-black w3-padding"><?php echo $row["Name"]; ?></div>
+                    <img src=<?php echo $row["Picture"]; ?> alt=<?php echo $row["Category"]; ?> style="width:100%">
                 </div>
             </div>
+            <?php $row = $randomEvents->fetch_assoc(); ?>
             <div class="w3-col l3 m6 w3-margin-bottom">
                 <div class="w3-display-container">
-                    <div class="w3-display-topleft w3-black w3-padding">International Festival</div>
-                    <img src="../img/Music.jpg" alt="Music" style="width:100%">
+                    <div class="w3-display-topleft w3-black w3-padding"><?php echo $row["Name"]; ?></div>
+                    <img src=<?php echo $row["Picture"]; ?> alt=<?php echo $row["Category"]; ?> style="width:100%">
                 </div>
             </div>
+            <?php $row = $randomEvents->fetch_assoc(); ?>
             <div class="w3-col l3 m6 w3-margin-bottom">
                 <div class="w3-display-container">
-                    <div class="w3-display-topleft w3-black w3-padding">Modern Theater</div>
-                    <img src="../img/Theater.jpg" alt="Theater" style="width:100%"">
+                    <div class="w3-display-topleft w3-black w3-padding"><?php echo $row["Name"]; ?></div>
+                    <img src=<?php echo $row["Picture"]; ?> alt=<?php echo $row["Category"]; ?> style="width:100%"">
                 </div>
             </div>
 
@@ -107,3 +112,4 @@ $list_catgs_query = "Select Category from Event group by Category";
 </body>
 
 </html>
+
