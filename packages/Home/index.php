@@ -46,6 +46,7 @@ include '../Header.php';
             <div class="w3-col l3 m6 w3-margin-bottom">
                 <div class="w3-display-container">
                     <div class="w3-display-topleft w3-black w3-padding"> <?php echo $row["Name"]; ?></div>
+                    <a href="../Event/Event.php">
                     <img src=<?php echo $row["Picture"]; ?> alt=<?php echo $row["Category"]; ?> style="width:100%">
                 </div>
             </div>
@@ -53,6 +54,7 @@ include '../Header.php';
             <div class="w3-col l3 m6 w3-margin-bottom">
                 <div class="w3-display-container">
                     <div class="w3-display-topleft w3-black w3-padding"><?php echo $row["Name"]; ?></div>
+                    <a href="../Event/Event.php">
                     <img src=<?php echo $row["Picture"]; ?> alt=<?php echo $row["Category"]; ?> style="width:100%">
                 </div>
             </div>
@@ -60,6 +62,7 @@ include '../Header.php';
             <div class="w3-col l3 m6 w3-margin-bottom">
                 <div class="w3-display-container">
                     <div class="w3-display-topleft w3-black w3-padding"><?php echo $row["Name"]; ?></div>
+                    <a href="../Event/Event.php">
                     <img src=<?php echo $row["Picture"]; ?> alt=<?php echo $row["Category"]; ?> style="width:100%">
                 </div>
             </div>
@@ -67,6 +70,7 @@ include '../Header.php';
             <div class="w3-col l3 m6 w3-margin-bottom">
                 <div class="w3-display-container">
                     <div class="w3-display-topleft w3-black w3-padding"><?php echo $row["Name"]; ?></div>
+                    <a href="../Event/Event.php">
                     <img src=<?php echo $row["Picture"]; ?> alt=<?php echo $row["Category"]; ?> style="width:100%"">
                 </div>
             </div>
