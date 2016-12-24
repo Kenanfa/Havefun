@@ -35,7 +35,7 @@ $list_catgs_query = "Select Category from Event group by Category";
     <div class="w3-row-padding">
         <div class="w3-col m3">
             <label><i class="fa fa-calendar-o"></i>Event Date</label>
-            <input class="w3-input w3-border" type="text" placeholder="DD-MM-YY">
+                <input class="w3-input w3-border" type="date" name="date">
         </div>
         <div class="w3-col m3">
             <label><i class=""></i>City</label>
