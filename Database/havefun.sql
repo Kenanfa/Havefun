@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 24, 2016 at 01:31 AM
+-- Generation Time: Dec 26, 2016 at 09:30 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -27,24 +27,83 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `event` (
-  `ID` int(11) NOT NULL,
-  `Name` varchar(50) NOT NULL,
-  `Category` varchar(25) NOT NULL,
-  `Picture` text NOT NULL
+  `ID` int(10) UNSIGNED NOT NULL,
+  `Name` varchar(100) NOT NULL,
+  `Date` date NOT NULL,
+  `Time` int(10) UNSIGNED NOT NULL,
+  `Place_ID` int(11) NOT NULL,
+  `Picture` text NOT NULL,
+  `Category` varchar(30) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `event`
 --
 
-INSERT INTO `event` (`ID`, `Name`, `Category`, `Picture`) VALUES
-(1, 'Istanbul Concert', 'Music', 'http://www.millenniumparkconcerts.org/wp-content/uploads/2015/07/music-concert.jpg'),
-(2, 'Arsenal vs Chelsea', 'Sports', 'http://www.ticketgum.com/blog/wp-content/uploads/2016/08/arsenal-vs-chelsea.jpg'),
-(3, 'Modern Theatre', 'Theatre', 'http://kingofwallpapers.com/theatre/theatre-010.jpg'),
-(4, 'Let\'s code confrence', 'Confrence', 'http://www.prisonabolition.org/wp-content/uploads/2013/10/4596544906.jpg'),
-(5, 'Manchester Derby', 'Sports', 'http://www.manutd.com/sitecore/shell/~/media/7C25C9744A8C48F8A22955E10ADCB0F9.ashx?w=1280&h=720&rgn=0,440,2000,1560'),
-(6, 'The Eminem Show', 'Music', 'https://blog.tickpick.com/wp-content/uploads/2015/04/eminem.jpg'),
-(7, 'El Classico ', 'Sports', 'http://static.sportskeeda.com/wp-content/uploads/2015/03/real-madrid-vs-barcelona-1426960797.jpg');
+INSERT INTO `event` (`ID`, `Name`, `Date`, `Time`, `Place_ID`, `Picture`, `Category`) VALUES
+(1, 'Istanbul Concert', '2016-12-07', 1400, 1, 'http://www.millenniumparkconcerts.org/wp-content/uploads/2015/07/music-concert.jpg', 'Music'),
+(2, 'Arsenal vs Chelsea', '2017-03-08', 1700, 4, 'http://www.ticketgum.com/blog/wp-content/uploads/2016/08/arsenal-vs-chelsea.jpg', 'Sports'),
+(3, 'Modern Theatre', '2016-09-09', 2100, 3, 'http://kingofwallpapers.com/theatre/theatre-010.jpg', 'Theatre'),
+(4, 'Let\'s Code Confrence', '2017-06-28', 1200, 2, 'http://www.prisonabolition.org/wp-content/uploads/2013/10/4596544906.jpg', 'Confrence'),
+(5, 'Manchester Derby', '2017-02-03', 1300, 5, 'http://www.manutd.com/sitecore/shell/~/media/7C25C9744A8C48F8A22955E10ADCB0F9.ashx?w=1280&h=720&rgn=0,440,2000,1560', 'Sports'),
+(6, 'The Eminem Show', '2017-03-16', 2200, 7, 'https://blog.tickpick.com/wp-content/uploads/2015/04/eminem.jpg', 'Music'),
+(7, 'El Classico ', '2017-06-22', 1800, 6, 'http://static.sportskeeda.com/wp-content/uploads/2015/03/real-madrid-vs-barcelona-1426960797.jpg', 'Sports');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `place`
+--
+
+CREATE TABLE `place` (
+  `ID` int(11) NOT NULL,
+  `Name` varchar(100) NOT NULL,
+  `Address` varchar(150) NOT NULL,
+  `Num_of_seats` int(10) UNSIGNED NOT NULL,
+  `City` varchar(70) NOT NULL,
+  `Country` varchar(70) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `purchased`
+--
+
+CREATE TABLE `purchased` (
+  `ID` int(10) UNSIGNED NOT NULL,
+  `Ticket_ID` int(10) UNSIGNED NOT NULL,
+  `User_ID` int(10) UNSIGNED NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ticket`
+--
+
+CREATE TABLE `ticket` (
+  `ID` int(10) UNSIGNED NOT NULL,
+  `Event_ID` int(10) UNSIGNED NOT NULL,
+  `Price` double UNSIGNED NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `ID` int(11) UNSIGNED NOT NULL,
+  `Username` varchar(30) NOT NULL,
+  `Password` varchar(30) NOT NULL,
+  `Name` varchar(30) NOT NULL,
+  `Surname` varchar(30) NOT NULL,
+  `Email` varchar(50) NOT NULL,
+  `Phone_number` int(10) UNSIGNED DEFAULT NULL,
+  `Type` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Indexes for dumped tables
@@ -54,6 +113,24 @@ INSERT INTO `event` (`ID`, `Name`, `Category`, `Picture`) VALUES
 -- Indexes for table `event`
 --
 ALTER TABLE `event`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `place`
+--
+ALTER TABLE `place`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `purchased`
+--
+ALTER TABLE `purchased`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `ticket`
+--
+ALTER TABLE `ticket`
   ADD PRIMARY KEY (`ID`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

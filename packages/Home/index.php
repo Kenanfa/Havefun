@@ -6,6 +6,7 @@ $list_catgs_query = "Select Category from Event group by Category";
 
 include '../Header.php';
 ?>
+<link href="../../includes/css/Home.css" rel="stylesheet">
 
 <body>
 <div class="content" style="max-width: :1500px;">
@@ -79,7 +80,7 @@ include '../Header.php';
 
 
 
-        <?php include '../Footer.php';?>
+
 
 
     <div class="mainselection">
@@ -92,7 +93,7 @@ include '../Header.php';
         </select>
     </div>
 
-
+        <?php include '../Footer.php';?>
 
 
 
