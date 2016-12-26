@@ -8,10 +8,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="../../includes/css/signup.css" rel="stylesheet">
 
-<style>
-
-    body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
-</style>
 <body>
 
 <!-- Navigation Bar -->
@@ -47,9 +43,18 @@
             <input type="email" placeholder="e-mail" autofocus />
             <input type="text" placeholder="Username" autofocus />
             <input type="password" placeholder="Password" />
+            <input type="text" placeholder="Phone Number" autofocus />
 
+
+            <section title=".roundedTwo">
+                <!-- .roundedTwo -->
+                <div class="roundedTwo">
+                    <input type="checkbox" value="None" id="roundedTwo" name="check" checked  Label text</label>Are You An Admin?
+                    <label for="roundedTwo"></label>
+                </div>
+                <!-- end .roundedTwo -->
+            </section>
             <a id="submit" href="#">SIGN UP</a>
-
         </div>
 
     </form>
