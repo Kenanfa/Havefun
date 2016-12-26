@@ -3,7 +3,7 @@
 class Database{
     public function __construct()
     {
-        $this->conn = new mysqli("localhost", "root", "12345678", "havefun");
+        $this->conn = new mysqli("localhost", "root", "root", "havefun");
 
     }
 
