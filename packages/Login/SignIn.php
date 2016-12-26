@@ -1,6 +1,6 @@
 <?php include '../Header.php';
-include '../Home/Database.php';
-$database = new Database(); ?>
+?>
+
 <link href="../../includes/css/login.css" rel="stylesheet">
 
 
@@ -14,26 +14,11 @@ $database = new Database(); ?>
 <div class="login-page">
     <div class="form">
 
-        <form class="login-form">
+        <form class="login-form" method="POST" action="CheckSignIn.php">
              <input type="text" placeholder="username" id="username" name="username"/>
              <input type="password" placeholder="password" id="password" name="password"/>
-            <button onclick=<?php $username = $_GET["username"];
-                     $password = $_GET["password"];
-            if(!$database->userExists($username)){
-               ?>  <h3> <?php echo "no such user!!!!";?> </h3>                                   <!--add a popup msg-->
-              <?php
-              }else if(!$database->passwordCorrect($password)){
-                ?>  <h3> <?php echo "Wrong password!!!!"; ?> </h3>                                <!--add a popup msg-->
-                <?php
-              }else{
-                  if($database->isAdmin($username)){
-                  header('Location: ../User/AdminProfile.php');
-              }else {
-                      header('Location: ../User/UserProfile.php');
-                  }
-              }
-              ?>
-                Sign in</button>
+            <button class="btn btn-info" type="submit" >Sign in</button>
+
             <p class="message">Not registered? <a href="SignUp.php">Create an account</a></p>
         </form>
     </div>

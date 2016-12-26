@@ -1,4 +1,6 @@
-<?php include '../Header.php';?>
+<?php include '../Header.php';
+include '../Home/Database.php';
+$database = new Database(); ?>
 <link href="../../includes/css/signup.css" rel="stylesheet">
 
 <body>

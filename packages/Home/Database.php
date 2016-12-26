@@ -56,10 +56,8 @@ class Database{
         $results = $this->selectQuery($query);
         $row = $results->fetch_assoc();
         return($row[Type]==1);
-        
-
-    
     }
+    
 
 
 }
