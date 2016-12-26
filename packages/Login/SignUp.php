@@ -48,6 +48,6 @@
 </div>
 ​
 
-<div class="footer">Havefun.com &copy; 2016</div>
+<?php include '../Footer.php';?>
 </body>
 </html>

@@ -11,6 +11,6 @@
     <li><a href="../Home/index.php" class="w3-black"></i>HaveFun</a></li>
     <li class=><a href="../About/About.php">About</a></li>
     <li><a href="../Contact/contact.php">Contact us</a></li>
-    <li class="w3-right w3-light-grey"><a href="../Login/index1.php">Sign in</a></li>
+    <li class="w3-right w3-light-grey"><a href="../Login/SignIn.php">Sign in</a></li>
 
 </ul>

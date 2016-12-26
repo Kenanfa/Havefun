@@ -39,4 +39,11 @@ class Database{
             return intval($row["count(ID)"]);
         }
 
+    public function userExists($username){
+        $query = "select * from User where Username = '" .$username ."'";
+        $results = $this->selectQuery($query);
+        return($results->num_rows==1);
+
+    }
+
 }
