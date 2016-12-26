@@ -19,10 +19,21 @@ $database = new Database(); ?>
              <input type="password" placeholder="password" id="password" name="password"/>
             <button onclick=<?php $username = $_GET["username"];
                      $password = $_GET["password"];
-            if($database->userExists($username)){
-
-            }
-            ?>>Sign in</button>
+            if(!$database->userExists($username)){
+               ?>  <h3> <?php echo "no such user!!!!";?> </h3>                                   <!--add a popup msg-->
+              <?php
+              }else if(!$database->passwordCorrect($password)){
+                ?>  <h3> <?php echo "Wrong password!!!!"; ?> </h3>                                <!--add a popup msg-->
+                <?php
+              }else{
+                  if($database->isAdmin($username)){
+                  header('Location: ../User/AdminProfile.php');
+              }else {
+                      header('Location: ../User/UserProfile.php');
+                  }
+              }
+              ?>
+                Sign in</button>
             <p class="message">Not registered? <a href="SignUp.php">Create an account</a></p>
         </form>
     </div>

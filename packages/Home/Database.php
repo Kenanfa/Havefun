@@ -43,7 +43,23 @@ class Database{
         $query = "select * from User where Username = '" .$username ."'";
         $results = $this->selectQuery($query);
         return($results->num_rows==1);
-
     }
+
+    public function passwordCorrect($password){
+        $query = "select * from User where Password = '" .$password ."'";
+        $results = $this->selectQuery($query);
+        return($results->num_rows==1);
+    }
+    
+    public function isAdmin($username){
+        $query = "select Type from User where Username = '" .$username ."'";
+        $results = $this->selectQuery($query);
+        $row = $results->fetch_assoc();
+        return($row[Type]==1);
+        
+
+    
+    }
+
 
 }
