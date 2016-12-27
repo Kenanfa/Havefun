@@ -26,7 +26,6 @@
                 <h4>Event ID:</h4>
                 <h4>Event Name: <h4/>
                     <h4>Event Category: <h4/>
-
                         <button class="btn" type="submit" >Buy Tickets</button>
                 <p class="message"><a href="../Login/SignUp.php">Not Registered? Create An Account.</a></p>
             </form>

@@ -27,10 +27,10 @@ class Database{
             $x = rand(1,$n);
             if(array_search($x,$randomIndicesArray )===FALSE)
                 array_push($randomIndicesArray, $x);
-            }
+        }
         return $this->selectQuery("select * from event where ID = " . $randomIndicesArray[0]. " OR ID = " . $randomIndicesArray[1]. " OR ID = " . $randomIndicesArray[2]. " OR ID = " . $randomIndicesArray[3]);
 
-        }
+    }
 
 
     private function getNumberOfEvents(){
