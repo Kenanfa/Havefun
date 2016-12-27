@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 26, 2016 at 09:30 AM
+-- Generation Time: Dec 27, 2016 at 09:58 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -104,6 +104,14 @@ CREATE TABLE `user` (
   `Phone_number` int(10) UNSIGNED DEFAULT NULL,
   `Type` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`ID`, `Username`, `Password`, `Name`, `Surname`, `Email`, `Phone_number`, `Type`) VALUES
+(1, 'kenan', 'kenan', 'kenan', 'kenan', 'kenan', NULL, 1),
+(2, 'root', 'root', 'erk', 'Erk', 'ERK', NULL, 0);
 
 --
 -- Indexes for dumped tables
