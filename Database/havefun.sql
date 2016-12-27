@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 27, 2016 at 01:20 PM
+-- Generation Time: Dec 27, 2016 at 04:25 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -33,21 +33,23 @@ CREATE TABLE `event` (
   `Time` int(10) UNSIGNED NOT NULL,
   `Place_ID` int(11) NOT NULL,
   `Picture` text NOT NULL,
-  `Category` varchar(30) NOT NULL
+  `Category` varchar(30) NOT NULL,
+  `num_of_tickets_left` int(10) NOT NULL,
+  `Creator_ID` int(11) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `event`
 --
 
-INSERT INTO `event` (`ID`, `Name`, `Date`, `Time`, `Place_ID`, `Picture`, `Category`) VALUES
-(1, 'Istanbul Concert', '2016-12-07', 1400, 1, 'http://www.millenniumparkconcerts.org/wp-content/uploads/2015/07/music-concert.jpg', 'Music'),
-(2, 'Arsenal vs Chelsea', '2017-03-08', 1700, 1, 'http://www.ticketgum.com/blog/wp-content/uploads/2016/08/arsenal-vs-chelsea.jpg', 'Sports'),
-(3, 'Modern Theatre', '2016-09-09', 2100, 1, 'http://kingofwallpapers.com/theatre/theatre-010.jpg', 'Theatre'),
-(4, 'Let\'s Code Confrence', '2017-06-28', 1200, 1, 'http://www.prisonabolition.org/wp-content/uploads/2013/10/4596544906.jpg', 'Confrence'),
-(5, 'Manchester Derby', '2017-02-03', 1300, 1, 'http://www.manutd.com/sitecore/shell/~/media/7C25C9744A8C48F8A22955E10ADCB0F9.ashx?w=1280&h=720&rgn=0,440,2000,1560', 'Sports'),
-(6, 'The Eminem Show', '2017-03-16', 2200, 1, 'https://blog.tickpick.com/wp-content/uploads/2015/04/eminem.jpg', 'Music'),
-(7, 'El Classico ', '2017-06-22', 1800, 1, 'http://static.sportskeeda.com/wp-content/uploads/2015/03/real-madrid-vs-barcelona-1426960797.jpg', 'Sports');
+INSERT INTO `event` (`ID`, `Name`, `Date`, `Time`, `Place_ID`, `Picture`, `Category`, `num_of_tickets_left`, `Creator_ID`) VALUES
+(1, 'Istanbul Concert', '2016-12-07', 1400, 1, 'http://www.millenniumparkconcerts.org/wp-content/uploads/2015/07/music-concert.jpg', 'Music', 0, 0),
+(2, 'Arsenal vs Chelsea', '2017-03-08', 1700, 1, 'http://www.ticketgum.com/blog/wp-content/uploads/2016/08/arsenal-vs-chelsea.jpg', 'Sports', 0, 0),
+(3, 'Modern Theatre', '2016-09-09', 2100, 1, 'http://kingofwallpapers.com/theatre/theatre-010.jpg', 'Theatre', 0, 0),
+(4, 'Let\'s Code Confrence', '2017-06-28', 1200, 1, 'http://www.prisonabolition.org/wp-content/uploads/2013/10/4596544906.jpg', 'Confrence', 0, 0),
+(5, 'Manchester Derby', '2017-02-03', 1300, 1, 'http://www.manutd.com/sitecore/shell/~/media/7C25C9744A8C48F8A22955E10ADCB0F9.ashx?w=1280&h=720&rgn=0,440,2000,1560', 'Sports', 0, 0),
+(6, 'The Eminem Show', '2017-03-16', 2200, 1, 'https://blog.tickpick.com/wp-content/uploads/2015/04/eminem.jpg', 'Music', 0, 0),
+(7, 'El Classico ', '2017-06-22', 1800, 1, 'http://static.sportskeeda.com/wp-content/uploads/2015/03/real-madrid-vs-barcelona-1426960797.jpg', 'Sports', 0, 0);
 
 -- --------------------------------------------------------
 

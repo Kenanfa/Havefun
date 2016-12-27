@@ -2,7 +2,7 @@
 ?>
 
 
-
+<img src="../includes/Pictures/1.jpg" style="width:100%">
 
 
 
