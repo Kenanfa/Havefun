@@ -12,14 +12,10 @@ class Database{
 
     }
 
-    public function selectQuery($query){
+    public function performQuery($query){
         return $this->conn->query($query);
     }
-
-    public function insertQuery($query){
-        $this->conn->query($query);
-    }
-
+    
     public function getRandomEvents(){
         $n = $this->getNumberOfEvents();
         $randomIndicesArray = array(rand(1,$n));
@@ -28,34 +24,40 @@ class Database{
             if(array_search($x,$randomIndicesArray )===FALSE)
                 array_push($randomIndicesArray, $x);
         }
-        return $this->selectQuery("select * from event where ID = " . $randomIndicesArray[0]. " OR ID = " . $randomIndicesArray[1]. " OR ID = " . $randomIndicesArray[2]. " OR ID = " . $randomIndicesArray[3]);
+        return $this->performQuery("select * from event where ID = " . $randomIndicesArray[0]. " OR ID = " . $randomIndicesArray[1]. " OR ID = " . $randomIndicesArray[2]. " OR ID = " . $randomIndicesArray[3]);
 
     }
 
 
     private function getNumberOfEvents(){
-        $result = $this->selectQuery("select count(ID) from Event");
+        $result = $this->performQuery("select count(ID) from Event");
         $row = $result->fetch_assoc();
             return intval($row["count(ID)"]);
         }
 
     public function userExists($username){
         $query = "select * from User where Username = '" .$username ."'";
-        $results = $this->selectQuery($query);
+        $results = $this->performQuery($query);
+        return($results->num_rows==1);
+    }
+
+    public function emailExists($email){
+        $query = "select * from User where email = '" .$email ."'";
+        $results = $this->performQuery($query);
         return($results->num_rows==1);
     }
 
     public function passwordCorrect($password){
         $query = "select * from User where Password = '" .$password ."'";
-        $results = $this->selectQuery($query);
+        $results = $this->performQuery($query);
         return($results->num_rows==1);
     }
     
     public function isAdmin($username){
-        $query = "select Type from User where Username = '" .$username ."'";
-        $results = $this->selectQuery($query);
+        $query = "select isAdmin from User where Username = '" .$username ."'";
+        $results = $this->performQuery($query);
         $row = $results->fetch_assoc();
-        return($row[Type]==1);
+        return($row[isAdmin]==true);
     }
     
 

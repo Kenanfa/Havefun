@@ -15,7 +15,7 @@ $database = new Database(); ?>
 
 <div class="container">
 
-    <form id="signup" method="POST" action="CheckSignIn.php">
+    <form id="signup" method="POST" action="CheckSignUp.php">
 
         <div class="header">
 
@@ -26,23 +26,22 @@ $database = new Database(); ?>
         <div class="sep"></div>
 
         <div class="inputs">
-            <input type="text" placeholder="Name" autofocus />
-            <input type="text" placeholder="Surname" autofocus />
-            <input type="email" placeholder="e-mail" autofocus />
-            <input type="text" placeholder="Username" autofocus />
-            <input type="password" placeholder="Password" />
-            <input type="text" placeholder="Phone Number" autofocus />
+            <input type="text" placeholder="Name" id="Name" name="Name" autofocus />
+            <input type="text" placeholder="Surname"  id="Surname" name="Surname" autofocus />
+            <input type="email" placeholder="e-mail"  id="e-mail" name="e-mail" autofocus />
+            <input type="text" placeholder="Username" id="Username" name="Username" autofocus />
+            <input type="password" placeholder="Password" id="Password" name="Password" />
+            <input type="text" placeholder="Phone Number" id="number" name="number" autofocus />
 
 
             <section title=".roundedTwo">
-                <!-- .roundedTwo -->
+
                 <div class="roundedTwo">
-                    <input type="checkbox" value="None" id="roundedTwo" name="check" checked  Label text</label>Are You An Admin?
-                    <label for="roundedTwo"></label>
+                    <input type="checkbox" value=1 id="check" name="check"   Label text</label>Are You An Admin?
                 </div>
-                <!-- end .roundedTwo -->
+
             </section>
-            <a id="submit" href="#">SIGN UP</a>
+            <button class="btn btn-info" type="submit" >Sign up</button>
         </div>
 
     </form>

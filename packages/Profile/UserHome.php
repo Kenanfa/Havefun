@@ -91,7 +91,7 @@
         <div class="mainselection">
             <select name="State" id="inputs">
                 <option value="">All Categories</option>
-                <?php $result = $database->selectQuery($list_catgs_query);
+                <?php $result = $database->performQuery($list_catgs_query);
                 while($row = $result->fetch_assoc()) { ?>
                     <option value=<?php echo $row["Category"]; ?>> <?php echo $row["Category"]; ?></option>
                 <?php } ?>
