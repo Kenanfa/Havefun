@@ -15,7 +15,7 @@ $database = new Database(); ?>
 
 <div class="container">
 
-    <form id="signup">
+    <form id="signup" method="POST" action="CheckSignIn.php">
 
         <div class="header">
 
