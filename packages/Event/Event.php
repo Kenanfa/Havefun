@@ -12,7 +12,6 @@
     <li class=><a href="../About/About.php">About</a></li>
     <li><a href="../Contact/contact.php">Contact us</a></li>
     <li class="w3-right w3-light-grey"><a href="../Login/SignIn.php">Sign in</a></li>
-
 </ul>
 
 
