@@ -21,7 +21,7 @@ h1{
     position: relative !important;
     background: #FFFFFF;
     max-width: 660px;
-    padding: 40px;
+    padding: 20px;
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
