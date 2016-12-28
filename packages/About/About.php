@@ -11,7 +11,7 @@
 
 <body>
 <img src="http://wallpapercave.com/wp/aHBwrlG.jpg" alt="boat" style="width:100%;max-height:150px;">
-<div class="w3-container w3-display-topmiddle w3-margin-bottom">
+<div class="w3-container w3-display-topmiddle w3-margin-bottom ">
 <header class="w3-container  w3-padding-16">
  <h1> About Us</h1>
      </header>

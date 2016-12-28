@@ -10,35 +10,33 @@ $_SESSION["currentUser"] = "";
 include '../Header.php';
 ?>
 <link href="../../includes/css/Home.css" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 <body>
 <div>
     <div class="container matgin-top" id="Events">
-        <h3>Search Your Event</h3>
+        <h3 align="center" style="font-family: Lobster; font-size: 25px;" >Search Your Event</h3>
     </div>
 
-    <div class="w3-row-padding" >
-        <div class="w3-col m3" >
+    <div class="w3-row-padding">
+        <div class="w3-col m3">
             <input class="EventDate" type="date" placeholder="Event Date">
             <input class="City" type="text" placeholder="City">
             <input class="Place" type="text" placeholder="Place">
-            <form method="post"  class="sbutton" action="../Search/index.php">
-                <button class="sbutton" type="submit">Search</button>
-            </form>
-
+           <form method="post" action="../Search/index.php">
+            <button  type="submit" class="w3-btn-block">Search</button></form>
                 <select class="dropdown" name="State" id="inputs">
-                    <option value="dropdown" >All Categories</option>
+                    <option value="dropdown">All Categories</option>
                     <?php $result = $database->performQuery($list_catgs_query);
                     while($row = $result->fetch_assoc()) { ?>
                         <option value=<?php echo $row["Category"]; ?>> <?php echo $row["Category"]; ?></option>
                     <?php } ?>
                 </select>
             </div>
-        </div>
+    </div>
     </div>
 
     <hr>
-    <h2>Featured Events</h2>
+    <h2 style="font-family: Lobster; font-size: 45px; ">Featured Events</h2>
 
 
     <div class="content padding" >
