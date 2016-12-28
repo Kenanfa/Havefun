@@ -5,9 +5,9 @@ $currentUser = $_SESSION["currentUser"];
 $event = $_SESSION["event"];
 
 if($sign_in_status){
-    $query1 = "insert into Tickets_purchased (Event_ID) VALUES ( " . $event["ID"] . " );";
-    $query2 = "insert into purchased ( Ticket_ID, User_ID) VALUES ( \"" . $username . "\" , \"" . $password ." );";
+    $query = "insert into Tickets_purchased (Event_ID , User_ID) VALUES ( " . $event["ID"] . " , ".$currentUser["ID"]." );";
     if ($database->performQuery($query) == true) {
+        $database->ticketBought($eventID);
         if($isAdmin){
             ?>
             <script>

@@ -71,4 +71,14 @@ class Database{
         $results = $this->performQuery($query);
         return $results->fetch_assoc();
     }
+
+    public function getUser($username){
+        $query= "select * from user where username =".$username;
+        $results = $this->performQuery($query);
+        return $results->fetch_assoc();
+    }
+
+    public function ticketBought($eventID){
+        #TODO decrease the num of tickets left
+    }
 }

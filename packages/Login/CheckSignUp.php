@@ -80,7 +80,7 @@ if(strlen($username)==0){
     $query = "insert into user (Username, Password, Name, Surname, Email, Phone_number, isAdmin) VALUES ( \"" . $username . "\" , \"" . $password . "\" , \"" . $name . "\" , \"" . $surname . "\" , \"" . $email . "\" , " . $pNumber ." , " . $isAdmin ." );";
     if ($database->performQuery($query) == true) {
         session_start();
-        $_SESSION['username'] = $username;
+        $_SESSION['currentUser'] = $database->getUser($username);
         $_SESSION['sign_in_status'] = true;
 
 
