@@ -81,11 +81,14 @@ if(strlen($username)==0){
     if ($database->performQuery($query) == true) {
         session_start();
         $_SESSION['username'] = $username;
+        $_SESSION['sign_in_status'] = true;
+
+
         if($isAdmin){
         ?>
         <script>
             alert("Account successfully created!! ");
-            window.location.href = "CheckSignIn.php";
+            window.location.href = "../User/AdminProfile.php";
         </script>
 
         <?php
@@ -94,7 +97,7 @@ if(strlen($username)==0){
             ?>
             <script>
                 alert("Account successfully created!! ");
-                window.location.href = "CheckSignIn.php";
+                window.location.href = "../User/UserProfile.php";
             </script>
 
             <?php

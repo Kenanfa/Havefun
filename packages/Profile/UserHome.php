@@ -11,6 +11,13 @@
 <link href="../../includes/css/header.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 
+<?php session_start() ?>
+<script>
+    function signOut() {
+        <?php  $_SESSION["sign_in_status"] = false; ?>
+        window.location.href = "SignUp.php";
+    }
+</script>
 <ul class="w3-navbar w3-white w3-large">
     <li class="shrift"><a href="../Profile/UserHome.php" class="w3-black"></i>HaveFun</a></li>
     <li class="shrift"><a href="../User/UserProfile.php">Profile</a></li>
