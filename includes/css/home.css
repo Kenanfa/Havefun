@@ -105,6 +105,7 @@ position: absolute !important;
 
 hr {
     display: block;
+    color: inherit;
     position: absolute !important;
     margin-top: 130px;
     height: 0;
