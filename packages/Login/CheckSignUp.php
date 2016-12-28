@@ -92,8 +92,7 @@ if(strlen($username)==0){
         </script>
 
         <?php
-    }else
-        {
+    }else{
             ?>
             <script>
                 alert("Account successfully created!! ");

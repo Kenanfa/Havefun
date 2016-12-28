@@ -15,8 +15,8 @@
 <?php session_start();?>
 
 <ul class="w3-navbar w3-white w3-large">
-    <li class="shrift"><a href="../Profile/AdminHomePage.php" class="w3-black">HaveFun</a></li>
-    <li class="shrift"><a href="../User/AdminProfile.php">Profile</a></li>
+    <li class="shrift"><a href="../Profile/UserHome.php" class="w3-black">HaveFun</a></li>
+    <li class="shrift"><a href="../User/UserProfile.php">Profile</a></li>
     <li class="w3-right w3-light-grey shrift"><a href="../Home/index.php">Sign Out</a></li>
    </ul>
 

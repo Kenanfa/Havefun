@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 28, 2016 at 01:07 PM
+-- Generation Time: Dec 28, 2016 at 02:38 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -35,21 +35,22 @@ CREATE TABLE `event` (
   `Picture` text NOT NULL,
   `Category` varchar(30) NOT NULL,
   `num_of_tickets_left` int(10) NOT NULL,
-  `Creator_ID` int(11) UNSIGNED NOT NULL
+  `Creator_ID` int(11) UNSIGNED NOT NULL,
+  `Ticket_price` double UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `event`
 --
 
-INSERT INTO `event` (`ID`, `Name`, `Date`, `Time`, `Place_ID`, `Picture`, `Category`, `num_of_tickets_left`, `Creator_ID`) VALUES
-(1, 'Istanbul Concert', '2016-12-07', 1400, 1, 'http://www.millenniumparkconcerts.org/wp-content/uploads/2015/07/music-concert.jpg', 'Music', 0, 0),
-(2, 'Arsenal vs Chelsea', '2017-03-08', 1700, 1, 'http://www.ticketgum.com/blog/wp-content/uploads/2016/08/arsenal-vs-chelsea.jpg', 'Sports', 0, 0),
-(3, 'Modern Theatre', '2016-09-09', 2100, 1, 'http://kingofwallpapers.com/theatre/theatre-010.jpg', 'Theatre', 0, 0),
-(4, 'Let\'s Code Confrence', '2017-06-28', 1200, 1, 'http://www.prisonabolition.org/wp-content/uploads/2013/10/4596544906.jpg', 'Confrence', 0, 0),
-(5, 'Manchester Derby', '2017-02-03', 1300, 1, 'http://www.manutd.com/sitecore/shell/~/media/7C25C9744A8C48F8A22955E10ADCB0F9.ashx?w=1280&h=720&rgn=0,440,2000,1560', 'Sports', 0, 0),
-(6, 'The Eminem Show', '2017-03-16', 2200, 1, 'https://blog.tickpick.com/wp-content/uploads/2015/04/eminem.jpg', 'Music', 0, 0),
-(7, 'El Classico ', '2017-06-22', 1800, 1, 'http://static.sportskeeda.com/wp-content/uploads/2015/03/real-madrid-vs-barcelona-1426960797.jpg', 'Sports', 0, 0);
+INSERT INTO `event` (`ID`, `Name`, `Date`, `Time`, `Place_ID`, `Picture`, `Category`, `num_of_tickets_left`, `Creator_ID`, `Ticket_price`) VALUES
+(1, 'Istanbul Concert', '2016-12-07', 1400, 1, 'http://www.millenniumparkconcerts.org/wp-content/uploads/2015/07/music-concert.jpg', 'Music', 12, 0, 0),
+(2, 'Arsenal vs Chelsea', '2017-03-08', 1700, 1, 'http://www.ticketgum.com/blog/wp-content/uploads/2016/08/arsenal-vs-chelsea.jpg', 'Sports', 23, 0, 0),
+(3, 'Modern Theatre', '2016-09-09', 2100, 1, 'http://kingofwallpapers.com/theatre/theatre-010.jpg', 'Theatre', 5, 0, 0),
+(4, 'Let\'s Code Confrence', '2017-06-28', 1200, 1, 'http://www.prisonabolition.org/wp-content/uploads/2013/10/4596544906.jpg', 'Confrence', 17, 0, 0),
+(5, 'Manchester Derby', '2017-02-03', 1300, 1, 'http://www.manutd.com/sitecore/shell/~/media/7C25C9744A8C48F8A22955E10ADCB0F9.ashx?w=1280&h=720&rgn=0,440,2000,1560', 'Sports', 22, 0, 0),
+(6, 'The Eminem Show', '2017-03-16', 2200, 1, 'https://blog.tickpick.com/wp-content/uploads/2015/04/eminem.jpg', 'Music', 21, 0, 0),
+(7, 'El Classico ', '2017-06-22', 1800, 1, 'http://static.sportskeeda.com/wp-content/uploads/2015/03/real-madrid-vs-barcelona-1426960797.jpg', 'Sports', 25, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -61,7 +62,6 @@ CREATE TABLE `place` (
   `ID` int(11) NOT NULL,
   `Name` varchar(100) NOT NULL,
   `Address` varchar(150) NOT NULL,
-  `Num_of_seats` int(10) UNSIGNED NOT NULL,
   `City` varchar(70) NOT NULL,
   `Country` varchar(70) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -70,48 +70,28 @@ CREATE TABLE `place` (
 -- Dumping data for table `place`
 --
 
-INSERT INTO `place` (`ID`, `Name`, `Address`, `Num_of_seats`, `City`, `Country`) VALUES
-(1, 'Test Only ', 'Test Only ', 12, 'Test Only Test Only ', 'Test Only ');
+INSERT INTO `place` (`ID`, `Name`, `Address`, `City`, `Country`) VALUES
+(1, 'Test Only ', 'Test Only ', 'Test Only Test Only ', 'Test Only ');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `purchased`
+-- Table structure for table `tickets_purchased`
 --
 
-CREATE TABLE `purchased` (
+CREATE TABLE `tickets_purchased` (
   `ID` int(10) UNSIGNED NOT NULL,
-  `Ticket_ID` int(10) UNSIGNED NOT NULL,
+  `Event_ID` int(10) UNSIGNED NOT NULL,
   `User_ID` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `purchased`
+-- Dumping data for table `tickets_purchased`
 --
 
-INSERT INTO `purchased` (`ID`, `Ticket_ID`, `User_ID`) VALUES
-(1, 1, 2),
-(2, 2, 2);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `ticket`
---
-
-CREATE TABLE `ticket` (
-  `ID` int(10) UNSIGNED NOT NULL,
-  `Event_ID` int(10) UNSIGNED NOT NULL,
-  `Price` double UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `ticket`
---
-
-INSERT INTO `ticket` (`ID`, `Event_ID`, `Price`) VALUES
-(1, 1, 22),
-(2, 1, 22);
+INSERT INTO `tickets_purchased` (`ID`, `Event_ID`, `User_ID`) VALUES
+(1, 1, 1),
+(2, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -136,10 +116,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`ID`, `Username`, `Password`, `Name`, `Surname`, `Email`, `Phone_number`, `isAdmin`) VALUES
 (1, 'kenan', 'kenan', 'kenan', 'kenan', 'kenan', NULL, 1),
-(2, 'root', 'root', 'erk', 'Erk', 'ERK', NULL, 0),
-(12, 'rootabb', 'rootsxxx', 'asd', 'sadsad', 'sadasd@asd', NULL, 1),
-(13, 'asdlpsakj', '5453asdx', 'asdsad', 'asdasd', 'sadasdasd@sadasd', NULL, 1),
-(14, 'rootXXDD', 'W223DFBFDF', 'sdWEWQEQ', 'SADASDSAD', 'asdasdasdsdd2XXXX@X', NULL, 0);
+(2, 'root', 'root', 'erk', 'Erk', 'ERK', NULL, 0);
 
 --
 -- Indexes for dumped tables
@@ -159,19 +136,12 @@ ALTER TABLE `place`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `purchased`
+-- Indexes for table `tickets_purchased`
 --
-ALTER TABLE `purchased`
+ALTER TABLE `tickets_purchased`
   ADD PRIMARY KEY (`ID`),
-  ADD KEY `purchased_ibfk_1` (`User_ID`),
-  ADD KEY `ticket_id` (`Ticket_ID`);
-
---
--- Indexes for table `ticket`
---
-ALTER TABLE `ticket`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `event_id` (`Event_ID`);
+  ADD KEY `event_id` (`Event_ID`),
+  ADD KEY `User_ID` (`User_ID`);
 
 --
 -- Indexes for table `user`
@@ -194,14 +164,9 @@ ALTER TABLE `event`
 ALTER TABLE `place`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT for table `purchased`
+-- AUTO_INCREMENT for table `tickets_purchased`
 --
-ALTER TABLE `purchased`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `ticket`
---
-ALTER TABLE `ticket`
+ALTER TABLE `tickets_purchased`
   MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `user`
@@ -219,17 +184,11 @@ ALTER TABLE `event`
   ADD CONSTRAINT `place_id` FOREIGN KEY (`Place_ID`) REFERENCES `place` (`ID`);
 
 --
--- Constraints for table `purchased`
+-- Constraints for table `tickets_purchased`
 --
-ALTER TABLE `purchased`
-  ADD CONSTRAINT `purchased_ibfk_1` FOREIGN KEY (`User_ID`) REFERENCES `user` (`ID`),
-  ADD CONSTRAINT `ticket_id` FOREIGN KEY (`Ticket_ID`) REFERENCES `ticket` (`ID`);
-
---
--- Constraints for table `ticket`
---
-ALTER TABLE `ticket`
-  ADD CONSTRAINT `event_id` FOREIGN KEY (`Event_ID`) REFERENCES `event` (`ID`);
+ALTER TABLE `tickets_purchased`
+  ADD CONSTRAINT `event_id` FOREIGN KEY (`Event_ID`) REFERENCES `event` (`ID`),
+  ADD CONSTRAINT `tickets_purchased_ibfk_1` FOREIGN KEY (`User_ID`) REFERENCES `user` (`ID`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
