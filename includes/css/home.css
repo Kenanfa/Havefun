@@ -1,6 +1,7 @@
 body {
     background-size: cover;
     background-image: url("http://wallpapercave.com/wp/aHBwrlG.jpg");
+    height: 800px;
 }
 
 .navbar {
@@ -16,20 +17,17 @@ h2 {
     font-kerning: auto;
     font-feature-settings: normal;
     font-size-adjust: inherit;
-
+    font-weight: bold;
+    position: absolute;!important;
+    margin-top: 70px;
 }
-.jumbotron {
-    background-color: rgba(52,73,94,0.7);
-    margin-left: -40px;
-    margin-right: -40px;
-    padding-right: 10px !important;
-    padding-left: 10px !important;
-    padding-bottom: 10px;
-    padding-top: 10px;
+h3{
+    font-weight: bold;
 }
 
 .footer {
     position: absolute !important;
+    margin-bottom: 0px;
     right: 0;
     bottom: 0;
     left: 0;
@@ -37,27 +35,63 @@ h2 {
     background-color: #efefef;
     text-align: center;
 }
+.EventDate{
+    position: absolute !important;
+    margin-bottom: 10px;
+    height: 30px;
+    margin-left: 10px;
+    border-bottom-color: #1a1a1a;
+}
+.City{
+    position: absolute !important;
+    margin-bottom: 10px;
+    height: 30px;
+    margin-left: 230px;
+    border-bottom-color: #1a1a1a;
+}
+.Place{
+    position: absolute !important;
+    height: 30px;
+    margin-left: 440px;
+    border-bottom-color: #1a1a1a;
+}
 
+.first{
+position: absolute !important;
+    margin-bottom: 50px;
+    bottom: 50px;
+}
+.w3-display-container{
+    padding-right: 10px;
+}
+.login-form{
+    bottom: 0px;
+}
 .search-form_3{
     right: 50px;
     padding: 0.5rem;
     background-color:darkblue;
-    position: absolute; !important;
+    position: absolute !important;
 }
 .search_3{
     left:100px;
 
 }
-.form-control
-{
-    position: absolute;
-    left: 200px;
+
+.dropdown{
+    font-family: "Roboto", sans-serif;
+    font-size: 70px;
+    position: absolute !important;
+    margin-left: 700px;
+    margin-top: 10px;
+    width: 12%;
 
 }
+
 .w3-btn-block{
     position: absolute !important;
-    top: 125px;
-    width: 10%;
+    top: 100px;
+    width: 20%;
     right: 90px;
 }
 
@@ -66,18 +100,19 @@ h2 {
     width:350px;
     margin-left:35px;
 }
-select {
-    border:0;
-    background:transparent;
-    height:32px;
-    border:1px solid #d8d8d8;
-    width:350px;
-    -webkit-appearance: none;
-}
 
-.mainselection{
-    position: absolute;
-    right: 270px;
-    width: 120px;
-    top: 120px ;
+
+
+hr {
+    display: block;
+    position: absolute !important;
+    margin-top: 130px;
+    height: 0;
+    width: 100%;
+    max-height: 400px;
+    font-size: 3px;
+    line-height: 10px;
+    clear: both;
+    border: none;
+    border-top: 4px solid #000000;
 }

@@ -6,6 +6,8 @@ $username = $_POST["username"];
 $password = $_POST["password"];
 
 if(!$database->userExists($username)){
+    echo "username";
+
     ?>
     <script>
         alert("there is no such username!!!!");
@@ -16,6 +18,8 @@ if(!$database->userExists($username)){
 
     
 }else if(!$database->passwordCorrect($password)){
+    echo "pass";
+
     ?>
     <script>
         alert("the password is incorrect!!!");
@@ -26,6 +30,7 @@ if(!$database->userExists($username)){
     
 }else{
     if($database->isAdmin($username)){
+
         header('Location: ../User/AdminProfile.php');
     }else{
         header('Location: ../User/UserProfile.php');

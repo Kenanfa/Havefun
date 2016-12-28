@@ -25,7 +25,7 @@ session_start();
 
 
 </ul>
-<link href="../../includes/css/userprofile.css" rel="stylesheet">
+<link href="../../includes/css/adminprofile.css" rel="stylesheet">
 
 <h1>Personal Information</h1>
 

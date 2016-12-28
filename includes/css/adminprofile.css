@@ -4,12 +4,14 @@ body {
 }
 
 
-h4.groove {border-style: solid;}
+h4.groove {border-style: solid
+;}
 h1 {
      background-color:black ;
     text-align: center;
     font-weight: bold;
     margin-top: 0px;
+    color: white;
 }
 
 h2 {
