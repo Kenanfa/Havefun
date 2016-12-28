@@ -23,10 +23,10 @@
 
     <form class="login-form" method="POST" action="CheckCreateEvent.php">
         <label id="icon" for="Name"><i class="icon-shield"></i></label>
-        <input type="text" name="name" value="" placeholder="Name" required/>
+        <input type="text" name="Name"  placeholder="Name" required/>
 
         <label id="icon" for="Date"><i class="icon-shield"></i></label>
-        <input type="text" name="name" id="name" placeholder="Date" required/>
+        <input class = "dateBox" type="date" name="Date" id="name" placeholder="Date" required/>
 
         <label id="icon" for="Time"><i class="icon-shield"></i></label>
         <input type="text" name="name" id="name" placeholder="Time" required/>
