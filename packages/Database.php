@@ -120,4 +120,11 @@ class Database{
         }
         return $events;
     }
+    
+    public function getNumOfTickets($eventID){
+        $query = "select num_of_tickets_left from event where ID = " .$eventID ;
+        $results = $this->performQuery($query);
+        $row = $results->fetch_assoc();
+        return intval($row["num_of_tickets_left"]);
+    }
 }

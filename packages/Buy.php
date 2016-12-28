@@ -11,11 +11,12 @@ $eventID = $_POST["eventID"];
 
 
 if(isset($_SESSION['status']) && $status == 1){
-    $user = $database->getUser($username);
-    $query = "insert into Tickets_purchased (Event_ID , User_ID) VALUES ( " . $eventID . " , ".$user["ID"]." );";
-    $database->performQuery($query);
+    if($database->getNumOfTickets($eventID)>0) {
+        $user = $database->getUser($username);
+        $query = "insert into Tickets_purchased (Event_ID , User_ID) VALUES ( " . $eventID . " , " . $user["ID"] . " );";
+        $database->performQuery($query);
         $database->ticketBought($eventID);
-        if($database->isAdmin($username)){
+        if ($database->isAdmin($username)) {
             ?>
             <script>
                 alert("You have succesfully purchased a ticket!!!");
@@ -23,21 +24,39 @@ if(isset($_SESSION['status']) && $status == 1){
             </script>
 
             <?php
-        }else
-        {
+        } else {
+            ?>
+            <script>
+                alert("You have succesfully purchased a ticket!!!");
+                window.location.href = "UserHome.php";
+            </script>
+
+            <?php
+        }
+    }else{
+        if ($database->isAdmin($username)) {
+            ?>
+            <script>
+                alert("Sorry.. tickets are SOLDOUT!!!");
+                window.location.href = "AdminHomePage.php";
+            </script>
+
+            <?php
+        }else{
+            ?>
+            <script>
+                alert("Sorry.. tickets are SOLDOUT!!!");
+                window.location.href = "UserHome.php";
+            </script>
+
+            <?php
+        }
+    }
+}else {
         ?>
         <script>
-            alert("You have succesfully purchased a ticket!!!");
-            window.location.href = "UserHome.php";
+            window.location.href = "signIn.php";
         </script>
-
         <?php
-    }
 
-}else{
-    ?>
-    <script>
-        window.location.href = "signIn.php";
-    </script>
-<?php
 }
