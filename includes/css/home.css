@@ -1,7 +1,7 @@
 body {
     background-size: cover;
     background-image: url("http://wallpapercave.com/wp/aHBwrlG.jpg");
-    height: 800px;
+
 }
 
 .navbar {
@@ -19,7 +19,7 @@ h2 {
     font-size-adjust: inherit;
     font-weight: bold;
     position: absolute;!important;
-    margin-top: 70px;
+    margin-top: 110px;
 }
 h3{
     font-weight: bold;
@@ -107,7 +107,7 @@ hr {
     display: block;
     color: inherit;
     position: absolute !important;
-    margin-top: 130px;
+    margin-top: 160px;
     height: 0;
     width: 100%;
     max-height: 400px;

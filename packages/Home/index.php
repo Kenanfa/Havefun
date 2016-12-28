@@ -37,7 +37,7 @@ include '../Header.php';
 
     <hr>
     <h2>Featured Events</h2>
-<h4>deneme</h4>
+
 
     <div class="content padding" >
 <form  class="login-form" method="POST" action="../Event/Event.php">
