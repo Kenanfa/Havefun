@@ -21,9 +21,9 @@
 
 <div class="testbox">
 
-    <form action="/">
+    <form class="login-form" method="POST" action="CheckCreateEvent.php">
         <label id="icon" for="Name"><i class="icon-shield"></i></label>
-        <input type="text" name="name" id="name" placeholder="Name" required/>
+        <input type="text" name="name" value="" placeholder="Name" required/>
 
         <label id="icon" for="Date"><i class="icon-shield"></i></label>
         <input type="text" name="name" id="name" placeholder="Date" required/>
@@ -45,6 +45,9 @@
 
         <label id="icon" for="Category"><i class="icon-shield"></i></label>
         <input type="text" name="name" id="name" placeholder="Event Category" required/>
+
+        <label id="icon" for="Link"><i class="icon-shield"></i></label>
+        <input type="text" name="name" id="name" placeholder="Price" required/>
 <p class="p"> By clicking you agree to the terms and conditions</p>
         <a href="#" class="button">Register</a>
     </form>
