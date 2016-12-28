@@ -59,14 +59,14 @@ include '../Header.php';
             <div class="w3-col l3 m6 w3-margin-bottom">
                 <div class="w3-display-container">
                     <div class="w3-display-topleft w3-black w3-padding"> <?php echo $row["Name"]; ?></div>
-                    <input type="image" class="imager" src=<?php echo $row["Picture"]; ?> name="eventID" value="imager"<?php echo $row["ID"]; ?> style="width:100%"  alt="Submit" />
+                    <input type="image" class="imager" src=<?php echo $row["Picture"]; ?> name="eventID" value=<?php echo $row["ID"]; ?> style="width:100%"  alt="Submit" />
                 </div>
             </div>
             <?php $row = $randomEvents->fetch_assoc(); ?>
             <div class="w3-col l3 m6 w3-margin-bottom">
                 <div class="w3-display-container">
                     <div class="w3-display-topleft w3-black w3-padding"> <?php echo $row["Name"]; ?></div>
-                    <input type="image" class="imager" src=<?php echo $row["Picture"]; ?>  name="eventID" value="imager"<?php echo $row["ID"]; ?> style="width:100%"  alt="Submit" />
+                    <input type="image" class="imager" src=<?php echo $row["Picture"]; ?>  name="eventID" value=<?php echo $row["ID"]; ?> style="width:100%"  alt="Submit" />
                 </div>
             </div>
 
