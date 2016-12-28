@@ -81,4 +81,21 @@ class Database{
     public function ticketBought($eventID){
         #TODO decrease the num of tickets left
     }
+
+    public function getRelatedEvents($username){
+        $user = $this->getUser($username);
+        $query = "select Event_ID from tickets_purchased where User_ID = ".$user["ID"]." GROUP BY Event_ID";
+        $results = $this->performQuery($query);
+        $a = array();
+        for ($x = 0; $x < $results->num_rows; $x++) {
+            $eventID = $results->fetch_assoc();
+            array_push($a, $eventID["Event_ID"]);
+        }
+
+        $events = array();
+        for ($x = 0; $x < count($a); $x++) {
+            array_push($events,$this->getEvent($a[$x]) );
+        }
+        return $events;
+    }
 }

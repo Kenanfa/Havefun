@@ -88,8 +88,6 @@ $list_catgs_query = "Select Category from Event group by Category";
             </div>
 
         </div>
-
-        <div class="footer">Havefun.com &copy; 2016</div>
 </body>
 </html>
 
