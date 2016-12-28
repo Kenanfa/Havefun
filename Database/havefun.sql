@@ -1,6 +1,20 @@
+-- phpMyAdmin SQL Dump
+-- version 4.6.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Dec 28, 2016 at 09:08 PM
+-- Server version: 5.7.14
+-- PHP Version: 5.6.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `havefun`
@@ -30,13 +44,13 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`ID`, `Name`, `Date`, `Time`, `Place_ID`, `Picture`, `Category`, `num_of_tickets_left`, `Creator_ID`, `Ticket_price`) VALUES
-(1, 'Istanbul Concert', '2016-12-07', 1400, 1, 'http://www.millenniumparkconcerts.org/wp-content/uploads/2015/07/music-concert.jpg', 'Music', 12, 1, 0),
-(2, 'Arsenal vs Chelsea', '2017-03-08', 1700, 1, 'http://www.ticketgum.com/blog/wp-content/uploads/2016/08/arsenal-vs-chelsea.jpg', 'Sports', 23, 1, 0),
-(3, 'Modern Theatre', '2016-09-09', 2100, 1, 'http://kingofwallpapers.com/theatre/theatre-010.jpg', 'Theatre', 5, 1, 0),
-(4, 'Let\'s Code Confrence', '2017-06-28', 1200, 1, 'http://www.prisonabolition.org/wp-content/uploads/2013/10/4596544906.jpg', 'Confrence', 17, 1, 0),
-(5, 'Manchester Derby', '2017-02-03', 1300, 1, 'http://www.manutd.com/sitecore/shell/~/media/7C25C9744A8C48F8A22955E10ADCB0F9.ashx?w=1280&h=720&rgn=0,440,2000,1560', 'Sports', 22, 1, 0),
-(6, 'The Eminem Show', '2017-03-16', 2200, 1, 'https://blog.tickpick.com/wp-content/uploads/2015/04/eminem.jpg', 'Music', 21, 1, 0),
-(7, 'El Classico ', '2017-06-22', 1800, 1, 'http://static.sportskeeda.com/wp-content/uploads/2015/03/real-madrid-vs-barcelona-1426960797.jpg', 'Sports', 25, 1, 0);
+(1, 'Istanbul Concert', '2016-12-07', 1400, 1, 'http://www.millenniumparkconcerts.org/wp-content/uploads/2015/07/music-concert.jpg', 'Music', 12, 1, 22),
+(2, 'Arsenal vs Chelsea', '2017-03-08', 1700, 1, 'http://www.ticketgum.com/blog/wp-content/uploads/2016/08/arsenal-vs-chelsea.jpg', 'Sports', 23, 1, 25),
+(3, 'Modern Theatre', '2016-09-09', 2100, 1, 'http://kingofwallpapers.com/theatre/theatre-010.jpg', 'Theatre', 5, 1, 28),
+(4, 'Let\'s Code Confrence', '2017-06-28', 1200, 1, 'http://www.prisonabolition.org/wp-content/uploads/2013/10/4596544906.jpg', 'Confrence', 17, 1, 15),
+(5, 'Manchester Derby', '2017-02-03', 1300, 1, 'http://www.manutd.com/sitecore/shell/~/media/7C25C9744A8C48F8A22955E10ADCB0F9.ashx?w=1280&h=720&rgn=0,440,2000,1560', 'Sports', 22, 1, 45),
+(6, 'The Eminem Show', '2017-03-16', 2200, 1, 'https://blog.tickpick.com/wp-content/uploads/2015/04/eminem.jpg', 'Music', 21, 1, 110),
+(7, 'El Classico ', '2017-06-22', 1800, 1, 'http://static.sportskeeda.com/wp-content/uploads/2015/03/real-madrid-vs-barcelona-1426960797.jpg', 'Sports', 25, 1, 60);
 
 -- --------------------------------------------------------
 
@@ -77,7 +91,17 @@ CREATE TABLE `tickets_purchased` (
 
 INSERT INTO `tickets_purchased` (`ID`, `Event_ID`, `User_ID`) VALUES
 (1, 1, 1),
-(2, 1, 1);
+(2, 1, 1),
+(18, 5, 2),
+(19, 4, 1),
+(20, 3, 2),
+(21, 6, 2),
+(22, 6, 2),
+(23, 2, 2),
+(24, 3, 2),
+(25, 6, 2),
+(26, 7, 2),
+(27, 3, 2);
 
 -- --------------------------------------------------------
 
@@ -155,7 +179,7 @@ ALTER TABLE `place`
 -- AUTO_INCREMENT for table `tickets_purchased`
 --
 ALTER TABLE `tickets_purchased`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT for table `user`
 --
