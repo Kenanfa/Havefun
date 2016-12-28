@@ -1,5 +1,5 @@
 <?php
-include '../Home/Database.php';
+include 'Database.php';
 $database = new Database();
 
 $username = $_POST["Username"];
@@ -80,15 +80,15 @@ if(strlen($username)==0){
     $query = "insert into user (Username, Password, Name, Surname, Email, Phone_number, isAdmin) VALUES ( \"" . $username . "\" , \"" . $password . "\" , \"" . $name . "\" , \"" . $surname . "\" , \"" . $email . "\" , " . $pNumber ." , " . $isAdmin ." );";
     if ($database->performQuery($query) == true) {
         session_start();
-        $_SESSION['currentUser'] = $database->getUser($username);
-        $_SESSION['sign_in_status'] = 1;
+        $_SESSION["sign_in_status"] = "y";
+        $_SESSION["currentUser"] = $username;
 
 
         if($isAdmin){
         ?>
         <script>
             alert("Account successfully created!! ");
-            window.location.href = "../User/AdminProfile.php";
+            window.location.href = "AdminProfile.php";
         </script>
 
         <?php
@@ -96,7 +96,7 @@ if(strlen($username)==0){
             ?>
             <script>
                 alert("Account successfully created!! ");
-                window.location.href = "../User/UserProfile.php";
+                window.location.href = "UserProfile.php";
             </script>
 
             <?php

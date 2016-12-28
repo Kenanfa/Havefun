@@ -10,35 +10,35 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
-<link href="../../includes/css/header.css" rel="stylesheet">
+<link href="../includes/css/home.css" rel="stylesheet">
 
 <?php
-include '../Home/Database.php';
+include 'Database.php';
 $database = new Database();
 $randomEvents = $database->getRandomEvents();
 $list_catgs_query = "Select Category from Event group by Category";
-session_start();
 ?>
 <script>
     function signOut() {
-        <?php  $_SESSION["sign_in_status"] = false; ?>
-        window.location.href = "SignUp.php";
+        <?php session_start();
+        session_unset();
+        session_destroy();  ?>
+        window.location.href = "index.php";
     }
 </script>
 
 <ul class="w3-navbar w3-white w3-large">
-    <li class="shrift"><a href="../Profile/AdminHomePage.php" class="w3-black"></i>HaveFun</a></li>
-    <li class="shrift"><a href="../User/AdminProfile.php">Profile</a></li>
-    <li class="w3-right w3-light-grey shrift"><a href="../Login/SignIn.php">Sign Out</a></li>
-    <li class="w3-right w3-light-grey shrift"><a href="../Event/CreateEvent.php">Create An Event</a></li>
-</ul>
+    <li class="shrift"><a href="AdminHomePage.php" class="w3-black"></i>HaveFun</a></li>
+    <li class="shrift"><a href="AdminProfile.php">Profile</a></li>
+    <li class="w3-right w3-light-grey shrift"><a href="SignIn.php">Sign Out</a></li>
+   </ul>
 
 <link href="../../includes/css/Home.css" rel="stylesheet">
 
 <body>
 <div>
     <div class="container matgin-top" id="Events">
-        <h3 class="shrift">Search Your Event</h3>
+        <h3 class="shrift" style="font-size: 25px">Search Your Event</h3>
     </div>
 
     <div class="w3-row-padding">
@@ -46,7 +46,7 @@ session_start();
             <input class="EventDate" type="date" placeholder="Event Date">
             <input class="City" type="text" placeholder="City">
             <input class="Place" type="text" placeholder="Place">
-            <button class="w3-btn-block" style="font-size: 25px">Search</button>
+            <button class="w3-btn-block">Search</button>
 
             <select class="dropdown" name="State" id="inputs">
                 <option value="dropdown" >All Categories</option>
@@ -64,7 +64,7 @@ session_start();
 
 
 <div class="content padding" >
-    <form  class="login-form" method="POST" action="../Event/Event.php">
+    <form  class="login-form" method="POST" action="Event.php">
         <div class="first">
             <?php $row = $randomEvents->fetch_assoc(); ?>
             <div class="w3-col l3 m6 w3-margin-bottom">
@@ -101,7 +101,7 @@ session_start();
 </body>
 </html>
 
-        <?php include '../Footer.php';?>
+<?php include 'Footer.php';?>
 
 
 

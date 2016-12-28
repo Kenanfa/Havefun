@@ -1,18 +1,20 @@
 <?php
 session_start();
-$sign_in_status = $_SESSION["sign_in_status"];
-$currentUser = $_SESSION["currentUser"];
-$event = $_SESSION["event"];
+if(isset($_SESSION["sign_in_status"])) {
+    $sign_in_status = $_SESSION["sign_in_status"];
+    $currentUser = $_SESSION["currentUser"];
+}
+$eventID = $_POST["eventID"];
 
-if($sign_in_status == true){
-    $query = "insert into Tickets_purchased (Event_ID , User_ID) VALUES ( " . $event["ID"] . " , ".$currentUser["ID"]." );";
+if(isset($_SESSION["currentUser"])){
+    $query = "insert into Tickets_purchased (Event_ID , User_ID) VALUES ( " . $eventID . " , ".$currentUser["ID"]." );";
     if ($database->performQuery($query) == true) {
         $database->ticketBought($eventID);
         if($isAdmin){
             ?>
             <script>
                 alert("You have purchased a ticket for  <?php echo $event["Name"] ?>");
-                window.location.href = "../Profile/AdminHomePage.php";
+                window.location.href = "AdminHomePage.php";
             </script>
 
             <?php
@@ -32,7 +34,9 @@ if($sign_in_status == true){
 }else{
     ?>
     <script>
-        window.location.href = "../Login/SignIn.php";
+       // window.location.href = "../Login/test.php";
     </script>
 <?php
+    echo $eventID;
+
 }

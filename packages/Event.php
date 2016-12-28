@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <?php
-include '../Home/Database.php';
+include 'Database.php';
 $database = new Database();
 $eventID = $_POST["eventID"];
 $event = $database->getEvent($eventID);
 $place = $database->getPlace($event["Place_ID"]);
+$_POST["event"]= $event;
 session_start();
-$sign_in_status = $_SESSION["sign_in_status"];
-$currentUser = $_SESSION["currentUser"];
-$_SESSION["event"]= $event;
 
 ?>
 <title> <?php echo $event["Name"]; ?> </title>
-<?php include '../Header.php';?>
+<?php include 'Header.php';?>
 
 <html>
 
-<link href="../../includes/css/event.css" rel="stylesheet">
-
+<link href="../includes/css/event.css" rel="stylesheet">
 <h2>Event Information</h2>
 
     <div class="login-page">
@@ -33,6 +30,7 @@ $_SESSION["event"]= $event;
                 <h4>Event Number of tickets left: <?php echo $event["num_of_tickets_left"]?><h4/>
                 <button class="btn"  type="submit">Buy Tickets</button>
                 <p class="message"><a href="Buy.php">Not Registered? Create An Account.</a></p>
+                    <input hidden type="password" value=<?php echo $eventID ?>   name="eventID"/>
             </form>
         </div>
     </div>

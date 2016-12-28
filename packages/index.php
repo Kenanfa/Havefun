@@ -3,13 +3,10 @@ include 'Database.php';
 $database = new Database();
 $randomEvents = $database->getRandomEvents();
 $list_catgs_query = "Select Category from Event group by Category";
-session_start();
-$_SESSION["sign_in_status"] = 0;
-$_SESSION["currentUser"] = "";
 
-include '../Header.php';
+include 'Header.php';
 ?>
-<link href="../../includes/css/Home.css" rel="stylesheet">
+<link href="../includes/css/Home.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 <body>
 <div>
@@ -22,7 +19,7 @@ include '../Header.php';
             <input class="EventDate" type="date" placeholder="Event Date">
             <input class="City" type="text" placeholder="City">
             <input class="Place" type="text" placeholder="Place">
-           <form method="post" action="../Search/index.php">
+           <form method="post" action="SearchIndex.php">
             <button  type="submit" class="w3-btn-block">Search</button></form>
                 <select class="dropdown" name="State" id="inputs">
                     <option value="dropdown">All Categories</option>
@@ -40,7 +37,7 @@ include '../Header.php';
 
 
     <div class="content padding" >
-<form  class="login-form" method="POST" action="../Event/Event.php">
+<form  class="login-form" method="POST" action="Event.php">
         <div class="first">
             <?php $row = $randomEvents->fetch_assoc(); ?>
             <div class="w3-col l3 m6 w3-margin-bottom">

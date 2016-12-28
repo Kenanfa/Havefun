@@ -1,7 +1,8 @@
-<?php include '../Header.php';
+<?php include 'Header.php';
+session_start();
 ?>
 
-<link href="../../includes/css/login.css" rel="stylesheet">
+<link href="../includes/css/login.css" rel="stylesheet">
 
 
 <body>
@@ -24,7 +25,7 @@
     </div>
 </div>
 
-<?php include '../Footer.php';?>
+<?php include 'Footer.php';?>
 
 </body>
 </html>

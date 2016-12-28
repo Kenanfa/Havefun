@@ -1,8 +1,8 @@
-<?php include '../Header.php';
-include '../Home/Database.php';
+<?php include 'Header.php';
+include 'Database.php';
 $database = new Database(); ?>
 
-<link href="../../includes/css/signup.css" rel="stylesheet">
+<link href="../includes/css/signup.css" rel="stylesheet">
 
 <body>
 
@@ -50,6 +50,6 @@ $database = new Database(); ?>
 </div>
 ​
 
-<?php include '../Footer.php';?>
+<?php include 'Footer.php';?>
 </body>
 </html>

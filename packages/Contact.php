@@ -1,7 +1,7 @@
-<?php include '../Header.php';
+<?php include 'Header.php';
 ?>
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
-<link href="../../includes/css/contact.css" rel="stylesheet">
+<link href="../includes/css/contact.css" rel="stylesheet">
 <!--ufuiii-->
 <head>
     <title> HaveFun Contact Us</title>
@@ -50,4 +50,4 @@
 
 
 
-    <?php include '../Footer.php';?>
+    <?php include 'Footer.php';?>

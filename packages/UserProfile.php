@@ -8,20 +8,27 @@
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="../../includes/css/userprofile.css" rel="stylesheet">
-<link href="../../includes/css/header.css" rel="stylesheet">
+<link href="../includes/css/userprofile.css" rel="stylesheet">
+<link href="../includes/css/header.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 
-<?php session_start();?>
+<script>
+    function signOut() {
+        <?php session_start();
+        session_unset();
+        session_destroy();  ?>
+        window.location.href = "index.php";
+    }
+</script>
 
 <ul class="w3-navbar w3-white w3-large">
-    <li class="shrift"><a href="../Profile/UserHome.php" class="w3-black">HaveFun</a></li>
-    <li class="shrift"><a href="../User/UserProfile.php">Profile</a></li>
-    <li class="w3-right w3-light-grey shrift"><a href="../Home/index.php">Sign Out</a></li>
+    <li class="shrift"><a href="UserHome.php" class="w3-black">HaveFun</a></li>
+    <li class="shrift"><a href="UserProfile.php">Profile</a></li>
+    <li class="w3-right w3-light-grey shrift"><a href="index.php">Sign Out</a></li>
    </ul>
 
 
-<link href="../../includes/css/adminprofile.css" rel="stylesheet">
+<link href="../includes/css/adminprofile.css" rel="stylesheet">
 
 <head>
 <body>
@@ -86,4 +93,4 @@
 
 
 
-<?php include '../Footer.php';?>
+<?php include 'Footer.php';?>

@@ -1,6 +1,6 @@
 <?php
 
-include '../Home/Database.php';
+include 'Database.php';
 $database = new Database();
 
 $username = $_POST["username"];
@@ -27,12 +27,12 @@ if(!$database->userExists($username)){
 
     
 }else{
+    $_SESSION["sign_in_status"] = "y";
+    $_SESSION["currentUser"] = $username;
+
     if($database->isAdmin($username)){
-        $_SESSION["sign_in_status"] = 1;
-        $_SESSION["currentUser"] = $database->getUser($username);
-        
-        header('Location: ../User/AdminProfile.php');
+        header('Location: AdminProfile.php');
     }else{
-        header('Location: ../User/UserProfile.php');
+        header('Location: UserProfile.php');
     }
 }
