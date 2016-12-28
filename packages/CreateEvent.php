@@ -20,22 +20,32 @@
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
 
 <div class="testbox">
-    <h1>Create Event</h1>
 
     <form action="/">
-        <label id="icon" for="name"><i class="icon-envelope "></i></label>
-        <input type="text" name="name" id="name" placeholder="Event ID" required/>
+        <label id="icon" for="Name"><i class="icon-shield"></i></label>
+        <input type="text" name="name" id="name" placeholder="Name" required/>
 
-        <label id="icon" for="ID"><i class="icon-user"></i></label>
-        <input type="text" name="name" id="name" placeholder="Event Name" required/>
+        <label id="icon" for="Date"><i class="icon-shield"></i></label>
+        <input type="text" name="name" id="name" placeholder="Date" required/>
 
-        <label id="icon" for="Link"><i class="icon-user"></i></label>
+        <label id="icon" for="Time"><i class="icon-shield"></i></label>
+        <input type="text" name="name" id="name" placeholder="Time" required/>
+
+        <label id="icon" for="City"><i class="icon-shield"></i></label>
+        <input type="text" name="name" id="name" placeholder="City" required/>
+
+        <label id="icon" for="Country"><i class="icon-shield"></i></label>
+        <input type="text" name="name" id="name" placeholder="Country" required/>
+
+        <label id="icon" for="Number Of Tickets"><i class="icon-shield"></i></label>
+        <input type="text" name="name" id="name" placeholder="Number Of Tickets" required/>
+
+        <label id="icon" for="Link"><i class="icon-shield"></i></label>
         <input type="text" name="name" id="name" placeholder="Picture Link" required/>
 
         <label id="icon" for="Category"><i class="icon-shield"></i></label>
         <input type="text" name="name" id="name" placeholder="Event Category" required/>
-
-        <p>By clicking Register, you agree on our <a href="#">terms and condition</a>.</p>
+<p class="p"> By clicking you agree to the terms and conditions</p>
         <a href="#" class="button">Register</a>
     </form>
 </div>
