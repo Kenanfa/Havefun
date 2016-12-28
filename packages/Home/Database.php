@@ -65,4 +65,10 @@ class Database{
         $results = $this->performQuery($query);
         return $results->fetch_assoc();
     }
+    
+    public function getPlace($placeID){
+        $query= "select * from place where id =".$placeID;
+        $results = $this->performQuery($query);
+        return $results->fetch_assoc();
+    }
 }

@@ -11,9 +11,13 @@ h4 {
 font-size: 30px;
     font-kerning: auto;
     font-family: "Helvetica Neue", Helvetica, Arial;
-    font-weight: 500;
-    color: darkkhaki;
+    font-weight: BOLD;
+
+    color: #4CAF50;
     text-align: left;
+    border:groove;
+    border-color: #1a1a1a;
+
 }
 
 h2 {
