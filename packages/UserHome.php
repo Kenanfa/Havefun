@@ -20,8 +20,8 @@ $list_catgs_query = "Select Category from Event group by Category";
 ?>
 
 <ul class="w3-navbar w3-white w3-large">
-    <li class="shrift"><a href="AdminHomePage.php" class="w3-black"></i>HaveFun</a></li>
-    <li class="shrift"><a href="AdminProfile.php">Profile</a></li>
+    <li class="shrift"><a href="UserHome.php" class="w3-black"></i>HaveFun</a></li>
+    <li class="shrift"><a href="UserProfile.php">Profile</a></li>
     <li class="w3-right w3-light-grey shrift"><a href="logout.php">Sign Out</a></li>
    </ul>
 
