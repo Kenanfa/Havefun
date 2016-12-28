@@ -32,6 +32,9 @@
         <input type="text" name="Time" id="name" placeholder="Time" required/>
 
         <label id="icon" for="City"><i class="icon-shield"></i></label>
+        <input type="text" name="Place" id="name" placeholder="Place" required/>
+
+        <label id="icon" for="City"><i class="icon-shield"></i></label>
         <input type="text" name="City" id="name" placeholder="City" required/>
 
         <label id="icon" for="Country"><i class="icon-shield"></i></label>
