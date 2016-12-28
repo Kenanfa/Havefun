@@ -23,8 +23,9 @@ include '../Header.php';
             <input class="City" type="text" placeholder="City">
             <input class="Place" type="text" placeholder="Place">
             <button class="w3-btn-block">Search</button>
+
                 <select class="dropdown" name="State" id="inputs">
-                    <option value="dropdown">All Categories</option>
+                    <option value="dropdown" >All Categories</option>
                     <?php $result = $database->performQuery($list_catgs_query);
                     while($row = $result->fetch_assoc()) { ?>
                         <option value=<?php echo $row["Category"]; ?>> <?php echo $row["Category"]; ?></option>
