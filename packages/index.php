@@ -3,7 +3,6 @@ include 'Database.php';
 $database = new Database();
 $randomEvents = $database->getRandomEvents();
 $list_catgs_query = "Select Category from Event group by Category";
-
 include 'Header.php';
 ?>
 <link href="../includes/css/Home.css" rel="stylesheet">
@@ -46,7 +45,8 @@ include 'Header.php';
                     <input type="image" class="imager" src=<?php echo $row["Picture"]; ?> name="eventID" value=<?php echo $row["ID"]; ?> style="width:100%"  alt="Submit" />
                 </div>
             </div>
-            <?php $row = $randomEvents->fetch_assoc(); ?>
+            <?php 
+            $row = $randomEvents->fetch_assoc(); ?>
             <div class="w3-col l3 m6 w3-margin-bottom">
                 <div class="w3-display-container">
                     <div class="w3-display-topleft w3-black w3-padding"> <?php echo $row["Name"]; ?></div>

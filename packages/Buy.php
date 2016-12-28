@@ -1,19 +1,24 @@
 <?php
+include 'Database.php';
+$database = new Database();
 session_start();
-if(isset($_SESSION["sign_in_status"])) {
-    $sign_in_status = $_SESSION["sign_in_status"];
-    $currentUser = $_SESSION["currentUser"];
+if(isset($_SESSION['status'])) {
+    $status = $_SESSION['status'];
+    $username = $_SESSION['currentUser'];
 }
 $eventID = $_POST["eventID"];
 
-if(isset($_SESSION["currentUser"])){
-    $query = "insert into Tickets_purchased (Event_ID , User_ID) VALUES ( " . $eventID . " , ".$currentUser["ID"]." );";
-    if ($database->performQuery($query) == true) {
+
+
+if(isset($_SESSION['status']) && $status == 1){
+    $user = $database->getUser($username);
+    $query = "insert into Tickets_purchased (Event_ID , User_ID) VALUES ( " . $eventID . " , ".$user["ID"]." );";
+    $database->performQuery($query);
         $database->ticketBought($eventID);
-        if($isAdmin){
+        if($database->isAdmin($username)){
             ?>
             <script>
-                alert("You have purchased a ticket for  <?php echo $event["Name"] ?>");
+                alert("You have succesfully purchased a ticket!!!");
                 window.location.href = "AdminHomePage.php";
             </script>
 
@@ -22,21 +27,18 @@ if(isset($_SESSION["currentUser"])){
         {
         ?>
         <script>
-            alert("You have purchased a ticket for  <?php echo $event["Name"] ?>");
-            window.location.href = "../Profile/UserHomePage.php";
+            alert("You have succesfully purchased a ticket!!!");
+            window.location.href = "UserHome.php";
         </script>
 
         <?php
     }
-        }
-    echo "could not insert to table!";
 
 }else{
     ?>
     <script>
-       // window.location.href = "../Login/test.php";
+        window.location.href = "signIn.php";
     </script>
 <?php
-    echo $eventID;
-
+    echo "x";
 }

@@ -18,19 +18,11 @@ $database = new Database();
 $randomEvents = $database->getRandomEvents();
 $list_catgs_query = "Select Category from Event group by Category";
 ?>
-<script>
-    function signOut() {
-        <?php session_start();
-        session_unset();
-        session_destroy();  ?>
-        window.location.href = "index.php";
-    }
-</script>
 
 <ul class="w3-navbar w3-white w3-large">
     <li class="shrift"><a href="AdminHomePage.php" class="w3-black"></i>HaveFun</a></li>
     <li class="shrift"><a href="AdminProfile.php">Profile</a></li>
-    <li class="w3-right w3-light-grey shrift"><a href="SignIn.php">Sign Out</a></li>
+    <li class="w3-right w3-light-grey shrift"><a href="logout.php">Sign Out</a></li>
    </ul>
 
 <link href="../../includes/css/Home.css" rel="stylesheet">

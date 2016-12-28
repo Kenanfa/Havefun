@@ -6,7 +6,7 @@ $eventID = $_POST["eventID"];
 $event = $database->getEvent($eventID);
 $place = $database->getPlace($event["Place_ID"]);
 $_POST["event"]= $event;
-session_start();
+
 
 ?>
 <title> <?php echo $event["Name"]; ?> </title>

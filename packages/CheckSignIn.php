@@ -5,7 +5,7 @@ $database = new Database();
 
 $username = $_POST["username"];
 $password = $_POST["password"];
-session_start();
+
 
 if(!$database->userExists($username)){
     ?>
@@ -27,8 +27,10 @@ if(!$database->userExists($username)){
 
     
 }else{
-    $_SESSION["sign_in_status"] = "y";
-    $_SESSION["currentUser"] = $username;
+    session_start();
+    $_SESSION['status'] = 1;
+    $_SESSION['currentUser'] = $username;
+    
 
     if($database->isAdmin($username)){
         header('Location: AdminProfile.php');

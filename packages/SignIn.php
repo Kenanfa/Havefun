@@ -1,5 +1,5 @@
 <?php include 'Header.php';
-session_start();
+
 ?>
 
 <link href="../includes/css/login.css" rel="stylesheet">

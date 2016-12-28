@@ -79,9 +79,10 @@ if(strlen($username)==0){
 
     $query = "insert into user (Username, Password, Name, Surname, Email, Phone_number, isAdmin) VALUES ( \"" . $username . "\" , \"" . $password . "\" , \"" . $name . "\" , \"" . $surname . "\" , \"" . $email . "\" , " . $pNumber ." , " . $isAdmin ." );";
     if ($database->performQuery($query) == true) {
+
         session_start();
-        $_SESSION["sign_in_status"] = "y";
-        $_SESSION["currentUser"] = $username;
+        $_SESSION['status'] = 1;
+        $_SESSION['currentUser'] = $username;
 
 
         if($isAdmin){
