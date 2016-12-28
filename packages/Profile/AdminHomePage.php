@@ -110,11 +110,10 @@
                 <?php } ?>
             </select>
         </div>
+</body>
+</html>
 
         <?php include '../Footer.php';?>
 
 
 
-</body>
-
-</html>
