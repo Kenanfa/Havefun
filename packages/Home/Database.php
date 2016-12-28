@@ -60,6 +60,9 @@ class Database{
         return($row[isAdmin]==true);
     }
     
-
-
+    public function getEvent($id){
+        $query= "select * from event where id =".$id;
+        $results = $this->performQuery($query);
+        return $results->fetch_assoc();
+    }
 }

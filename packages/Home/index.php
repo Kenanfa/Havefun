@@ -3,6 +3,9 @@ include 'Database.php';
 $database = new Database();
 $randomEvents = $database->getRandomEvents();
 $list_catgs_query = "Select Category from Event group by Category";
+session_start();
+$_SESSION["sign_in_status"] = false;
+$_SESSION["currentUser"] = "";
 
 include '../Header.php';
 ?>

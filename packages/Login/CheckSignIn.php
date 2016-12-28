@@ -1,13 +1,13 @@
 <?php
+
 include '../Home/Database.php';
 $database = new Database();
 
 $username = $_POST["username"];
 $password = $_POST["password"];
+session_start();
 
 if(!$database->userExists($username)){
-    echo "username";
-
     ?>
     <script>
         alert("there is no such username!!!!");
@@ -18,8 +18,6 @@ if(!$database->userExists($username)){
 
     
 }else if(!$database->passwordCorrect($password)){
-    echo "pass";
-
     ?>
     <script>
         alert("the password is incorrect!!!");
@@ -30,7 +28,9 @@ if(!$database->userExists($username)){
     
 }else{
     if($database->isAdmin($username)){
-
+        $_SESSION["sign_in_status"] = true;
+        $_SESSION["currentUser"] = $username;
+        
         header('Location: ../User/AdminProfile.php');
     }else{
         header('Location: ../User/UserProfile.php');

@@ -3,23 +3,15 @@
 include '../Home/Database.php';
 $database = new Database();
 $eventID = $_POST["eventID"];
+$event = $database->getEvent($eventID);
+session_start();
+$sign_in_status = $_SESSION["sign_in_status"];
+$currentUser = $_SESSION["currentUser"];
+include '../Header.php';
 ?>
 <html>
-<title>Havefun</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> <?php echo $event["Name"]; ?> </title>
 <link href="../../includes/css/event.css" rel="stylesheet">
-<ul class="w3-navbar w3-white w3-large">
-    <li><a href="../Home/index.php" class="w3-black"></i>HaveFun</a></li>
-    <li class=><a href="../About/About.php">About</a></li>
-    <li><a href="../Contact/contact.php">Contact us</a></li>
-    <li class="w3-right w3-light-grey"><a href="../Login/SignIn.php">Sign in</a></li>
-</ul>
-
-
 
 <h2>Event Information</h2>
 
