@@ -19,7 +19,6 @@ include '../Header.php';
 
     <div class="w3-row-padding">
         <div class="w3-col m3">
-
             <input class="EventDate" type="number" placeholder="Event Date">
             <input class="City" type="text" placeholder="City">
             <input class="Place" type="text" placeholder="Place">
@@ -72,13 +71,6 @@ include '../Header.php';
             </div>
 
         </div>
-
-
-
-
-
-
-
 
     <div class="footer">Havefun.com &copy; 2016</div>
 </body>
