@@ -40,38 +40,34 @@ include '../Header.php';
 
 
     <div class="content padding" >
-
+<form  class="login-form" method="POST" action="../Event/Event.php">
         <div class="w3-row-padding">
             <?php $row = $randomEvents->fetch_assoc(); ?>
             <div class="w3-col l3 m6 w3-margin-bottom">
                 <div class="w3-display-container">
                     <div class="w3-display-topleft w3-black w3-padding"> <?php echo $row["Name"]; ?></div>
-                    <a href="../Event/Event.php">
-                    <img src=<?php echo $row["Picture"]; ?> alt=<?php echo $row["Category"]; ?> style="width:100%">
+                    <input type="image" src=<?php echo $row["Picture"]; ?> name="eventID" value=<?php echo $row["ID"]; ?> style="width:100%" alt="Submit" />
                 </div>
             </div>
             <?php $row = $randomEvents->fetch_assoc(); ?>
             <div class="w3-col l3 m6 w3-margin-bottom">
                 <div class="w3-display-container">
-                    <div class="w3-display-topleft w3-black w3-padding"><?php echo $row["Name"]; ?></div>
-                    <a href="../Event/Event.php">
-                    <img src=<?php echo $row["Picture"]; ?> alt=<?php echo $row["Category"]; ?> style="width:100%">
+                    <div class="w3-display-topleft w3-black w3-padding"> <?php echo $row["Name"]; ?></div>
+                    <input type="image" src=<?php echo $row["Picture"]; ?> name="eventID" value=<?php echo $row["ID"]; ?> style="width:100%" alt="Submit" />
                 </div>
             </div>
             <?php $row = $randomEvents->fetch_assoc(); ?>
             <div class="w3-col l3 m6 w3-margin-bottom">
                 <div class="w3-display-container">
-                    <div class="w3-display-topleft w3-black w3-padding"><?php echo $row["Name"]; ?></div>
-                    <a href="../Event/Event.php">
-                    <img src=<?php echo $row["Picture"]; ?> alt=<?php echo $row["Category"]; ?> style="width:100%">
+                    <div class="w3-display-topleft w3-black w3-padding"> <?php echo $row["Name"]; ?></div>
+                    <input type="image" src=<?php echo $row["Picture"]; ?> name="eventID" value=<?php echo $row["ID"]; ?> style="width:100%" alt="Submit" />
                 </div>
             </div>
             <?php $row = $randomEvents->fetch_assoc(); ?>
             <div class="w3-col l3 m6 w3-margin-bottom">
                 <div class="w3-display-container">
-                    <div class="w3-display-topleft w3-black w3-padding"><?php echo $row["Name"]; ?></div>
-                    <a href="../Event/Event.php">
-                    <img src=<?php echo $row["Picture"]; ?> alt=<?php echo $row["Category"]; ?> style="width:100%"">
+                    <div class="w3-display-topleft w3-black w3-padding"> <?php echo $row["Name"]; ?></div>
+                    <input type="image" src=<?php echo $row["Picture"]; ?> name="eventID" value=<?php echo $row["ID"]; ?> style="width:100%" alt="Submit" />
                 </div>
             </div>
 

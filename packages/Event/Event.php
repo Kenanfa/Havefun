@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php
+include '../Home/Database.php';
+$database = new Database();
+$eventID = $_POST["eventID"];
+?>
 <html>
 <title>Havefun</title>
 <meta charset="UTF-8">
