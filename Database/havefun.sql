@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 28, 2016 at 09:08 PM
+-- Generation Time: Dec 28, 2016 at 10:33 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -31,7 +31,7 @@ CREATE TABLE `event` (
   `Name` varchar(100) NOT NULL,
   `Date` date NOT NULL,
   `Time` int(10) UNSIGNED NOT NULL,
-  `Place_ID` int(11) NOT NULL,
+  `Place_Name` varchar(100) NOT NULL,
   `Picture` text NOT NULL,
   `Category` varchar(30) NOT NULL,
   `num_of_tickets_left` int(10) NOT NULL,
@@ -43,14 +43,14 @@ CREATE TABLE `event` (
 -- Dumping data for table `event`
 --
 
-INSERT INTO `event` (`ID`, `Name`, `Date`, `Time`, `Place_ID`, `Picture`, `Category`, `num_of_tickets_left`, `Creator_ID`, `Ticket_price`) VALUES
-(1, 'Istanbul Concert', '2016-12-07', 1400, 1, 'http://www.millenniumparkconcerts.org/wp-content/uploads/2015/07/music-concert.jpg', 'Music', 12, 1, 22),
-(2, 'Arsenal vs Chelsea', '2017-03-08', 1700, 1, 'http://www.ticketgum.com/blog/wp-content/uploads/2016/08/arsenal-vs-chelsea.jpg', 'Sports', 23, 1, 25),
-(3, 'Modern Theatre', '2016-09-09', 2100, 1, 'http://kingofwallpapers.com/theatre/theatre-010.jpg', 'Theatre', 5, 1, 28),
-(4, 'Let\'s Code Confrence', '2017-06-28', 1200, 1, 'http://www.prisonabolition.org/wp-content/uploads/2013/10/4596544906.jpg', 'Confrence', 17, 1, 15),
-(5, 'Manchester Derby', '2017-02-03', 1300, 1, 'http://www.manutd.com/sitecore/shell/~/media/7C25C9744A8C48F8A22955E10ADCB0F9.ashx?w=1280&h=720&rgn=0,440,2000,1560', 'Sports', 22, 1, 45),
-(6, 'The Eminem Show', '2017-03-16', 2200, 1, 'https://blog.tickpick.com/wp-content/uploads/2015/04/eminem.jpg', 'Music', 21, 1, 110),
-(7, 'El Classico ', '2017-06-22', 1800, 1, 'http://static.sportskeeda.com/wp-content/uploads/2015/03/real-madrid-vs-barcelona-1426960797.jpg', 'Sports', 25, 1, 60);
+INSERT INTO `event` (`ID`, `Name`, `Date`, `Time`, `Place_Name`, `Picture`, `Category`, `num_of_tickets_left`, `Creator_ID`, `Ticket_price`) VALUES
+(1, 'Istanbul Concert', '2016-12-07', 1400, 'Test Only', 'http://www.millenniumparkconcerts.org/wp-content/uploads/2015/07/music-concert.jpg', 'Music', 12, 1, 22),
+(2, 'Arsenal vs Chelsea', '2017-03-08', 1700, 'Test Only', 'http://www.ticketgum.com/blog/wp-content/uploads/2016/08/arsenal-vs-chelsea.jpg', 'Sports', 23, 1, 25),
+(3, 'Modern Theatre', '2016-09-09', 2100, 'Test Only', 'http://kingofwallpapers.com/theatre/theatre-010.jpg', 'Theatre', 5, 1, 28),
+(4, 'Let\'s Code Confrence', '2017-06-28', 1200, 'Test Only', 'http://www.prisonabolition.org/wp-content/uploads/2013/10/4596544906.jpg', 'Confrence', 17, 1, 15),
+(5, 'Manchester Derby', '2017-02-03', 1300, 'Test Only', 'http://www.manutd.com/sitecore/shell/~/media/7C25C9744A8C48F8A22955E10ADCB0F9.ashx?w=1280&h=720&rgn=0,440,2000,1560', 'Sports', 22, 16, 45),
+(6, 'The Eminem Show', '2017-03-16', 2200, 'Test Only', 'https://blog.tickpick.com/wp-content/uploads/2015/04/eminem.jpg', 'Music', 21, 1, 110),
+(7, 'El Classico ', '2017-06-22', 1800, 'Test Only', 'http://static.sportskeeda.com/wp-content/uploads/2015/03/real-madrid-vs-barcelona-1426960797.jpg', 'Sports', 25, 1, 60);
 
 -- --------------------------------------------------------
 
@@ -59,9 +59,7 @@ INSERT INTO `event` (`ID`, `Name`, `Date`, `Time`, `Place_ID`, `Picture`, `Categ
 --
 
 CREATE TABLE `place` (
-  `ID` int(11) NOT NULL,
   `Name` varchar(100) NOT NULL,
-  `Address` varchar(150) NOT NULL,
   `City` varchar(70) NOT NULL,
   `Country` varchar(70) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -70,8 +68,8 @@ CREATE TABLE `place` (
 -- Dumping data for table `place`
 --
 
-INSERT INTO `place` (`ID`, `Name`, `Address`, `City`, `Country`) VALUES
-(1, 'Test Only ', 'Test Only ', 'Test Only Test Only ', 'Test Only ');
+INSERT INTO `place` (`Name`, `City`, `Country`) VALUES
+('Test Only ', 'Test Only Test Only ', 'Test Only ');
 
 -- --------------------------------------------------------
 
@@ -101,7 +99,11 @@ INSERT INTO `tickets_purchased` (`ID`, `Event_ID`, `User_ID`) VALUES
 (24, 3, 2),
 (25, 6, 2),
 (26, 7, 2),
-(27, 3, 2);
+(27, 3, 2),
+(28, 4, 1),
+(29, 5, 1),
+(30, 2, 1),
+(31, 1, 16);
 
 -- --------------------------------------------------------
 
@@ -127,7 +129,7 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`ID`, `Username`, `Password`, `Name`, `Surname`, `Email`, `Phone_number`, `isAdmin`) VALUES
 (1, 'kenan', 'kenan', 'kenan', 'kenan', 'kenan', NULL, 1),
 (2, 'root', 'root', 'erk', 'Erk', 'ERK', NULL, 0),
-(15, 'rootsaas', 'rootssbb', 'sadsad', 'sadsad', 'sdasad@xxeddc', 123213, 1);
+(16, 'Absusu', 'Absusu', 'Ab', 'Susu', 'Ab@susu', 588735171, 1);
 
 --
 -- Indexes for dumped tables
@@ -138,14 +140,14 @@ INSERT INTO `user` (`ID`, `Username`, `Password`, `Name`, `Surname`, `Email`, `P
 --
 ALTER TABLE `event`
   ADD PRIMARY KEY (`ID`),
-  ADD KEY `place_id` (`Place_ID`),
+  ADD KEY `place_id` (`Place_Name`),
   ADD KEY `Creator_ID` (`Creator_ID`);
 
 --
 -- Indexes for table `place`
 --
 ALTER TABLE `place`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`Name`);
 
 --
 -- Indexes for table `tickets_purchased`
@@ -171,20 +173,15 @@ ALTER TABLE `user`
 ALTER TABLE `event`
   MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
--- AUTO_INCREMENT for table `place`
---
-ALTER TABLE `place`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
 -- AUTO_INCREMENT for table `tickets_purchased`
 --
 ALTER TABLE `tickets_purchased`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- Constraints for dumped tables
 --
@@ -194,7 +191,7 @@ ALTER TABLE `user`
 --
 ALTER TABLE `event`
   ADD CONSTRAINT `event_ibfk_1` FOREIGN KEY (`Creator_ID`) REFERENCES `user` (`ID`),
-  ADD CONSTRAINT `place_id` FOREIGN KEY (`Place_ID`) REFERENCES `place` (`ID`);
+  ADD CONSTRAINT `event_ibfk_2` FOREIGN KEY (`place_name`) REFERENCES `place` (`name`);
 
 --
 -- Constraints for table `tickets_purchased`

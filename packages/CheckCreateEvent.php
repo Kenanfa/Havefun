@@ -1,4 +1,7 @@
 <?php
+include 'Database.php';
+$database = new Database();
+
 $name = $_POST["Name"];
 $date = $_POST["Date"];
 $time = $_POST["Time"];
@@ -9,4 +12,8 @@ $link = $_POST["Link"];
 $category = $_POST["Category"];
 $price = $_POST["Price"];
 
-echo $date;
+session_start();
+$user = $database->getUser($_SESSION['currentUser']);
+
+$placeQuery = "insert into place (Name, )";
+$query = "insert into event (Name, Date, Name, Time, Email, Phone_number, isAdmin) VALUES ( \"" . $username . "\" , \"" . $password . "\" , \"" . $name . "\" , \"" . $surname . "\" , \"" . $email . "\" , " . $pNumber ." , " . $isAdmin ." );";
