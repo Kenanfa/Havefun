@@ -5,6 +5,7 @@ include 'Database.php';
 $database = new Database();
 session_start();
 $username = $_SESSION["currentUser"];
+$user = $database->getUser($username);
 $events = $database->getRelatedEvents($username);
 ?>
 <title>Profile</title>
@@ -37,9 +38,9 @@ $events = $database->getRelatedEvents($username);
 
 <nav class="w3-center">
     <i class="fa fa-user-circle-o  w3-text-theme" style="font-size:150px"></i>
-    <h3 class="w3-center">User Name</h3>
-    <h4 class="w3-center" style="color:black"><i class="fa fa-envelope w3-text-theme" style="font-size:30px; color:black;"></i> user email</h4>
-    <h4 class="w3-center" style="color:black"><i class="fa fa-phone w3-text-theme" style="font-size:30px; color:black;"></i> user phone</h4>
+    <h3 class="w3-center"><?php echo $user["Name"]." ".$user["Surname"] ?></h3>
+    <h4 class="w3-center" style="color:black"><i class="fa fa-envelope w3-text-theme" style="font-size:30px; color:black;"></i><?php echo "        " .$user["Email"] ?></h4>
+    <h4 class="w3-center" style="color:black"><i class="fa fa-phone w3-text-theme" style="font-size:30px; color:black;"></i><?php echo"    " . $user["Phone_number"] ?></h4>
 </nav>
 
 <section>

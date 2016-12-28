@@ -2,7 +2,11 @@
 <?php
 include 'Database.php';
 $database = new Database();
-
+session_start();
+$username = $_SESSION["currentUser"];
+$user = $database->getUser($username);
+$relatedEvents = $database->getRelatedEvents($username);
+$createdEvents = $database->getCreatedEvents($username);
 ?>
 
 <html>
@@ -39,51 +43,40 @@ $database = new Database();
 
 <nav class="w3-center">
     <i class="fa fa-user-circle-o  w3-text-theme" style="font-size:150px"></i>
-    <h3 class="w3-center">User Name</h3>
-    <h4 class="w3-center" style="color:black"><i class="fa fa-envelope w3-text-theme" style="font-size:30px; color:black;"></i> user email</h4>
-    <h4 class="w3-center" style="color:black"><i class="fa fa-phone w3-text-theme" style="font-size:30px; color:black;"></i> user phone</h4>
+    <h3 class="w3-center"><?php echo $user["Name"]." ".$user["Surname"] ?></h3>
+    <h4 class="w3-center" style="color:black"><i class="fa fa-envelope w3-text-theme" style="font-size:30px; color:black;"></i><?php echo "        " .$user["Email"] ?></h4>
+    <h4 class="w3-center" style="color:black"><i class="fa fa-phone w3-text-theme" style="font-size:30px; color:black;"></i><?php echo"    " . $user["Phone_number"] ?></h4>
 </nav>
 
 <section>
     <h1 style="color:black">-------------  </h1>
 </section>
 
-<article>
+<form class="w3-row-padding w3-center w3-margin-top" method="POST" action="EventForSignedIn.php">
     <div class="w3-row-padding w3-center w3-margin-top">
         <div class="w3-half" style="background-color: seashell">
             <div class="w3-card-2  w3-padding-top" style="min-height:70px">
                 <table class="w3-table w3-bordered" style="width:100%; background-color:#ffecf7;">
                     <h3 style="font-family: Lobster"> Events I participated in:</h3>
                     <tr>
+                        <th>Picture </th>
                         <th>Event</th>
-                        <th>Location</th>
                         <th>Date</th>
+                        <th>Category</th>
                     </tr>
-                    <tr>
-                        <td>Jill</td>
-                        <td>Smith</td>
-                        <td>50</td>
-                    </tr>
-                    <tr>
-                        <td>Eve</td>
-                        <td>Jackson</td>
-                        <td>94</td>
-                    </tr>
-                    <tr>
-                        <td>Jill</td>
-                        <td>Smith</td>
-                        <td>50</td>
-                    </tr>
-                    <tr>
-                        <td>Jill</td>
-                        <td>Smith</td>
-                        <td>50</td>
-                    </tr>
-                    <tr>
-                        <td>Jill</td>
-                        <td>Smith</td>
-                        <td>50</td>
-                    </tr>
+                    <?php
+                    for ($x = 0; $x <= count($relatedEvents)-1; $x++) {
+
+                        ?>
+                        <tr>
+                            <td><input type="image" class="imager" src=<?php echo $relatedEvents[$x]["Picture"]; ?>  name="eventID" value=<?php echo $relatedEvents[$x]["ID"]; ?> width="150" height="100" alt="Submit" /></td>
+                            <td><?php echo $relatedEvents[$x]["Name"] ?></td>
+                            <td><?php echo $relatedEvents[$x]["Date"] ?></td>
+                            <td> <?php echo $relatedEvents[$x]["Category"] ?> </td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
                 </table>
             </div>
         </div>
@@ -92,45 +85,29 @@ $database = new Database();
             <table class="w3-table w3-bordered" style="width:100%; background-color:#ffecf7;">
                 <h3 style="font-family: Lobster"> Created events</h3>
                 <tr>
+                    <th>Picture </th>
                     <th>Event</th>
-                    <th>Location</th>
                     <th>Date</th>
+                    <th>Category</th>
                 </tr>
-                <tr>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>50</td>
-                </tr>
-                <tr>
-                    <td>Eve</td>
-                    <td>Jackson</td>
-                    <td>94</td>
-                </tr>
-                <tr>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>50</td>
-                </tr>
-                <tr>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>50</td>
-                </tr>
-                <tr>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>50</td>
-                </tr>
-                <tr>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>50</td>
-                </tr>
+                <?php
+                for ($x = 0; $x <= count($createdEvents)-1; $x++) {
+
+                    ?>
+                    <tr>
+                        <td><input type="image" class="imager" src=<?php echo $createdEvents[$x]["Picture"]; ?>  name="eventID" value=<?php echo $createdEvents[$x]["ID"]; ?> width="150" height="100" alt="Submit" /></td>
+                        <td><?php echo $createdEvents[$x]["Name"] ?></td>
+                        <td><?php echo $createdEvents[$x]["Date"] ?></td>
+                        <td> <?php echo $createdEvents[$x]["Category"] ?> </td>
+                    </tr>
+                    <?php
+                }
+                ?>
             </table>
         </div>
     </div>
     </div>
-</article>
+</form>
 
 </body>
 </head>

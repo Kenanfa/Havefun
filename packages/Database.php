@@ -98,4 +98,22 @@ class Database{
         }
         return $events;
     }
+
+    public function getCreatedEvents($username){
+        $user = $this->getUser($username);
+        $query = "select ID from Event where Creator_ID = ".$user["ID"] ;
+        $results = $this->performQuery($query);
+
+        $a = array();
+        for ($x = 0; $x < $results->num_rows; $x++) {
+            $eventID = $results->fetch_assoc();
+            array_push($a, $eventID["ID"]);
+        }
+
+        $events = array();
+        for ($x = 0; $x < count($a); $x++) {
+            array_push($events,$this->getEvent($a[$x]) );
+        }
+        return $events;
+    }
 }
