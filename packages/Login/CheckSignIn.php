@@ -28,7 +28,7 @@ if(!$database->userExists($username)){
     
 }else{
     if($database->isAdmin($username)){
-        $_SESSION["sign_in_status"] = true;
+        $_SESSION["sign_in_status"] = 1;
         $_SESSION["currentUser"] = $database->getUser($username);
         
         header('Location: ../User/AdminProfile.php');

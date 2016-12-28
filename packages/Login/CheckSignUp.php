@@ -81,7 +81,7 @@ if(strlen($username)==0){
     if ($database->performQuery($query) == true) {
         session_start();
         $_SESSION['currentUser'] = $database->getUser($username);
-        $_SESSION['sign_in_status'] = true;
+        $_SESSION['sign_in_status'] = 1;
 
 
         if($isAdmin){

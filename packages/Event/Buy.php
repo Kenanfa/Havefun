@@ -4,7 +4,7 @@ $sign_in_status = $_SESSION["sign_in_status"];
 $currentUser = $_SESSION["currentUser"];
 $event = $_SESSION["event"];
 
-if($sign_in_status){
+if($sign_in_status == true){
     $query = "insert into Tickets_purchased (Event_ID , User_ID) VALUES ( " . $event["ID"] . " , ".$currentUser["ID"]." );";
     if ($database->performQuery($query) == true) {
         $database->ticketBought($eventID);

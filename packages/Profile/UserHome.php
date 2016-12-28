@@ -11,7 +11,13 @@
 <link href="../../includes/css/header.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 
-<?php session_start() ?>
+<?php
+include '../Home/Database.php';
+$database = new Database();
+$randomEvents = $database->getRandomEvents();
+$list_catgs_query = "Select Category from Event group by Category";
+session_start();
+?>
 <script>
     function signOut() {
         <?php  $_SESSION["sign_in_status"] = false; ?>

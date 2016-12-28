@@ -57,7 +57,7 @@ class Database{
         $query = "select isAdmin from User where Username = '" .$username ."'";
         $results = $this->performQuery($query);
         $row = $results->fetch_assoc();
-        return($row[isAdmin]==true);
+        return($row["isAdmin"]==true);
     }
     
     public function getEvent($id){
@@ -73,7 +73,7 @@ class Database{
     }
 
     public function getUser($username){
-        $query= "select * from user where username =".$username;
+        $query= "select * from user where username ='".$username."'";
         $results = $this->performQuery($query);
         return $results->fetch_assoc();
     }

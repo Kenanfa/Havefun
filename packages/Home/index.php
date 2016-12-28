@@ -4,7 +4,7 @@ $database = new Database();
 $randomEvents = $database->getRandomEvents();
 $list_catgs_query = "Select Category from Event group by Category";
 session_start();
-$_SESSION["sign_in_status"] = false;
+$_SESSION["sign_in_status"] = 0;
 $_SESSION["currentUser"] = "";
 
 include '../Header.php';
