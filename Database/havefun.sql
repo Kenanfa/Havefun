@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 28, 2016 at 07:55 AM
+-- Generation Time: Dec 28, 2016 at 01:07 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -136,7 +136,10 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`ID`, `Username`, `Password`, `Name`, `Surname`, `Email`, `Phone_number`, `isAdmin`) VALUES
 (1, 'kenan', 'kenan', 'kenan', 'kenan', 'kenan', NULL, 1),
-(2, 'root', 'root', 'erk', 'Erk', 'ERK', NULL, 0);
+(2, 'root', 'root', 'erk', 'Erk', 'ERK', NULL, 0),
+(12, 'rootabb', 'rootsxxx', 'asd', 'sadsad', 'sadasd@asd', NULL, 1),
+(13, 'asdlpsakj', '5453asdx', 'asdsad', 'asdasd', 'sadasdasd@sadasd', NULL, 1),
+(14, 'rootXXDD', 'W223DFBFDF', 'sdWEWQEQ', 'SADASDSAD', 'asdasdasdsdd2XXXX@X', NULL, 0);
 
 --
 -- Indexes for dumped tables
@@ -204,7 +207,7 @@ ALTER TABLE `ticket`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- Constraints for dumped tables
 --
