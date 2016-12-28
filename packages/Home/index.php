@@ -10,7 +10,6 @@ include '../Header.php';
 
 <body>
 <div class="content" style="max-width: :1500px;">
-
     <div class="container matgin-top" id="Events">
         <h3>Search Your Event</h3>
     </div>
