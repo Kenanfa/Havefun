@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html>
+<title>Havefun</title>
 
 <title>Havefun</title>
 <meta charset="UTF-8">
