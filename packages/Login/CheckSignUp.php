@@ -79,11 +79,13 @@ if(strlen($username)==0){
 
     $query = "insert into user (Username, Password, Name, Surname, Email, Phone_number, isAdmin) VALUES ( \"" . $username . "\" , \"" . $password . "\" , \"" . $name . "\" , \"" . $surname . "\" , \"" . $email . "\" , " . $pNumber ." , " . $isAdmin ." );";
     if ($database->performQuery($query) == true) {
+        session_start();
+        $_SESSION['username'] = $username;
         if($isAdmin){
         ?>
         <script>
             alert("Account successfully created!! ");
-            window.location.href = "../User/AdminProfile.php";
+            window.location.href = "CheckSignIn.php";
         </script>
 
         <?php
@@ -92,7 +94,7 @@ if(strlen($username)==0){
             ?>
             <script>
                 alert("Account successfully created!! ");
-                window.location.href = "../User/UserProfile.php";
+                window.location.href = "CheckSignIn.php";
             </script>
 
             <?php

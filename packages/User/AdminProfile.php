@@ -1,6 +1,15 @@
 <!DOCTYPE html>
+<?php
+include '../Home/Database.php';
+$database = new Database();
+session_start();
+?>
+
 <html>
 <title>Havefun</title>
+
+
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
@@ -10,7 +19,7 @@
 
 <ul class="w3-navbar w3-white w3-large">
     <li><a href="../Profile/AdminHomePage.php" class="w3-black"></i>HaveFun</a></li>
-    <li class=><a href="../User/AdminProfile.php">Profile</a></li>
+    <li class=><a href="AdminProfile.php">Profile</a></li>
     <li class="w3-right w3-light-grey"><a href="../Home/index.php">Sign Out</a></li>
     <li class="w3-right w3-light-grey"><a href="../Event/CreateEvent.php">Create An Event</a></li>
 
