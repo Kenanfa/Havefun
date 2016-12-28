@@ -55,7 +55,9 @@ h3{
     margin-left: 440px;
     border-bottom-color: #1a1a1a;
 }
-
+.imager{
+max-height: 170px;
+}
 .first{
 position: absolute !important;
     margin-bottom: 50px;
