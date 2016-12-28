@@ -29,27 +29,27 @@
         <input class = "dateBox" type="date" name="Date" id="name" placeholder="Date" required/>
 
         <label id="icon" for="Time"><i class="icon-shield"></i></label>
-        <input type="text" name="name" id="name" placeholder="Time" required/>
+        <input type="text" name="Time" id="name" placeholder="Time" required/>
 
         <label id="icon" for="City"><i class="icon-shield"></i></label>
-        <input type="text" name="name" id="name" placeholder="City" required/>
+        <input type="text" name="City" id="name" placeholder="City" required/>
 
         <label id="icon" for="Country"><i class="icon-shield"></i></label>
-        <input type="text" name="name" id="name" placeholder="Country" required/>
+        <input type="text" name="Country" id="name" placeholder="Country" required/>
 
         <label id="icon" for="Number Of Tickets"><i class="icon-shield"></i></label>
-        <input type="text" name="name" id="name" placeholder="Number Of Tickets" required/>
+        <input type="text" name="Numticket" id="name" placeholder="Number Of Tickets" required/>
 
         <label id="icon" for="Link"><i class="icon-shield"></i></label>
-        <input type="text" name="name" id="name" placeholder="Picture Link" required/>
+        <input type="text" name="Link" id="name" placeholder="Picture Link" required/>
 
         <label id="icon" for="Category"><i class="icon-shield"></i></label>
-        <input type="text" name="name" id="name" placeholder="Event Category" required/>
+        <input type="text" name="Category" id="name" placeholder="Event Category" required/>
 
-        <label id="icon" for="Link"><i class="icon-shield"></i></label>
-        <input type="text" name="name" id="name" placeholder="Price" required/>
-
-        <a href="#" class="button">Register</a>
+        <label id="icon" for="Price"><i class="icon-shield"></i></label>
+        <input type="text" name="Price" id="price" placeholder="Price" required/>
+        <p class="p"> By clicking you agree to the terms and conditions</p>
+        <button type="submit" class="button" >Register</button>
     </form>
 </div>
 

@@ -1,7 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: thena_000
- * Date: 12/28/2016
- * Time: 11:36 PM
- */
+$name = $_POST["Name"];
+$date = $_POST["Date"];
+$time = $_POST["Time"];
+$city = $_POST["City"];
+$country = $_POST["Country"];
+$numticket = $_POST["Numticket"];
+$link = $_POST["Link"];
+$category = $_POST["Category"];
+$price = $_POST["Price"];
+
+echo $date;

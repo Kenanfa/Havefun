@@ -27,11 +27,11 @@ $database = new Database(); ?>
         <div class="sep"></div>
 
         <div class="inputs">
-            <input type="text" placeholder="Name" id="Name" name="Name" autofocus />
-            <input type="text" placeholder="Surname"  id="Surname" name="Surname" autofocus />
-            <input type="email" placeholder="e-mail"  id="e-mail" name="e-mail" autofocus />
-            <input type="text" placeholder="Username" id="Username" name="Username" autofocus />
-            <input type="password" placeholder="Password" id="Password" name="Password" />
+            <input type="text" placeholder="Name" id="Name" name="Name" autofocus required/>
+            <input type="text" placeholder="Surname"  id="Surname" name="Surname" autofocus required/>
+            <input type="email" placeholder="e-mail"  id="e-mail" name="e-mail" autofocus required/>
+            <input type="text" placeholder="Username" id="Username" name="Username" autofocus required/>
+            <input type="password" placeholder="Password" id="Password" name="Password" required/>
             <input type="text" placeholder="Phone Number" id="number" name="number" autofocus />
 
 
