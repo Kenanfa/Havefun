@@ -40,5 +40,4 @@ if(isset($_SESSION['status']) && $status == 1){
         window.location.href = "signIn.php";
     </script>
 <?php
-    echo "x";
 }

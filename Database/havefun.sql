@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 28, 2016 at 02:38 PM
+-- Generation Time: Dec 28, 2016 at 07:06 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -44,13 +44,13 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`ID`, `Name`, `Date`, `Time`, `Place_ID`, `Picture`, `Category`, `num_of_tickets_left`, `Creator_ID`, `Ticket_price`) VALUES
-(1, 'Istanbul Concert', '2016-12-07', 1400, 1, 'http://www.millenniumparkconcerts.org/wp-content/uploads/2015/07/music-concert.jpg', 'Music', 12, 0, 0),
-(2, 'Arsenal vs Chelsea', '2017-03-08', 1700, 1, 'http://www.ticketgum.com/blog/wp-content/uploads/2016/08/arsenal-vs-chelsea.jpg', 'Sports', 23, 0, 0),
-(3, 'Modern Theatre', '2016-09-09', 2100, 1, 'http://kingofwallpapers.com/theatre/theatre-010.jpg', 'Theatre', 5, 0, 0),
-(4, 'Let\'s Code Confrence', '2017-06-28', 1200, 1, 'http://www.prisonabolition.org/wp-content/uploads/2013/10/4596544906.jpg', 'Confrence', 17, 0, 0),
-(5, 'Manchester Derby', '2017-02-03', 1300, 1, 'http://www.manutd.com/sitecore/shell/~/media/7C25C9744A8C48F8A22955E10ADCB0F9.ashx?w=1280&h=720&rgn=0,440,2000,1560', 'Sports', 22, 0, 0),
-(6, 'The Eminem Show', '2017-03-16', 2200, 1, 'https://blog.tickpick.com/wp-content/uploads/2015/04/eminem.jpg', 'Music', 21, 0, 0),
-(7, 'El Classico ', '2017-06-22', 1800, 1, 'http://static.sportskeeda.com/wp-content/uploads/2015/03/real-madrid-vs-barcelona-1426960797.jpg', 'Sports', 25, 0, 0);
+(1, 'Istanbul Concert', '2016-12-07', 1400, 1, 'http://www.millenniumparkconcerts.org/wp-content/uploads/2015/07/music-concert.jpg', 'Music', 12, 1, 0),
+(2, 'Arsenal vs Chelsea', '2017-03-08', 1700, 1, 'http://www.ticketgum.com/blog/wp-content/uploads/2016/08/arsenal-vs-chelsea.jpg', 'Sports', 23, 1, 0),
+(3, 'Modern Theatre', '2016-09-09', 2100, 1, 'http://kingofwallpapers.com/theatre/theatre-010.jpg', 'Theatre', 5, 1, 0),
+(4, 'Let\'s Code Confrence', '2017-06-28', 1200, 1, 'http://www.prisonabolition.org/wp-content/uploads/2013/10/4596544906.jpg', 'Confrence', 17, 1, 0),
+(5, 'Manchester Derby', '2017-02-03', 1300, 1, 'http://www.manutd.com/sitecore/shell/~/media/7C25C9744A8C48F8A22955E10ADCB0F9.ashx?w=1280&h=720&rgn=0,440,2000,1560', 'Sports', 22, 1, 0),
+(6, 'The Eminem Show', '2017-03-16', 2200, 1, 'https://blog.tickpick.com/wp-content/uploads/2015/04/eminem.jpg', 'Music', 21, 1, 0),
+(7, 'El Classico ', '2017-06-22', 1800, 1, 'http://static.sportskeeda.com/wp-content/uploads/2015/03/real-madrid-vs-barcelona-1426960797.jpg', 'Sports', 25, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -116,7 +116,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`ID`, `Username`, `Password`, `Name`, `Surname`, `Email`, `Phone_number`, `isAdmin`) VALUES
 (1, 'kenan', 'kenan', 'kenan', 'kenan', 'kenan', NULL, 1),
-(2, 'root', 'root', 'erk', 'Erk', 'ERK', NULL, 0);
+(2, 'root', 'root', 'erk', 'Erk', 'ERK', NULL, 0),
+(15, 'rootsaas', 'rootssbb', 'sadsad', 'sadsad', 'sdasad@xxeddc', 123213, 1);
 
 --
 -- Indexes for dumped tables
@@ -127,7 +128,8 @@ INSERT INTO `user` (`ID`, `Username`, `Password`, `Name`, `Surname`, `Email`, `P
 --
 ALTER TABLE `event`
   ADD PRIMARY KEY (`ID`),
-  ADD KEY `place_id` (`Place_ID`);
+  ADD KEY `place_id` (`Place_ID`),
+  ADD KEY `Creator_ID` (`Creator_ID`);
 
 --
 -- Indexes for table `place`
@@ -167,12 +169,12 @@ ALTER TABLE `place`
 -- AUTO_INCREMENT for table `tickets_purchased`
 --
 ALTER TABLE `tickets_purchased`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- Constraints for dumped tables
 --
@@ -181,6 +183,7 @@ ALTER TABLE `user`
 -- Constraints for table `event`
 --
 ALTER TABLE `event`
+  ADD CONSTRAINT `event_ibfk_1` FOREIGN KEY (`Creator_ID`) REFERENCES `user` (`ID`),
   ADD CONSTRAINT `place_id` FOREIGN KEY (`Place_ID`) REFERENCES `place` (`ID`);
 
 --
