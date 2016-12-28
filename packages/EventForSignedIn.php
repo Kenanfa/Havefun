@@ -6,6 +6,13 @@ $eventID = $_POST["eventID"];
 $event = $database->getEvent($eventID);
 $place = $database->getPlace($event["Place_ID"]);
 $_POST["event"]= $event;
+session_start();
+
+$isAdmin = $database->isAdmin($_SESSION['currentUser']);
+if ($database->isAdmin($_SESSION['currentUser']))
+    $ref = "AdminHomePage.php";
+else
+    $ref = "UserHome.php";
 ?>
 
     <title> <?php echo $event["Name"]; ?> </title>
@@ -17,10 +24,10 @@ $_POST["event"]= $event;
     <link href="../includes/css/event.css" rel="stylesheet">
 
     <ul class="w3-navbar w3-white w3-large">
-        <li class="shrift"><a href="index.php" class="w3-black"></i>HaveFun</a></li>
+        <li class="shrift"><a href="<?php echo $ref ?> " class="w3-black"></i>HaveFun</a></li>
         <li class="shrift"><a href="About.php">About</a></li>
         <li class="shrift"><a href="contact.php">Contact us</a></li>
-        <li class="w3-right w3-light-grey shrift"><a href="index.php">Sign Out</a></li>
+        <li class="w3-right w3-light-grey shrift"><a href="logout.php">Sign Out</a></li>
 
     </ul>
 <h2>Event Information</h2>
