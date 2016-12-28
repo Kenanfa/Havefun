@@ -6,7 +6,7 @@ session_start();
 ?>
 
 <html>
-<title>Havefun</title>
+<title>Profile</title>
 
 
 
@@ -29,22 +29,26 @@ session_start();
 
 
 <link href="../../includes/css/adminprofile.css" rel="stylesheet">
+
 <head>
 <body>
+
 <header>
     <h1 style="font-family:Lobster; color:white;">Personel Infomation</h1>
 </header>
+
 <nav class="w3-center">
     <i class="fa fa-user-circle-o  w3-text-theme" style="font-size:150px"></i>
     <h3 class="w3-center">User Name</h3>
     <h4 class="w3-center" style="color:black"><i class="fa fa-envelope w3-text-theme" style="font-size:30px; color:black;"></i> user email</h4>
     <h4 class="w3-center" style="color:black"><i class="fa fa-phone w3-text-theme" style="font-size:30px; color:black;"></i> user phone</h4>
 </nav>
+
 <section>
     <h1 style="color:black">-------------  </h1>
 </section>
-<article>
 
+<article>
     <div class="w3-row-padding w3-center w3-margin-top">
         <div class="w3-half" style="background-color: seashell">
             <div class="w3-card-2  w3-padding-top" style="min-height:70px">
@@ -127,8 +131,8 @@ session_start();
     </div>
     </div>
 </article>
-</body>
 
+</body>
 </head>
 </html>
 

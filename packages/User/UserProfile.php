@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-<title>Havefun</title>
+
+<title>Profile</title>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
@@ -13,33 +15,36 @@
 <?php session_start();?>
 
 <ul class="w3-navbar w3-white w3-large">
-    <li class="shrift"><a href="../Profile/AdminHomePage.php" class="w3-black"></i>HaveFun</a></li>
+    <li class="shrift"><a href="../Profile/AdminHomePage.php" class="w3-black">HaveFun</a></li>
     <li class="shrift"><a href="../User/AdminProfile.php">Profile</a></li>
     <li class="w3-right w3-light-grey shrift"><a href="../Home/index.php">Sign Out</a></li>
    </ul>
 
 
 <link href="../../includes/css/adminprofile.css" rel="stylesheet">
+
 <head>
 <body>
+
 <header>
     <h1 style="font-family:Lobster; color:white;">Personel Infomation</h1>
 </header>
+
 <nav class="w3-center">
     <i class="fa fa-user-circle-o  w3-text-theme" style="font-size:150px"></i>
     <h3 class="w3-center">User Name</h3>
     <h4 class="w3-center" style="color:black"><i class="fa fa-envelope w3-text-theme" style="font-size:30px; color:black;"></i> user email</h4>
     <h4 class="w3-center" style="color:black"><i class="fa fa-phone w3-text-theme" style="font-size:30px; color:black;"></i> user phone</h4>
 </nav>
+
 <section>
     <h1 style="color:black">-------------  </h1>
 </section>
+
 <article>
-
     <div class="w3-row-padding w3-center w3-margin-top">
-
+        <h3 style="font-family: Lobster"> Events I participated in:</h3>
                 <table class="w3-table w3-bordered" style="width:100%; background-color:#ffecf7;">
-                    <h3 style="font-family: Lobster"> Events I participated in:</h3>
                     <tr>
                         <th>Event</th>
                         <th>Location</th>
@@ -71,12 +76,10 @@
                         <td>50</td>
                     </tr>
                 </table>
-            </div>
-        </div>
-    </div>
+              </div>
 </article>
-</body>
 
+</body>
 </head>
 </html>
 
