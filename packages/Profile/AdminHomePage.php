@@ -38,7 +38,7 @@ session_start();
 <body>
 <div>
     <div class="container matgin-top" id="Events">
-        <h3>Search Your Event</h3>
+        <h3 class="shrift">Search Your Event</h3>
     </div>
 
     <div class="w3-row-padding">
@@ -46,7 +46,7 @@ session_start();
             <input class="EventDate" type="date" placeholder="Event Date">
             <input class="City" type="text" placeholder="City">
             <input class="Place" type="text" placeholder="Place">
-            <button class="w3-btn-block">Search</button>
+            <button class="w3-btn-block" style="font-size: 25px">Search</button>
 
             <select class="dropdown" name="State" id="inputs">
                 <option value="dropdown" >All Categories</option>
@@ -60,7 +60,7 @@ session_start();
 </div>
 
 <hr>
-<h2>Featured Events</h2>
+<h2 class="shrift" style="font-size: 45px">Featured Events</h2>
 
 
 <div class="content padding" >
