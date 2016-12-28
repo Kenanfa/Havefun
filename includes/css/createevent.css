@@ -5,9 +5,9 @@ body {
 }
 
 .testbox {
-    margin: 10px auto;
+    margin: 0px auto;
     width: 340px;
-    height: 480px;
+    height: 500px;
     -webkit-border-radius: 8px/7px;
     -moz-border-radius: 8px/7px;
     border-radius: 8px/7px;
@@ -17,16 +17,14 @@ body {
     box-shadow: 1px 2px 5px rgba(0,0,0,.31);
     border: solid 1px #cbc9c9;
 }
-.p{
-    font-size: 10px;
-}
+
 form{
     margin: 0 30px;
 }
 h5{
     text-align: center;
     font-family: "Helvetica Neue", Helvetica, Arial;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold ;
 }
 h1{
@@ -97,11 +95,11 @@ input[type=text],input[type=password]{
 
 
 a.button {
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 400;
     color: white;
-    float: left;
-    width:90px; height: 24px;
+    margin-left: 92px;
+    width:90px; height: 20px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;

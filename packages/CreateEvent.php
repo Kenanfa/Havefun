@@ -48,7 +48,7 @@
 
         <label id="icon" for="Link"><i class="icon-shield"></i></label>
         <input type="text" name="name" id="name" placeholder="Price" required/>
-<p class="p"> By clicking you agree to the terms and conditions</p>
+
         <a href="#" class="button">Register</a>
     </form>
 </div>
