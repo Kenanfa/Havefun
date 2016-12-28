@@ -6,13 +6,16 @@
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<link href="../../includes/css/header.css" rel="stylesheet">
 
 <ul class="w3-navbar w3-white w3-large">
-    <li><a href="AdminHomePage.php" class="w3-black"></i>HaveFun</a></li>
-    <li class=><a href="../User/AdminProfile.php">Profile</a></li>
-    <li class="w3-right w3-light-grey"><a href="../Login/SignIn.php">Sign Out</a></li>
-    <li class="w3-right w3-light-grey"><a href="../Event/CreateEvent.php">Create An Event</a></li>
+    <li class="shrift"><a href="../Profile/AdminHomePage.php" class="w3-black"></i>HaveFun</a></li>
+    <li class="shrift"><a href="../User/AdminProfile.php">Profile</a></li>
+    <li class="w3-right w3-light-grey shrift"><a href="../Login/SignIn.php">Sign Out</a></li>
+    <li class="w3-right w3-light-grey shrift"><a href="../Event/CreateEvent.php">Create An Event</a></li>
 </ul>
+
 <link href="../../includes/css/Home.css" rel="stylesheet">
 
 <body>
