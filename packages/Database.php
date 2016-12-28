@@ -66,8 +66,8 @@ class Database{
         return $results->fetch_assoc();
     }
     
-    public function getPlace($placeID){
-        $query= "select * from place where id =".$placeID;
+    public function getPlace($place_name){
+        $query= "select * from place where NAME ='".$place_name."'";
         $results = $this->performQuery($query);
         return $results->fetch_assoc();
     }
@@ -79,7 +79,11 @@ class Database{
     }
 
     public function ticketBought($eventID){
-        #TODO decrease the num of tickets left
+        $query = "Update Event 
+        Set num_of_tickets_left = (num_of_tickets_left - 1)
+        Where ID = " .$eventID;
+
+        $this->performQuery($query);
     }
 
     public function getRelatedEvents($username){

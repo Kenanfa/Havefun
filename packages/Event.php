@@ -4,7 +4,7 @@ include 'Database.php';
 $database = new Database();
 $eventID = $_POST["eventID"];
 $event = $database->getEvent($eventID);
-$place = $database->getPlace($event["Place_ID"]);
+$place = $database->getPlace($event["Place_Name"]);
 $_POST["event"]= $event;
 
 
@@ -21,10 +21,10 @@ $_POST["event"]= $event;
         <div class="form">
 
             <form class="Event-form" method="POST" action="Buy.php">
-                <img src=<?php echo $event["Picture"]?> alt="Sport" height="132" width="440">
+                <img src=<?php echo $event["Picture"]?> alt="Sport" height="300" width="440">
                 <h4>Event Name: <?php echo $event["Name"]?></h4>
                 <h4>Place :<?php echo $place["Name"]?></h4>
-                <h4>Address :<?php echo $place["Address"]?></h4>
+                <h4>City :<?php echo $place["City"]?></h4>
                 <h4>Event Date :<?php echo $event["Date"]?></h4>
                 <h4>Event Time:<?php echo $event["Time"]?></h4>
                 <h4>Event Number of tickets left: <?php echo $event["num_of_tickets_left"]?><h4/>
