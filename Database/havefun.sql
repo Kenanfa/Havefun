@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 27, 2016 at 05:33 PM
+-- Generation Time: Dec 28, 2016 at 07:55 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -43,13 +43,13 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`ID`, `Name`, `Date`, `Time`, `Place_ID`, `Picture`, `Category`, `num_of_tickets_left`, `Creator_ID`) VALUES
-(1, ''Istanbul Concert'', ''2016-12-07'', 1400, 1, ''http://www.millenniumparkconcerts.org/wp-content/uploads/2015/07/music-concert.jpg'', ''Music'', 0, 0),
-(2, ''Arsenal vs Chelsea'', ''2017-03-08'', 1700, 1, ''http://www.ticketgum.com/blog/wp-content/uploads/2016/08/arsenal-vs-chelsea.jpg'', ''Sports'', 0, 0),
-(3, ''Modern Theatre'', ''2016-09-09'', 2100, 1, ''http://kingofwallpapers.com/theatre/theatre-010.jpg'', ''Theatre'', 0, 0),
-(4, ''Let\''s Code Confrence'', ''2017-06-28'', 1200, 1, ''http://www.prisonabolition.org/wp-content/uploads/2013/10/4596544906.jpg'', ''Confrence'', 0, 0),
-(5, ''Manchester Derby'', ''2017-02-03'', 1300, 1, ''http://www.manutd.com/sitecore/shell/~/media/7C25C9744A8C48F8A22955E10ADCB0F9.ashx?w=1280&h=720&rgn=0,440,2000,1560'', ''Sports'', 0, 0),
-(6, ''The Eminem Show'', ''2017-03-16'', 2200, 1, ''https://blog.tickpick.com/wp-content/uploads/2015/04/eminem.jpg'', ''Music'', 0, 0),
-(7, ''El Classico '', ''2017-06-22'', 1800, 1, ''http://static.sportskeeda.com/wp-content/uploads/2015/03/real-madrid-vs-barcelona-1426960797.jpg'', ''Sports'', 0, 0);
+(1, 'Istanbul Concert', '2016-12-07', 1400, 1, 'http://www.millenniumparkconcerts.org/wp-content/uploads/2015/07/music-concert.jpg', 'Music', 0, 0),
+(2, 'Arsenal vs Chelsea', '2017-03-08', 1700, 1, 'http://www.ticketgum.com/blog/wp-content/uploads/2016/08/arsenal-vs-chelsea.jpg', 'Sports', 0, 0),
+(3, 'Modern Theatre', '2016-09-09', 2100, 1, 'http://kingofwallpapers.com/theatre/theatre-010.jpg', 'Theatre', 0, 0),
+(4, 'Let\'s Code Confrence', '2017-06-28', 1200, 1, 'http://www.prisonabolition.org/wp-content/uploads/2013/10/4596544906.jpg', 'Confrence', 0, 0),
+(5, 'Manchester Derby', '2017-02-03', 1300, 1, 'http://www.manutd.com/sitecore/shell/~/media/7C25C9744A8C48F8A22955E10ADCB0F9.ashx?w=1280&h=720&rgn=0,440,2000,1560', 'Sports', 0, 0),
+(6, 'The Eminem Show', '2017-03-16', 2200, 1, 'https://blog.tickpick.com/wp-content/uploads/2015/04/eminem.jpg', 'Music', 0, 0),
+(7, 'El Classico ', '2017-06-22', 1800, 1, 'http://static.sportskeeda.com/wp-content/uploads/2015/03/real-madrid-vs-barcelona-1426960797.jpg', 'Sports', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -71,7 +71,7 @@ CREATE TABLE `place` (
 --
 
 INSERT INTO `place` (`ID`, `Name`, `Address`, `Num_of_seats`, `City`, `Country`) VALUES
-(1, ''Test Only '', ''Test Only '', 12, ''Test Only Test Only '', ''Test Only '');
+(1, 'Test Only ', 'Test Only ', 12, 'Test Only Test Only ', 'Test Only ');
 
 -- --------------------------------------------------------
 
@@ -127,16 +127,16 @@ CREATE TABLE `user` (
   `Surname` varchar(30) NOT NULL,
   `Email` varchar(50) NOT NULL,
   `Phone_number` int(10) UNSIGNED DEFAULT NULL,
-  `Type` int(11) NOT NULL
+  `isAdmin` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`ID`, `Username`, `Password`, `Name`, `Surname`, `Email`, `Phone_number`, `Type`) VALUES
-(1, ''kenan'', ''kenan'', ''kenan'', ''kenan'', ''kenan'', NULL, 1),
-(2, ''root'', ''root'', ''erk'', ''Erk'', ''ERK'', NULL, 0);
+INSERT INTO `user` (`ID`, `Username`, `Password`, `Name`, `Surname`, `Email`, `Phone_number`, `isAdmin`) VALUES
+(1, 'kenan', 'kenan', 'kenan', 'kenan', 'kenan', NULL, 1),
+(2, 'root', 'root', 'erk', 'Erk', 'ERK', NULL, 0);
 
 --
 -- Indexes for dumped tables
@@ -160,8 +160,8 @@ ALTER TABLE `place`
 --
 ALTER TABLE `purchased`
   ADD PRIMARY KEY (`ID`),
-  ADD KEY `ticket_id` (`Ticket_ID`),
-  ADD KEY `User_ID` (`User_ID`);
+  ADD KEY `purchased_ibfk_1` (`User_ID`),
+  ADD KEY `ticket_id` (`Ticket_ID`);
 
 --
 -- Indexes for table `ticket`
@@ -176,6 +176,35 @@ ALTER TABLE `ticket`
 ALTER TABLE `user`
   ADD PRIMARY KEY (`ID`);
 
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `event`
+--
+ALTER TABLE `event`
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `place`
+--
+ALTER TABLE `place`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `purchased`
+--
+ALTER TABLE `purchased`
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `ticket`
+--
+ALTER TABLE `ticket`
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- Constraints for dumped tables
 --
