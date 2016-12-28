@@ -48,7 +48,6 @@
 
         <label id="icon" for="Price"><i class="icon-shield"></i></label>
         <input type="text" name="Price" id="price" placeholder="Price" required/>
-        <p class="p"> By clicking you agree to the terms and conditions</p>
         <button type="submit" class="button" >Register</button>
     </form>
 </div>
