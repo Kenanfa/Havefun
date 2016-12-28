@@ -17,12 +17,14 @@ include '../Header.php';
         <h3>Search Your Event</h3>
     </div>
 
-    <div class="w3-row-padding">
-        <div class="w3-col m3">
+    <div class="w3-row-padding" >
+        <div class="w3-col m3" >
             <input class="EventDate" type="date" placeholder="Event Date">
             <input class="City" type="text" placeholder="City">
             <input class="Place" type="text" placeholder="Place">
-            <button class="w3-btn-block">Search</button>
+            <form method="post"  class="sbutton" action="../Search/index.php">
+                <button class="sbutton" type="submit">Search</button>
+            </form>
 
                 <select class="dropdown" name="State" id="inputs">
                     <option value="dropdown" >All Categories</option>
