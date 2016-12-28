@@ -19,7 +19,7 @@ include '../Header.php';
 
     <div class="w3-row-padding">
         <div class="w3-col m3">
-            <input class="EventDate" type="number" placeholder="Event Date">
+            <input class="EventDate" type="date" placeholder="Event Date">
             <input class="City" type="text" placeholder="City">
             <input class="Place" type="text" placeholder="Place">
             <button class="w3-btn-block">Search</button>
