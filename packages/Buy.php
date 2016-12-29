@@ -7,19 +7,22 @@ if(isset($_SESSION['status'])) {
     $username = $_SESSION['currentUser'];
 }
 $eventID = $_POST["eventID"];
+$ntickets = $_POST["ntickets"];
 
 
 
 if(isset($_SESSION['status']) && $status == 1){
     if($database->getNumOfTickets($eventID)>0) {
-        $user = $database->getUser($username);
-        $query = "insert into Tickets_purchased (Event_ID , User_ID) VALUES ( " . $eventID . " , " . $user["ID"] . " );";
-        $database->performQuery($query);
-        $database->ticketBought($eventID);
+        for($i = 0 ; $i<$ntickets ; $i++) {
+            $user = $database->getUser($username);
+            $query = "insert into Tickets_purchased (Event_ID , User_ID) VALUES ( " . $eventID . " , " . $user["ID"] . " );";
+            $database->performQuery($query);
+            $database->ticketBought($eventID);
+        }
         if ($database->isAdmin($username)) {
             ?>
             <script>
-                alert("You have succesfully purchased a ticket!!!");
+                alert("You have succesfully purchased your ticket!!!");
                 window.location.href = "AdminHomePage.php";
             </script>
 
@@ -27,7 +30,7 @@ if(isset($_SESSION['status']) && $status == 1){
         } else {
             ?>
             <script>
-                alert("You have succesfully purchased a ticket!!!");
+                alert("You have succesfully purchased your ticket!!!");
                 window.location.href = "UserHome.php";
             </script>
 

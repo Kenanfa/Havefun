@@ -6,6 +6,7 @@ $eventID = $_POST["eventID"];
 $event = $database->getEvent($eventID);
 $place = $database->getPlace($event["Place_Name"]);
 $_POST["event"]= $event;
+$numLeft = $event["num_of_tickets_left"] ;
 session_start();
 
 $isAdmin = $database->isAdmin($_SESSION['currentUser']);
@@ -42,10 +43,16 @@ else
             <h4>City :<?php echo $place["City"]?></h4>
             <h4>Event Date :<?php echo $event["Date"]?></h4>
             <h4>Event Time:<?php echo $event["Time"]?></h4>
-            <h4>Event Number of tickets left: <?php echo $event["num_of_tickets_left"]?><h4/>
-                <button class="btn"  type="submit">Buy Tickets</button>
-                <p class="message"><a href="Buy.php">Not Registered? Create An Account.</a></p>
-                <input hidden type="password" value=<?php echo $eventID ?>   name="eventID"/>
+            <h4>Event Number of tickets left: <?php echo $numLeft?><h4/>
+                <div>
+                    <?php if ($numLeft >0){ ?>
+                    <input class = "num" type="number" name="ntickets"  placeholder="Enter the number of tickets" min="0" max="<?php echo $numLeft?>"  required/>
+                    <button class="btn"  type="submit">Buy Tickets</button>
+                    <?php }else{ ?>
+                    <button class="button disabled" disabled >Sold Out!!!!</button>
+                    <?php } ?>
+                </div>
+                <input hidden type="password" value=<?php echo $eventID ?>  name="eventID"/>
         </form>
     </div>
 </div>
