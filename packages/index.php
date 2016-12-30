@@ -13,23 +13,25 @@ include 'Header.php';
         <h3 align="center" style="font-family: Lobster; font-size: 25px;" >Search Your Event</h3>
     </div>
 
-    <div class="w3-row-padding">
+    <form class="w3-row-padding" method="post" action="Search.php">
+        <div>
+            <input class="EventDate" name = "from" type="date" placeholder="Search from">    <!--  Bro do what you want here but just make sure that
+             you put the date boxes in order:  Date FROM  --- Date TO  -->
+        </div>
         <div class="w3-col m3">
-            <input class="EventDate" name = "from" type="date" placeholder="Search from">
-            <input class="EventDate2" name = "To" type="date" placeholder="To ">
-            <input class="City" type="text" placeholder="City">
-            <input class="Place" type="text" placeholder="Place">
-           <form method="post" action="SearchIndex.php">
+            <input class="EventDate2" name = "to" type="date" placeholder="To">
+            <input class="City" name = "city"type="text" placeholder="City">
+            <input class="Place" name = "place" type="text" placeholder="Place">
             <button  type="submit" class="w3-btn-block">Search</button></form>
-                <select class="dropdown" name="State" id="inputs">
-                    <option value="dropdown">All Categories</option>
+                <select class="dropdown" name="category" id="inputs">
+                    <option value="All">All Categories</option>
                     <?php $result = $database->performQuery($list_catgs_query);
                     while($row = $result->fetch_assoc()) { ?>
                         <option value=<?php echo $row["Category"]; ?>> <?php echo $row["Category"]; ?></option>
                     <?php } ?>
                 </select>
             </div>
-    </div>
+    </form>
     </div>
 
     <hr>

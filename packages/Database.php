@@ -125,4 +125,15 @@ class Database{
         $row = $results->fetch_assoc();
         return intval($row["num_of_tickets_left"]);
     }
+
+    public function getEventsBetweenDates($dateFrom,$dateTo){
+        $query = "select ID from Event where Date BETWEEN '".$dateFrom."' AND '".$dateTo."'";
+        $results = $this->performQuery($query);
+        
+        $events = array();
+        for ($x = 0; $x < $results->num_rows; $x++) {
+            array_push($events,$results->fetch_assoc());
+        }
+        return $events;
+    }
 }

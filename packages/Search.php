@@ -1,7 +1,17 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: thena_000
- * Date: 12/30/2016
- * Time: 3:13 PM
- */
+include 'Database.php';
+$database = new Database();
+
+$dateFrom = $_POST["from"];
+$dateTo = $_POST["to"]; 
+$city = $_POST["city"];
+$place = $_POST["place"];
+$category = $_POST["category"];
+
+
+echo $dateFrom;
+echo $dateTo;
+echo $category;
+echo $city;
+echo $place;
+
