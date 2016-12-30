@@ -126,10 +126,32 @@ class Database{
         return intval($row["num_of_tickets_left"]);
     }
 
-    public function getDateEvents($dateFrom, $dateTo){
+    public function getDateEventsFromTo($dateFrom, $dateTo){
         $query = "select * from Event where Date BETWEEN '".$dateFrom."' AND '".$dateTo."'";
         $results = $this->performQuery($query);
         
+        $events = array();
+        for ($x = 0; $x < $results->num_rows; $x++) {
+            array_push($events,$results->fetch_assoc());
+        }
+        return $events;
+    }
+
+    public function getDateEventsFrom($dateFrom){
+        $query = "select * from Event where Date >= '".$dateFrom."'";
+        $results = $this->performQuery($query);
+
+        $events = array();
+        for ($x = 0; $x < $results->num_rows; $x++) {
+            array_push($events,$results->fetch_assoc());
+        }
+        return $events;
+    }
+
+    public function getDateEventsTo($dateTo){
+        $query = "select * from Event where Date <= '".$dateTo."'";
+        $results = $this->performQuery($query);
+
         $events = array();
         for ($x = 0; $x < $results->num_rows; $x++) {
             array_push($events,$results->fetch_assoc());
@@ -171,6 +193,17 @@ class Database{
         }
         return $events;
 
+    }
+    
+    public function getAllEvents(){
+        $query = "select * from Event ";
+        $results = $this->performQuery($query);
+
+        $events = array();
+        for ($x = 0; $x < $results->num_rows; $x++) {
+            array_push($events,$results->fetch_assoc());
+        }
+        return $events;
     }
 
 }

@@ -16,21 +16,22 @@ if(isset($_SESSION['status']) && $status == 1){
         for($i = 0 ; $i<$ntickets ; $i++) {
 
             $query = "insert into Tickets_purchased (Event_ID , Username) VALUES ( " . $eventID . " , \"" . $username . "\" );";
+            $database->performQuery($query);
             $database->ticketBought($eventID);
+            echo $query;
         }
         if ($database->isAdmin($username)) {
             ?>
             <script>
                 alert("You have succesfully purchased your ticket!!!");
-                window.location.href = "AdminHomePage.php";
+                //window.location.href = "AdminHomePage.php";
             </script>
             <?php
-            echo $query;
         } else {
             ?>
             <script>
                 alert("You have succesfully purchased your ticket!!!");
-                window.location.href = "UserHome.php";
+              //  window.location.href = "UserHome.php";
             </script>
 
             <?php

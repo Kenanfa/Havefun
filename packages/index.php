@@ -15,11 +15,11 @@ include 'Header.php';
 
     <form class="w3-row-padding" method="post" action="Search.php">
         <div>
-            <input class="EventDate2" name = "from" type="date" placeholder="Search from">    <!--  Bro do what you want here but just make sure that
+            <input class="EventDate2"  name = "from" type="date" placeholder="Search from">    <!--  Bro do what you want here but just make sure that
              you put the date boxes in order:  Date FROM  --- Date TO  -->
         </div>
         <div class="w3-col m3">
-            <input class="EventDate" name = "to" type="date" placeholder="To">
+            <input class="EventDate"  name = "to" type="date" placeholder="To">
             <input class="City" name = "city"type="text" placeholder="City">
             <input class="Place" name = "place" type="text" placeholder="Place">
             <button  type="submit" class="w3-btn-block">Search</button></form>

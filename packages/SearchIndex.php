@@ -2,7 +2,11 @@
 <!DOCTYPE html>
 <html>
 
-<title>Havefun</title>
+<?php session_start();
+$events = $_SESSION['searchResults'];
+?>
+
+<title>Search results</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
@@ -24,38 +28,29 @@
 <div class="container matgin-top" id="Events">
     <h3>Searched Events</h3>
 </div>
+
 <table>
+    <form method="post" action="Event.php"
     <tr>
         <th>Picture</th>
         <th>Event Name</th>
         <th>Place</th>
         <th>Date</th>
     </tr>
+
+    <?php for($i = 0 ; $i < count($events);$i++){?>
+
     <tr>
-     <td>   <img src="img/Sport.jpg" alt="Sport" class="imager" width="200" height="52"></td>
-        <td> Arsenal-Chelsea</td>
-        <td>London</td>
-        <td>$100</td>
+     <td>   <input type="image" name="eventID" value="<?php echo $events[$i]["ID"] ?>" src="<?php echo $events[$i]["Picture"] ?>" alt="submit" class="imager" width="200" height="52" ></td>
+        <td> <?php echo $events[$i]["Name"] ?></td>
+        <td><?php echo $events[$i]["Place_Name"] ?></td>
+        <td><?php echo $events[$i]["Date"] ?></td>
     </tr>
-    <tr>
-        <td>   <img src="img/Sport.jpg" alt="Sport" class="imager" width="200" height="52"></td>
-        <td> Arsenal-Chelsea</td>
-        <td>London</td>
-        <td>$100</td>
-    </tr>
-    <tr>
-        <td>   <img src="img/Sport.jpg" alt="Sport" class="imager" width="200" height="52"></td>
-        <td> Arsenal-Chelsea</td>
-        <td>London</td>
-        <td>$100</td>
-    </tr>
-    <tr>
-        <td>   <img src="img/Sport.jpg" alt="Sport" class="imager" width="200" height="52"></td>
-        <td> Arsenal-Chelsea</td>
-        <td>London</td>
-        <td>$100</td>
-    </tr>
+
+    <?php } ?>
+    </form>
 </table>
+
 
     <?php include 'Footer.php';?>
 
