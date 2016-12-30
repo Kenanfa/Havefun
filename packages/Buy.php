@@ -14,9 +14,8 @@ $ntickets = $_POST["ntickets"];
 if(isset($_SESSION['status']) && $status == 1){
     if($database->getNumOfTickets($eventID)>0) {
         for($i = 0 ; $i<$ntickets ; $i++) {
-            $user = $database->getUser($username);
-            $query = "insert into Tickets_purchased (Event_ID , User_ID) VALUES ( " . $eventID . " , " . $user["ID"] . " );";
-            $database->performQuery($query);
+
+            $query = "insert into Tickets_purchased (Event_ID , Username) VALUES ( " . $eventID . " , \"" . $username . "\" );";
             $database->ticketBought($eventID);
         }
         if ($database->isAdmin($username)) {
@@ -25,8 +24,8 @@ if(isset($_SESSION['status']) && $status == 1){
                 alert("You have succesfully purchased your ticket!!!");
                 window.location.href = "AdminHomePage.php";
             </script>
-
             <?php
+            echo $query;
         } else {
             ?>
             <script>

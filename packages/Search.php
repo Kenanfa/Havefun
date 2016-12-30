@@ -8,10 +8,12 @@ $city = $_POST["city"];
 $place = $_POST["place"];
 $category = $_POST["category"];
 
+$dateResults = $database->getDateEvents($dateFrom, $dateTo);
+$categoryResults = $database->getCategoryEvents($category);
+$placeResults = $database->getPlaceEvents($place);
+$cityResults = $database->getCityEvents($city);
 
-echo $dateFrom;
-echo $dateTo;
-echo $category;
-echo $city;
-echo $place;
 
+for($x = 0 ; $x < count($cityResults);$x++){
+    echo $cityResults[$x]["Name"];
+}

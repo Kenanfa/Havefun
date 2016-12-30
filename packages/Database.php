@@ -126,8 +126,8 @@ class Database{
         return intval($row["num_of_tickets_left"]);
     }
 
-    public function getEventsBetweenDates($dateFrom,$dateTo){
-        $query = "select ID from Event where Date BETWEEN '".$dateFrom."' AND '".$dateTo."'";
+    public function getDateEvents($dateFrom, $dateTo){
+        $query = "select * from Event where Date BETWEEN '".$dateFrom."' AND '".$dateTo."'";
         $results = $this->performQuery($query);
         
         $events = array();
@@ -136,4 +136,41 @@ class Database{
         }
         return $events;
     }
+
+    public function getCategoryEvents($category){
+        $query = "select * from Event where Category ='".$category."'";
+        $results = $this->performQuery($query);
+
+        $events = array();
+        for ($x = 0; $x < $results->num_rows; $x++) {
+            array_push($events,$results->fetch_assoc());
+        }
+        return $events;
+    }
+    
+    public function getPlaceEvents($place){
+        $query = "select * from Event where Place_name ='".$place."'";
+        $results = $this->performQuery($query);
+
+        $events = array();
+        for ($x = 0; $x < $results->num_rows; $x++) {
+            array_push($events,$results->fetch_assoc());
+        }
+        return $events;
+        
+    }
+
+    public function getCityEvents($city){
+        $query = "select * from Place where City ='".$city."'";
+        $results = $this->performQuery($query);
+
+        $events = array();
+        for ($x = 0; $x < $results->num_rows; $x++) {
+            $place = $results->fetch_assoc();
+           $events = array_merge($events,$this->getPlaceEvents($place["Name"]));
+        }
+        return $events;
+
+    }
+
 }
