@@ -33,22 +33,25 @@ $list_catgs_query = "Select Category from Event group by Category";
         <h3 class="shrift" style="font-size: 25px">Search Your Event</h3>
     </div>
 
-    <div class="w3-row-padding">
-        <div class="w3-col m3">
-            <input class="EventDate" type="date" placeholder="Event Date">
-            <input class="City" type="text" placeholder="City">
-            <input class="Place" type="text" placeholder="Place">
-            <button class="w3-btn-block">Search</button>
-
-            <select class="dropdown" name="State" id="inputs">
-                <option value="dropdown" >All Categories</option>
-                <?php $result = $database->performQuery($list_catgs_query);
-                while($row = $result->fetch_assoc()) { ?>
-                    <option value=<?php echo $row["Category"]; ?>> <?php echo $row["Category"]; ?></option>
-                <?php } ?>
-            </select>
+    <form class="w3-row-padding" method="post" action="SearchIndexForSignedIn.php">
+        <div>
+            <input class="EventDate2"  name = "from" type="date" placeholder="Search from">    <!--  Bro do what you want here but just make sure that
+             you put the date boxes in order:  Date FROM  --- Date TO  -->
         </div>
-    </div>
+        <div class="w3-col m3">
+            <input class="EventDate"  name = "to" type="date" placeholder="To">
+            <input class="City" name = "city" type="text" placeholder="City">
+            <input class="Place" name = "place" type="text" placeholder="Place">
+            <button  type="submit" class="w3-btn-block">Search</button></form>
+    <select class="dropdown" name="category" id="inputs">
+        <option value="All">All Categories</option>
+        <?php $result = $database->performQuery($list_catgs_query);
+        while($row = $result->fetch_assoc()) { ?>
+            <option value=<?php echo $row["Category"]; ?>> <?php echo $row["Category"]; ?></option>
+        <?php } ?>
+    </select>
+</div>
+</form>
 </div>
 
 <hr>

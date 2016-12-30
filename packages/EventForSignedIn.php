@@ -10,10 +10,13 @@ $numLeft = $event["num_of_tickets_left"] ;
 session_start();
 
 $isAdmin = $database->isAdmin($_SESSION['currentUser']);
-if ($database->isAdmin($_SESSION['currentUser']))
-    $ref = "AdminHomePage.php";
-else
-    $ref = "UserHome.php";
+if ($database->isAdmin($_SESSION['currentUser'])) {
+    $refH = "AdminHomePage.php";
+    $refP = "AdminProfile.php";
+}else {
+    $refH = "UserHome.php";
+    $refP = "UserProfile.php";
+}
 ?>
 
     <title> <?php echo $event["Name"]; ?> </title>
@@ -22,12 +25,11 @@ else
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="../includes/css/event.css" rel="stylesheet">
+    <link href="../includes/css/eventforsignedin.css" rel="stylesheet">
 
     <ul class="w3-navbar w3-white w3-large">
-        <li class="shrift"><a href="<?php echo $ref ?> " class="w3-black"></i>HaveFun</a></li>
-        <li class="shrift"><a href="About.php">About</a></li>
-        <li class="shrift"><a href="contact.php">Contact us</a></li>
+        <li class="shrift"><a href="<?php echo $refH ?>" class="w3-black"></i>HaveFun</a></li>
+        <li class="shrift"><a href="<?php echo $refP ?>">Profile</a></li>
         <li class="w3-right w3-light-grey shrift"><a href="logout.php">Sign Out</a></li>
 
     </ul>

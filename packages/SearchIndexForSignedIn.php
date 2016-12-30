@@ -57,10 +57,19 @@ if(count($selectedCriteria)>0){
 }else{
     $events = $database->getAllEvents();
 }
+
+session_start();
+$isAdmin = $database->isAdmin($_SESSION['currentUser']);
+if ($database->isAdmin($_SESSION['currentUser'])) {
+    $refH = "AdminHomePage.php";
+    $refP = "AdminProfile.php";
+}else {
+    $refH = "UserHome.php";
+    $refP = "UserProfile.php";
+}
 ?>
 <!DOCTYPE html>
 <html>
-
 <title>Search results</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -71,12 +80,11 @@ if(count($selectedCriteria)>0){
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 
 <ul class="w3-navbar w3-white w3-large">
-    <li class="shrift"><a href="index.php" class="w3-black"></i>HaveFun</a></li>
-    <li class="shrift"><a href="About.php">About</a></li>
-    <li class="shrift"><a href="contact.php">Contact us</a></li>
-    <li class="w3-right w3-light-grey shrift"><a href="SignIn.php">Sign in</a></li>
-
+<li class="shrift"><a href="<?php echo $refH ?>" class="w3-black"></i>HaveFun</a></li>
+<li class="shrift"><a href="<?php echo $refP ?>">Profile</a></li>
+<li class="w3-right w3-light-grey shrift"><a href="logout.php">Sign Out</a></li>
 </ul>
+
 <link href="../includes/css/search.css" rel="stylesheet">
 
 <body>
@@ -85,7 +93,7 @@ if(count($selectedCriteria)>0){
 </div>
 
 <table>
-    <form method="post" action="Event.php"
+    <form method="post" action="EventForSignedIn.php"
     <tr>
         <th>Picture</th>
         <th>Event Name</th>
@@ -95,19 +103,20 @@ if(count($selectedCriteria)>0){
 
     <?php for($i = 0 ; $i < count($events);$i++){?>
 
-    <tr>
-     <td>   <input type="image" name="eventID" value="<?php echo $events[$i]["ID"] ?>" src="<?php echo $events[$i]["Picture"] ?>" alt="submit" class="imager" width="200" height="52" ></td>
-        <td> <?php echo $events[$i]["Name"] ?></td>
-        <td><?php echo $events[$i]["Place_Name"] ?></td>
-        <td><?php echo $events[$i]["Date"] ?></td>
-    </tr>
+        <tr>
+            <td>   <input type="image" name="eventID" value="<?php echo $events[$i]["ID"] ?>" src="<?php echo $events[$i]["Picture"] ?>" alt="submit" class="imager" width="200" height="52" ></td>
+            <td> <?php echo $events[$i]["Name"] ?></td>
+            <td><?php echo $events[$i]["Place_Name"] ?></td>
+            <td><?php echo $events[$i]["Date"] ?></td>
+        </tr>
 
     <?php } ?>
     </form>
 </table>
 
 
-    <?php include 'Footer.php';?>
+<?php include 'Footer.php';
+?>
 
 </body>
 </html>

@@ -13,7 +13,7 @@ include 'Header.php';
         <h3 align="center" style="font-family: Lobster; font-size: 25px;" >Search Your Event</h3>
     </div>
 
-    <form class="w3-row-padding" method="post" action="Search.php">
+    <form class="w3-row-padding" method="post" action="SearchIndex.php">
         <div>
             <input class="EventDate2"  name = "from" type="date" placeholder="Search from">    <!--  Bro do what you want here but just make sure that
              you put the date boxes in order:  Date FROM  --- Date TO  -->
