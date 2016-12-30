@@ -44,10 +44,11 @@ $events = array();
 if(count($selectedCriteria)>0){
     for($i = 0 ; $i<count($selectedCriteria[0]);$i++){
         $event = $selectedCriteria[0][$i];
-        $isMutual = false;
+        $isMutual = true;
         for($j = 1 ; $j<count($selectedCriteria);$j++){
+            $isMutual = false;
             for($k = 0 ; $k<count($selectedCriteria[$j]);$k++){
-                if($event )
+                if(strcmp($event["ID"],$selectedCriteria[$j][$k]["ID"]) ==0)
                     $isMutual = true;
             }
         }
