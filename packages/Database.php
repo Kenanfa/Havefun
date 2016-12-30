@@ -87,8 +87,7 @@ class Database{
     }
 
     public function getRelatedEvents($username){
-        $user = $this->getUser($username);
-        $query = "select Event_ID from tickets_purchased where User_ID = ".$user["ID"]." GROUP BY Event_ID";
+        $query = "select Event_ID from tickets_purchased where Username = \"".$username."\" GROUP BY Event_ID";
         $results = $this->performQuery($query);
         $a = array();
         for ($x = 0; $x < $results->num_rows; $x++) {
@@ -104,8 +103,7 @@ class Database{
     }
 
     public function getCreatedEvents($username){
-        $user = $this->getUser($username);
-        $query = "select ID from Event where Creator_ID = ".$user["ID"] ;
+        $query = "select ID from Event where Creator_Username = \"".$username."\"" ;
         $results = $this->performQuery($query);
 
         $a = array();

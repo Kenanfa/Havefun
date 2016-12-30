@@ -15,7 +15,8 @@ include 'Header.php';
 
     <div class="w3-row-padding">
         <div class="w3-col m3">
-            <input class="EventDate" type="date" placeholder="Event Date">
+            <input class="EventDate" name = "from" type="date" placeholder="Search from">
+            <input class="EventDate2" name = "To" type="date" placeholder="To ">
             <input class="City" type="text" placeholder="City">
             <input class="Place" type="text" placeholder="Place">
            <form method="post" action="SearchIndex.php">
