@@ -39,7 +39,11 @@ h3{
     position: absolute !important;
     margin-bottom: 10px;
     height: 30px;
-    margin-left: 10px;
+    margin-left: 25px;
+    border-bottom-color: #1a1a1a;
+}
+.EventDate2{
+    height: 30px;
     border-bottom-color: #1a1a1a;
 }
 .City{
@@ -89,7 +93,7 @@ position: absolute !important;
     font-family: "Roboto", sans-serif;
     font-size: 20px;
     position: absolute !important;
-    margin-left: 700px;
+    margin-left: 640px;
     margin-top: 3px;
     width: 12%;
 
@@ -98,8 +102,9 @@ position: absolute !important;
 .w3-btn-block{
     position: absolute !important;
     top: 100px;
-    width: 20%;
-    right: 90px;
+    width: 15%;
+    right: 60px;
+    height: 30px;
 }
 
 .mainselection {
@@ -107,8 +112,6 @@ position: absolute !important;
     width:350px;
     margin-left:35px;
 }
-
-
 
 hr {
     display: block;
