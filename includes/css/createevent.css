@@ -7,7 +7,7 @@ body {
 .testbox {
     margin: 0px auto;
     width: 340px;
-    height: 500px;
+    height: 555px;
     -webkit-border-radius: 8px/7px;
     -moz-border-radius: 8px/7px;
     border-radius: 8px/7px;
@@ -93,27 +93,12 @@ input[type=text],input[type=password]{
     margin-bottom: 30px;
 }
 
-
-a.button {
-    font-size: 16px;
-    font-weight: 400;
-    color: white;
-    margin-left: 92px;
-    width:90px; height: 20px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    background-color: darkkhaki;
-    -webkit-box-shadow: 0 3px;
-    -moz-box-shadow: 0 3px;
-    position: relative !important;
+.button{
+    bottom: 35px;
+    position: absolute !important;
+    margin-right:20px ;
+    right: 514px;
 }
-
-a.button:hover {
-    top: 3px;
-    background-color:transparent;
-}
-
 .footer {
     position: absolute !important;
     right: 0;
