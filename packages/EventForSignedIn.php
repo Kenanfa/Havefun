@@ -38,18 +38,20 @@ if ($database->isAdmin($_SESSION['currentUser'])) {
 <div class="login-page">
     <div class="form">
 
-        <form class="Event-form" method="POST" action="Buy.php">
+        <form class="Event-form" method="POST" >
             <img src=<?php echo $event["Picture"]?> alt="Sport" height="300" width="440">
+            <button class="btn" formaction="TicketReturn.php" type="submit" formnovalidate>Return your tickets!</button>
             <h4>Event Name: <?php echo $event["Name"]?></h4>
             <h4>Place :<?php echo $place["Name"]?></h4>
             <h4>City :<?php echo $place["City"]?></h4>
             <h4>Event Date :<?php echo $event["Date"]?></h4>
             <h4>Event Time:<?php echo $event["Time"]?></h4>
+            <h4>Ticket Price :<?php echo $event["Ticket_price"]?></h4>
             <h4>Event Number of tickets left: <?php echo $numLeft?><h4/>
                 <div>
                     <?php if ($numLeft >0){ ?>
-                    <input class = "num" type="number" name="ntickets"  placeholder="Enter the number of tickets" min="0" max="<?php echo $numLeft?>"  required/>
-                    <button class="btn"  type="submit">Buy Tickets</button>
+                    <input class = "num" type="number" name="ntickets"  placeholder="Enter the number of tickets" min="1" max="<?php echo $numLeft?>"  required/>
+                    <button class="btn" formaction="Buy.php" type="submit">Buy Tickets</button>
                     <?php }else{ ?>
                     <button class="button disabled" disabled >Sold Out!!!!</button>
                     <?php } ?>

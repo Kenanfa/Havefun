@@ -27,9 +27,10 @@ $_POST["event"]= $event;
                 <h4>City :<?php echo $place["City"]?></h4>
                 <h4>Event Date :<?php echo $event["Date"]?></h4>
                 <h4>Event Time:<?php echo $event["Time"]?></h4>
+                <h4>Ticket Price :<?php echo $event["Ticket_price"]?></h4>
                 <h4>Event Number of tickets left: <?php echo $event["num_of_tickets_left"]?><h4/>
                 <button class="btn"  type="submit">Buy Tickets</button>
-                <p class="message"><a href="Buy.php">Not Registered? Create An Account.</a></p>
+                <p class="message"><a href="SignIn.php">Not Registered? Create An Account.</a></p>
                     <input hidden type="password" value=<?php echo $eventID ?>   name="eventID"/>
             </form>
         </div>

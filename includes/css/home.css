@@ -46,6 +46,7 @@ h3{
     height: 30px;
     border-bottom-color: #1a1a1a;
 }
+
 .City{
     position: absolute !important;
     margin-bottom: 10px;
@@ -91,12 +92,11 @@ position: absolute !important;
 
 .dropdown{
     font-family: "Roboto", sans-serif;
-    font-size: 20px;
+    font-size: 21px;
     position: absolute !important;
-    margin-left: 640px;
+    margin-left: 700px;
     margin-top: 3px;
-    width: 12%;
-
+    width: 15%;
 }
 
 .w3-btn-block{

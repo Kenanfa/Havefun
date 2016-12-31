@@ -206,4 +206,20 @@ class Database{
         return $events;
     }
 
+    public function getTicketsBoughtForEvent($username,$eventID){
+        $query = "select count(ID) from Tickets_purchased where Event_ID = ".$eventID." AND Username = \"".$username."\"";
+        $result = $this->performQuery($query);
+        $row = $result->fetch_assoc();
+        return intval($row["count(ID)"]);
+
+    }
+
+    public function ticketReturned($nTickets,$eventID){
+        $query = "Update Event 
+        Set num_of_tickets_left = (num_of_tickets_left + ".$nTickets.")
+        Where ID = " .$eventID;
+
+        $this->performQuery($query);
+    }
+
 }
