@@ -40,7 +40,7 @@ if ($database->isAdmin($_SESSION['currentUser'])) {
 
         <form class="Event-form" method="POST" >
             <img src=<?php echo $event["Picture"]?> alt="Sport" height="300" width="440">
-            <button class="btn" formaction="TicketReturn.php" type="submit" formnovalidate>Return your tickets!</button>
+            <button class="buton" formaction="TicketReturn.php" type="submit" formnovalidate>Return your tickets!</button>
             <h4>Event Name: <?php echo $event["Name"]?></h4>
             <h4>Place :<?php echo $place["Name"]?></h4>
             <h4>City :<?php echo $place["City"]?></h4>

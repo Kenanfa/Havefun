@@ -58,7 +58,22 @@ h1{
     box-sizing: border-box;
     font-size: 14px;
 }
-.form button {
+.buton{
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    background-color: #2189f9;
+    height: 0px;
+    margin-right: 150px;
+    margin-top: 262px;
+    padding: 11px;
+    border: 1px solid green;
+    color: #FFFFFF;
+    font-size: 9px;
+position: absolute !important;
+    width: 40%;
+    right: 0px;
+}
+.btn{
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
