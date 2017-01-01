@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 29, 2016 at 09:05 PM
+-- Generation Time: Jan 01, 2017 at 10:03 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -44,13 +44,13 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`ID`, `Name`, `Date`, `Time`, `Place_Name`, `Picture`, `Category`, `num_of_tickets_left`, `Creator_username`, `Ticket_price`) VALUES
-(1, 'Istanbul Concert', '2016-12-07', 1400, 'Test Only ', 'http://www.millenniumparkconcerts.org/wp-content/uploads/2015/07/music-concert.jpg', 'Music', 12, 'Kenan', 22),
-(2, 'Arsenal vs Chelsea', '2017-03-08', 1700, 'Test Only ', 'http://www.ticketgum.com/blog/wp-content/uploads/2016/08/arsenal-vs-chelsea.jpg', 'Sports', 21, 'Kenan', 25),
-(3, 'Modern Theatre', '2016-09-09', 2100, 'Test Only ', 'http://kingofwallpapers.com/theatre/theatre-010.jpg', 'Theatre', 5, 'Kenan', 28),
-(4, 'Let\'s Code Confrence', '2017-06-28', 1200, 'Test Only ', 'http://www.prisonabolition.org/wp-content/uploads/2013/10/4596544906.jpg', 'Confrence', 17, 'Absusu', 15),
-(5, 'Manchester Derby', '2017-02-03', 1300, 'Test Only ', 'http://www.manutd.com/sitecore/shell/~/media/7C25C9744A8C48F8A22955E10ADCB0F9.ashx?w=1280&h=720&rgn=0,440,2000,1560', 'Sports', 21, 'Absusu', 45),
-(6, 'The Eminem Show', '2017-03-16', 2200, 'Test Only ', 'https://blog.tickpick.com/wp-content/uploads/2015/04/eminem.jpg', 'Music', 19, 'Absusu', 110),
-(7, 'El Classico ', '2017-06-22', 1800, 'Test Only ', 'http://static.sportskeeda.com/wp-content/uploads/2015/03/real-madrid-vs-barcelona-1426960797.jpg', 'Sports', 25, 'Absusu', 60),
+(1, 'Istanbul Concert', '2016-12-07', 1400, 'Test Only ', 'http://www.millenniumparkconcerts.org/wp-content/uploads/2015/07/music-concert.jpg', 'Music', 7, 'Kenan', 22),
+(2, 'Arsenal vs Chelsea', '2017-03-08', 1700, 'Test Only ', 'http://www.ticketgum.com/blog/wp-content/uploads/2016/08/arsenal-vs-chelsea.jpg', 'Sports', 19, 'Kenan', 25),
+(3, 'Modern Theatre', '2016-09-09', 2100, 'Test Only ', 'http://kingofwallpapers.com/theatre/theatre-010.jpg', 'Theatre', 3, 'Kenan', 28),
+(4, 'Let\'s Code Confrence', '2017-06-28', 1200, 'Test Only ', 'http://www.prisonabolition.org/wp-content/uploads/2013/10/4596544906.jpg', 'Confrence', 11, 'Absusu', 15),
+(5, 'Manchester Derby', '2017-02-03', 1300, 'Test Only ', 'http://www.manutd.com/sitecore/shell/~/media/7C25C9744A8C48F8A22955E10ADCB0F9.ashx?w=1280&h=720&rgn=0,440,2000,1560', 'Sports', 18, 'Absusu', 45),
+(6, 'The Eminem Show', '2017-03-16', 2200, 'The Big Square', 'https://blog.tickpick.com/wp-content/uploads/2015/04/eminem.jpg', 'Music', 7, 'Absusu', 110),
+(7, 'El Classico ', '2017-06-22', 1800, 'Test Only ', 'http://static.sportskeeda.com/wp-content/uploads/2015/03/real-madrid-vs-barcelona-1426960797.jpg', 'Sports', 26, 'Absusu', 60),
 (8, 'New Year\'s Eve', '2017-01-01', 2400, 'The Big Square', 'https://image.jimcdn.com/app/cms/image/transf/dimension=1190x10000:format=jpg/path/sa6549607c78f5c11/image/i5f0aebcd99fc6c3f/version/1448879184/best-new-year-eve-destinations-in-europe-brussels-copyright-visitbrussels-european-best-destinations.jpg', 'Entertainment', 0, 'Absusu', 250);
 
 -- --------------------------------------------------------
@@ -100,21 +100,14 @@ INSERT INTO `tickets_purchased` (`ID`, `Event_ID`, `Username`) VALUES
 (23, 2, 'Kenan'),
 (24, 3, 'Kenan'),
 (25, 6, 'Kenan'),
-(26, 7, 'Kenan'),
 (27, 3, 'Kenan'),
 (28, 4, 'Absusu'),
 (29, 5, 'Absusu'),
-(30, 2, 'Absusu'),
-(31, 1, 'Absusu'),
-(32, 3, 'Absusu'),
-(33, 8, 'Absusu'),
-(34, 8, 'Absusu'),
-(35, 8, 'Absusu'),
-(36, 5, 'Absusu'),
-(37, 2, 'Kenan'),
-(38, 2, 'Kenan'),
-(39, 6, 'Kenan'),
-(40, 6, 'Kenan');
+(52, 4, 'root'),
+(53, 4, 'root'),
+(54, 3, 'root'),
+(59, 4, 'root'),
+(60, 3, 'root');
 
 -- --------------------------------------------------------
 
@@ -124,7 +117,7 @@ INSERT INTO `tickets_purchased` (`ID`, `Event_ID`, `Username`) VALUES
 
 CREATE TABLE `user` (
   `Username` varchar(30) NOT NULL,
-  `Password` varchar(30) NOT NULL,
+  `Password` varchar(32) NOT NULL,
   `Name` varchar(30) NOT NULL,
   `Surname` varchar(30) NOT NULL,
   `Email` varchar(50) NOT NULL,
@@ -137,9 +130,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`Username`, `Password`, `Name`, `Surname`, `Email`, `Phone_number`, `isAdmin`) VALUES
-('Absusu', 'Absusu', 'Ab', 'Susu', 'Ab@susu', 588735171, 1),
-('kenan', 'kenan', 'kenan', 'kenan', 'kenan', NULL, 1),
-('root', 'root', 'erk', 'Erk', 'ERK', NULL, 0);
+('Absusu', '254063a7f84bc87285b05da2d47a6411', 'Ab', 'Susu', 'Ab@susu', 588735171, 1),
+('kenan', '67fe3cd004b5e5d3265d49f447005135', 'kenan', 'kenan', 'kenan', NULL, 1),
+('root', '63a9f0ea7bb98050796b649e85481845', 'erk', 'Erk', 'ERK', NULL, 0);
 
 --
 -- Indexes for dumped tables
@@ -186,7 +179,7 @@ ALTER TABLE `event`
 -- AUTO_INCREMENT for table `tickets_purchased`
 --
 ALTER TABLE `tickets_purchased`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 --
 -- Constraints for dumped tables
 --

@@ -77,7 +77,7 @@ if(strlen($username)==0){
 
 }else {
 
-    $query = "insert into user (Username, Password, Name, Surname, Email, Phone_number, isAdmin) VALUES ( \"" . $username . "\" , \"" . $password . "\" , \"" . $name . "\" , \"" . $surname . "\" , \"" . $email . "\" , " . $pNumber ." , " . $isAdmin ." );";
+    $query = "insert into user (Username, Password, Name, Surname, Email, Phone_number, isAdmin) VALUES ( \"" . $username . "\" , \"" . md5($password) . "\" , \"" . $name . "\" , \"" . $surname . "\" , \"" . $email . "\" , " . $pNumber ." , " . $isAdmin ." );";
     if ($database->performQuery($query) == true) {
 
         session_start();
