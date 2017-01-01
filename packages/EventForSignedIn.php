@@ -53,7 +53,7 @@ if ($database->isAdmin($_SESSION['currentUser'])) {
                     <input class = "num" type="number" name="ntickets"  placeholder="Enter the number of tickets" min="1" max="<?php echo $numLeft?>"  required/>
                     <button class="btn" formaction="Buy.php" type="submit">Buy Tickets</button>
                     <?php }else{ ?>
-                    <button class="button disabled" disabled >Sold Out!!!!</button>
+                    <button class="disbutton " disabled >Sold Out!!!!</button>
                     <?php } ?>
                 </div>
                 <input hidden type="password" value=<?php echo $eventID ?>  name="eventID"/>

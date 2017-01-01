@@ -61,17 +61,39 @@ h1{
 .buton{
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
-    background-color: #2189f9;
-    height: 0px;
+    background-color: dodgerblue;
+    height: 30px;
     margin-right: 150px;
-    margin-top: 262px;
+    margin-top: 270px;
     padding: 11px;
-    border: 1px solid green;
+    border: 1px solid dodgerblue;
     color: #FFFFFF;
     font-size: 9px;
 position: absolute !important;
     width: 40%;
     right: 0px;
+}
+.buton:hover{
+    background-color:  white!important; /* Green */
+    color: black !important;
+    border: 2px solid dodgerblue !important;
+}
+.disbutton{
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: red;
+    width: 100%;
+    height: 10px;
+    border: 0;
+    padding: 25px;
+    color: #FFFFFF;
+    font-size: 14px;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+.black {
+    background: black;
 }
 .btn{
     font-family: "Roboto", sans-serif;
@@ -86,7 +108,7 @@ position: absolute !important;
     font-size: 14px;
     cursor: pointer;
 }
-.form button:hover,.form button:active,.form button:focus {
+.form button:hover:enabled,.form button:active,.form button:focus {
     background: #43A047;
 }
 .form .message {

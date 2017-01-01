@@ -48,7 +48,7 @@ $nTicketsBought = $database->getTicketsBoughtForEvent($username, $eventID)
                         <input class = "num" type="number" name="ntickets"  placeholder="Enter the number of tickets" min="1" max="<?php echo $nTicketsBought?>"  required/>
                         <button class="btn"  type="submit">Return tickets</button>
                     <?php }else{ ?>
-                        <button class="button disabled" disabled >You didn't buy any tickets</button>
+                        <button class="disbutton black" disabled >You didn't buy any tickets</button>
                     <?php } ?>
                 </div>
                 <input hidden type="password" value=<?php echo $eventID ?>  name="eventID"/>
