@@ -33,7 +33,7 @@ include 'Header.php';
         </form>
 </div>
     </header>
-    <h2 style="font-family: Lobster; font-size: 45px; ">Featured Events</h2>
+    <h2>Featured Events</h2>
    <div class="container" style="padding-top: 180px">
     <form  class="login-form" method="POST" action="Event.php">
         <div>

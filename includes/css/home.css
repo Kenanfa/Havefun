@@ -4,14 +4,6 @@ body {
 
 }
 
-.navbar {
-    border-radius: 0px;
-}
-
-h1 {
-    color: white;
-}
-
 h2 {
     font-family: "Roboto", sans-serif;
     font-kerning: auto;
@@ -20,7 +12,12 @@ h2 {
     font-weight: bold;
     position: absolute;!important;
     margin-top: 110px;
+    border-bottom: 6px solid whitesmoke;
+    font-family: Lobster;
+    font-size: 30px;
+    background-color: whitesmoke;
 }
+
 h3{
     font-weight: bold;
 }
@@ -32,6 +29,7 @@ h3{
     margin-left: 25px;
     border-bottom-color: #1a1a1a;
 }
+
 .EventDate2{
     height: 30px;
     border-bottom-color: #1a1a1a;
@@ -44,40 +42,31 @@ h3{
     margin-left: 230px;
     border-bottom-color: #1a1a1a;
 }
+
 .Place{
     position: absolute !important;
     height: 30px;
     margin-left: 440px;
     border-bottom-color: #1a1a1a;
 }
+
 .imager{
 max-height: 210px;
 }
-.sbutton{
-    background-color: #1a1a1a;
-    margin-left:450px ;
-    color: #FFFFFF;
-}
-.first{
-position: absolute !important;
-    margin-bottom: 50px;
-    bottom: 50px;
-}
+
 .w3-display-container{
     padding-right: 10px;
 }
-.login-form{
-    bottom: 0px;
-}
+
 .search-form_3{
     right: 50px;
     padding: 0.5rem;
     background-color:darkblue;
     position: absolute !important;
 }
+
 .search_3{
     left:100px;
-
 }
 
 .dropdown{
@@ -97,12 +86,6 @@ position: absolute !important;
     height: 30px;
 }
 
-.mainselection {
-    overflow:hidden;
-    width:350px;
-    margin-left:35px;
-}
-
 hr {
     display: block;
     color: inherit;
@@ -117,8 +100,8 @@ hr {
     border: none;
     border-top: 4px solid #000000;
 }
-.inputstyle{
 
+.inputstyle{
     font-family:Lobster;
     padding: 5px 30px;
     font-size:15px;
