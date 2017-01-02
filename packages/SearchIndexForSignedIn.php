@@ -115,8 +115,7 @@ if ($database->isAdmin($_SESSION['currentUser'])) {
 </table>
 
 
-<?php include 'Footer.php';
-?>
+
 
 </body>
 </html>

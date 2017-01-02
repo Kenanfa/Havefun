@@ -104,9 +104,9 @@ input[type=text],input[type=password]{
 .footer {
     position: relative !important;
     right: 0;
-    bottom: -13;
+    bottom: 0;
     left: 0;
-    padding: 0.01rem;
+    padding: 0.08rem;
     background-color: #efefef;
     text-align: center;
 }

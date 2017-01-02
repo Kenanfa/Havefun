@@ -107,7 +107,6 @@ if(count($selectedCriteria)>0){
 </table>
 
 
-    <?php include 'Footer.php';?>
 
 </body>
 </html>

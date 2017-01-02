@@ -60,9 +60,8 @@
         </div>
     </form>
 </div>
-
 </body>
 </html>
 
 
-  <?php include 'Footer.php';?>
+
