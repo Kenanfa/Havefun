@@ -60,3 +60,13 @@ th {
     color: white;
 }
 
+.footer {
+    position: absolute !important;
+    right: 0;
+    bottom: 0px;
+    margin-bottom: -57px;
+    left: 0;
+    padding: 0.08rem;
+    background-color: #efefef;
+    text-align: center;
+}
