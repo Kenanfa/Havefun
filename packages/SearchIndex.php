@@ -84,7 +84,7 @@ if(count($selectedCriteria)>0){
     <h3>Searched Events</h3>
 </div>
 
-<table>
+<table style="background-color:darkgrey">
     <form method="post" action="Event.php"
     <tr>
         <th>Picture</th>

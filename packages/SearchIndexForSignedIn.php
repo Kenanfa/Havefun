@@ -81,8 +81,8 @@ if ($database->isAdmin($_SESSION['currentUser'])) {
 
 <ul class="w3-navbar w3-white w3-large">
 <li class="shrift"><a href="<?php echo $refH ?>" class="w3-black"></i>HaveFun</a></li>
-<li class="shrift"><a href="<?php echo $refP ?>">Profile</a></li>
-<li class="w3-right w3-light-grey shrift"><a href="logout.php">Sign Out</a></li>
+    <li class="w3-right w3-light-grey shrift"><a href="logout.php">Sign Out</a></li>
+    <li class="w3-right w3-light-grey shrift"><a href="<?php echo $refP ?>">Profile</a></li>
 </ul>
 
 <link href="../includes/css/search.css" rel="stylesheet">
@@ -92,7 +92,7 @@ if ($database->isAdmin($_SESSION['currentUser'])) {
     <h3>Searched Events</h3>
 </div>
 
-<table>
+<table style="background-color:darkgrey">
     <form method="post" action="EventForSignedIn.php"
     <tr>
         <th>Picture</th>
