@@ -36,21 +36,50 @@ class Database{
         }
 
     public function userExists($username){
-        $query = "select * from User where Username = '" .$username ."'";
-        $results = $this->performQuery($query);
-        return($results->num_rows==1);
+
+        $stmt = $this->conn->prepare("select username from User where Username = ?");
+
+
+            $stmt->bind_param("s", $username);
+
+            $stmt->execute();
+
+            $stmt->bind_result($results);
+
+        return($stmt->fetch());
+    }
+
+    public function createUser($username,$password,$name,$surname,$email,$pnum,$isAdmin){
+        $stmt = $this->conn->prepare("insert into user (Username, Password, Name, Surname, Email, Phone_number, isAdmin) VALUES (?,?,?,?,?,?,?)");
+        $isAdmin = intval($isAdmin);
+        $stmt->bind_param("sssssii",$username,$password,$name,$surname,$email,$pnum,$isAdmin);
+        $stmt->execute();
     }
 
     public function emailExists($email){
-        $query = "select * from User where email = '" .$email ."'";
-        $results = $this->performQuery($query);
-        return($results->num_rows==1);
+        $stmt = $this->conn->prepare("select email from User where email = ?");
+
+
+        $stmt->bind_param("s", $email);
+
+        $stmt->execute();
+
+        $stmt->bind_result($results);
+
+        return($stmt->fetch());
     }
 
-    public function passwordCorrect($password){
-        $query = "select * from User where Password = '" .$password ."'";
-        $results = $this->performQuery($query);
-        return($results->num_rows==1);
+    public function passwordCorrect($password,$username){
+        $stmt = $this->conn->prepare("select password from User where password = ? and username = ?");
+
+
+        $stmt->bind_param("ss", $password,$username);
+
+        $stmt->execute();
+
+        $stmt->bind_result($results);
+
+        return($stmt->fetch());
     }
     
     public function isAdmin($username){
@@ -220,6 +249,18 @@ class Database{
         Where ID = " .$eventID;
 
         $this->performQuery($query);
+    }
+
+    public function createPlace($place,$city,$country){
+        $stmt = $this->conn->prepare("insert into place (Name, City , Country ) VALUES (?,?,?)");
+        $stmt->bind_param("sss",$place,$city,$country);
+        $stmt->execute();
+    }
+
+    public function createEvent($name,$date,$time,$place,$link,$category,$numticket,$username,$price){
+        $stmt = $this->conn->prepare("insert into event (Name, Date, Time, Place_Name, Picture, Category, num_of_tickets_left, Creator_username, Ticket_price) VALUES (?,?,?,?,?,?,?,?,?)");
+        $stmt->bind_param("ssisssisi",$name,$date,$time,$place,$link,$category,$numticket,$username,$price);
+        $stmt->execute();
     }
 
 }

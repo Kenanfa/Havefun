@@ -14,11 +14,12 @@ $category = $_POST["Category"];
 $price = $_POST["Price"];
 
 session_start();
-$user = $database->getUser($_SESSION['currentUser']);
+$username = $_SESSION['currentUser'];
 
-$placeQuery = "insert into place (Name, City , Country ) VALUES ( \"".$place."\" , \"" .$city."\" , \"" .$country.   "\" )";
-$query = "insert into event (Name, Date, Time, Place_Name, Picture, Category, num_of_tickets_left, Creator_ID, Ticket_price) VALUES ( \"" . $name . "\" , \"" . $date . "\" , " . $time . " , \"" . $place . "\" , \"" . $link . "\" , \"" . $category ."\" , " . $numticket. " , " . $user["ID"]. " , " . $price ." );";
+if($database->getPlaceEvents($place)->num_rows)
+    $database->createPlace($place,$city,$country);
+$database->createEvent($name,$date,$time,$place,$link,$category,$numticket,$username,$price);
 
-$database->performQuery($placeQuery);
-$database->performQuery($query);
+
+
 header('Location: AdminProfile.php');

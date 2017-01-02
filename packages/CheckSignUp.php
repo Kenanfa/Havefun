@@ -76,9 +76,7 @@ if(strlen($username)==0){
     <?php
 
 }else {
-
-    $query = "insert into user (Username, Password, Name, Surname, Email, Phone_number, isAdmin) VALUES ( \"" . $username . "\" , \"" . md5($password) . "\" , \"" . $name . "\" , \"" . $surname . "\" , \"" . $email . "\" , " . $pNumber ." , " . $isAdmin ." );";
-    if ($database->performQuery($query) == true) {
+    $database->createUser($username,md5($password),$name,$surname,$email,$pNumber,$isAdmin);
 
         session_start();
         $_SESSION['status'] = 1;
@@ -103,7 +101,4 @@ if(strlen($username)==0){
             <?php
 
         }
-    }
-    else
-        echo "could not insert values into table";
 }

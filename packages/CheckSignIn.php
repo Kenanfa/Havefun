@@ -17,7 +17,7 @@ if(!$database->userExists($username)){
 
 
     
-}else if(!$database->passwordCorrect($password)){
+}else if(!$database->passwordCorrect($password,$username)){
     ?>
     <script>
         alert("the password is incorrect!!!");
