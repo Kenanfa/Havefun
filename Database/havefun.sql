@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 01, 2017 at 10:03 AM
+-- Generation Time: Jan 02, 2017 at 04:21 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -51,7 +51,8 @@ INSERT INTO `event` (`ID`, `Name`, `Date`, `Time`, `Place_Name`, `Picture`, `Cat
 (5, 'Manchester Derby', '2017-02-03', 1300, 'Test Only ', 'http://www.manutd.com/sitecore/shell/~/media/7C25C9744A8C48F8A22955E10ADCB0F9.ashx?w=1280&h=720&rgn=0,440,2000,1560', 'Sports', 18, 'Absusu', 45),
 (6, 'The Eminem Show', '2017-03-16', 2200, 'The Big Square', 'https://blog.tickpick.com/wp-content/uploads/2015/04/eminem.jpg', 'Music', 7, 'Absusu', 110),
 (7, 'El Classico ', '2017-06-22', 1800, 'Test Only ', 'http://static.sportskeeda.com/wp-content/uploads/2015/03/real-madrid-vs-barcelona-1426960797.jpg', 'Sports', 26, 'Absusu', 60),
-(8, 'New Year\'s Eve', '2017-01-01', 2400, 'The Big Square', 'https://image.jimcdn.com/app/cms/image/transf/dimension=1190x10000:format=jpg/path/sa6549607c78f5c11/image/i5f0aebcd99fc6c3f/version/1448879184/best-new-year-eve-destinations-in-europe-brussels-copyright-visitbrussels-european-best-destinations.jpg', 'Entertainment', 0, 'Absusu', 250);
+(8, 'New Year\'s Eve', '2017-01-01', 2400, 'The Big Square', 'https://image.jimcdn.com/app/cms/image/transf/dimension=1190x10000:format=jpg/path/sa6549607c78f5c11/image/i5f0aebcd99fc6c3f/version/1448879184/best-new-year-eve-destinations-in-europe-brussels-copyright-visitbrussels-european-best-destinations.jpg', 'Entertainment', 0, 'Absusu', 250),
+(9, 'Miami Heat vs LA Lakers', '2017-01-17', 2200, 'The Big Square', 'http://www.miamiherald.com/sports/nba/miami-heat/5espgw/picture69155347/ALTERNATES/FREE_640/heat(10)', 'Sports', 120, 'kenan', 340);
 
 -- --------------------------------------------------------
 
@@ -174,7 +175,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `tickets_purchased`
 --
