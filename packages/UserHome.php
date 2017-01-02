@@ -33,7 +33,7 @@ $list_catgs_query = "Select Category from Event group by Category";
     <div class="w3-container w3-padding-4 ">
         <h3 align="center" style="font-family: Lobster; font-size:50px;">Search Your Event</h3>
 
-        <form class="w3-row-padding" method="post" action="SearchIndex.php">
+        <form class="w3-row-padding" method="post" action="SearchIndexForSignedIn.php">
             <div class="w3-row-padding" align="center">
                 <div class="w3-rest">
                     <input class="inputstyle" name = "from" type="date" placeholder="Search from">
