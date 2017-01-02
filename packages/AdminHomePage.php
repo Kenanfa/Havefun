@@ -61,7 +61,7 @@ $list_catgs_query = "Select Category from Event group by Category";
 <h2 style="font-family: Lobster; font-size: 45px; ">Featured Events</h2>
 
 <div class="container" style="padding-top: 180px">
-    <form  class="login-form" method="POST" action="Event.php">
+    <form  class="login-form" method="POST" action="EventForSignedIn.php">
         <div>
             <?php $row = $randomEvents->fetch_assoc(); ?>
             <div class="w3-col l3 m6 w3-margin-bottom">
