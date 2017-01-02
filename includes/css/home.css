@@ -35,11 +35,39 @@ h3{
     background-color: #efefef;
     text-align: center;
 }
+.EventDate{
+    position: absolute !important;
+    margin-bottom: 10px;
+    height: 30px;
+    margin-left: 25px;
+    border-bottom-color: #1a1a1a;
+}
+.EventDate2{
+    height: 30px;
+    border-bottom-color: #1a1a1a;
+}
 
+.City{
+    position: absolute !important;
+    margin-bottom: 10px;
+    height: 30px;
+    margin-left: 230px;
+    border-bottom-color: #1a1a1a;
+}
+.Place{
+    position: absolute !important;
+    height: 30px;
+    margin-left: 440px;
+    border-bottom-color: #1a1a1a;
+}
 .imager{
 max-height: 210px;
 }
-
+.sbutton{
+    background-color: #1a1a1a;
+    margin-left:450px ;
+    color: #FFFFFF;
+}
 .first{
 position: absolute !important;
     margin-bottom: 50px;
@@ -62,6 +90,14 @@ position: absolute !important;
 
 }
 
+.dropdown{
+    font-family: "Roboto", sans-serif;
+    font-size: 21px;
+    position: absolute !important;
+    margin-left: 670px;
+    margin-top: 3px;
+    width: 13%;
+}
 
 .w3-btn-block{
     position: absolute !important;

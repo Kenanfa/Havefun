@@ -22,8 +22,8 @@ $events = $database->getRelatedEvents($username);
 
 <ul class="w3-navbar w3-white w3-large">
     <li class="shrift"><a href="UserHome.php" class="w3-black">HaveFun</a></li>
-    <li class="shrift"><a href="UserProfile.php">Profile</a></li>
     <li class="w3-right w3-light-grey shrift"><a href="logout.php">Sign Out</a></li>
+    <li class="w3-right w3-light-grey shrift"><a href="UserProfile.php">Profile</a></li>
    </ul>
 
 
