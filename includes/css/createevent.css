@@ -2,6 +2,7 @@
 body {
     background-size: cover;
     background-image: url("http://wallpapercave.com/wp/aHBwrlG.jpg");
+    height: 600px;
 }
 
 .testbox {
@@ -94,17 +95,18 @@ input[type=text],input[type=password]{
 }
 
 .button{
-    bottom: 35px;
+    bottom: 8px;
     position: absolute !important;
     margin-right:20px ;
-    right: 514px;
+    right: 664px;
+
 }
 .footer {
-    position: absolute !important;
+    position: relative !important;
     right: 0;
-    bottom: 0;
+    bottom: -13;
     left: 0;
-    padding: 0.08rem;
+    padding: 0.01rem;
     background-color: #efefef;
     text-align: center;
 }
