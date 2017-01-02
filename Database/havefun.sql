@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 02, 2017 at 04:21 PM
+-- Generation Time: Jan 02, 2017 at 07:40 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -44,15 +44,15 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`ID`, `Name`, `Date`, `Time`, `Place_Name`, `Picture`, `Category`, `num_of_tickets_left`, `Creator_username`, `Ticket_price`) VALUES
-(1, 'Istanbul Concert', '2016-12-07', 1400, 'Test Only ', 'http://www.millenniumparkconcerts.org/wp-content/uploads/2015/07/music-concert.jpg', 'Music', 7, 'Kenan', 22),
-(2, 'Arsenal vs Chelsea', '2017-03-08', 1700, 'Test Only ', 'http://www.ticketgum.com/blog/wp-content/uploads/2016/08/arsenal-vs-chelsea.jpg', 'Sports', 19, 'Kenan', 25),
-(3, 'Modern Theatre', '2016-09-09', 2100, 'Test Only ', 'http://kingofwallpapers.com/theatre/theatre-010.jpg', 'Theatre', 3, 'Kenan', 28),
-(4, 'Let\'s Code Confrence', '2017-06-28', 1200, 'Test Only ', 'http://www.prisonabolition.org/wp-content/uploads/2013/10/4596544906.jpg', 'Confrence', 11, 'Absusu', 15),
-(5, 'Manchester Derby', '2017-02-03', 1300, 'Test Only ', 'http://www.manutd.com/sitecore/shell/~/media/7C25C9744A8C48F8A22955E10ADCB0F9.ashx?w=1280&h=720&rgn=0,440,2000,1560', 'Sports', 18, 'Absusu', 45),
+(1, 'Istanbul Concert', '2016-12-07', 1400, 'Istanbul park', 'http://www.millenniumparkconcerts.org/wp-content/uploads/2015/07/music-concert.jpg', 'Music', 7, 'Kenan', 22),
+(2, 'Arsenal vs Chelsea', '2017-03-08', 1700, 'Emirates Stadium', 'http://www.ticketgum.com/blog/wp-content/uploads/2016/08/arsenal-vs-chelsea.jpg', 'Sports', 19, 'Kenan', 25),
+(3, 'Modern Theatre', '2016-09-09', 2100, 'Dar Al Opera', 'http://kingofwallpapers.com/theatre/theatre-010.jpg', 'Theatre', 3, 'Kenan', 28),
+(4, 'Let\'s Code Confrence', '2017-06-28', 1200, 'Hayat Hotel', 'http://www.prisonabolition.org/wp-content/uploads/2013/10/4596544906.jpg', 'Confrence', 11, 'Absusu', 15),
+(5, 'Manchester Derby', '2017-02-03', 1300, 'Old Trafford ', 'http://www.manutd.com/sitecore/shell/~/media/7C25C9744A8C48F8A22955E10ADCB0F9.ashx?w=1280&h=720&rgn=0,440,2000,1560', 'Sports', 18, 'Absusu', 45),
 (6, 'The Eminem Show', '2017-03-16', 2200, 'The Big Square', 'https://blog.tickpick.com/wp-content/uploads/2015/04/eminem.jpg', 'Music', 7, 'Absusu', 110),
-(7, 'El Classico ', '2017-06-22', 1800, 'Test Only ', 'http://static.sportskeeda.com/wp-content/uploads/2015/03/real-madrid-vs-barcelona-1426960797.jpg', 'Sports', 26, 'Absusu', 60),
+(7, 'El Classico ', '2017-06-22', 1800, 'Santiago Bernabeu Stadium', 'http://static.sportskeeda.com/wp-content/uploads/2015/03/real-madrid-vs-barcelona-1426960797.jpg', 'Sports', 26, 'Absusu', 60),
 (8, 'New Year\'s Eve', '2017-01-01', 2400, 'The Big Square', 'https://image.jimcdn.com/app/cms/image/transf/dimension=1190x10000:format=jpg/path/sa6549607c78f5c11/image/i5f0aebcd99fc6c3f/version/1448879184/best-new-year-eve-destinations-in-europe-brussels-copyright-visitbrussels-european-best-destinations.jpg', 'Entertainment', 0, 'Absusu', 250),
-(9, 'Miami Heat vs LA Lakers', '2017-01-17', 2200, 'The Big Square', 'http://www.miamiherald.com/sports/nba/miami-heat/5espgw/picture69155347/ALTERNATES/FREE_640/heat(10)', 'Sports', 120, 'kenan', 340);
+(9, 'Miami Heat vs LA Lakers', '2017-01-17', 2200, 'American Airlines Arena', 'http://www.miamiherald.com/sports/nba/miami-heat/5espgw/picture69155347/ALTERNATES/FREE_640/heat(10)', 'Sports', 120, 'kenan', 340);
 
 -- --------------------------------------------------------
 
@@ -71,7 +71,13 @@ CREATE TABLE `place` (
 --
 
 INSERT INTO `place` (`Name`, `City`, `Country`) VALUES
-('Test Only ', 'Test Only Test Only ', 'Test Only '),
+('American Airlines Arena', 'Miami', 'USA'),
+('Dar Al Opera', 'Damascus', 'Syria'),
+('Emirates Stadium', 'London', 'United Kingdom'),
+('Hayat Hotel', 'Dushanbe', 'Tajikstan'),
+('Istanbul park', 'Istanbul', 'Turkey'),
+('Old Trafford ', 'Manchester', 'United Kingdom'),
+('Santiago Bernabeu Stadium', 'Madrid', 'Spain'),
 ('The Big Square', 'Miami', 'USA');
 
 -- --------------------------------------------------------
@@ -175,12 +181,12 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `tickets_purchased`
 --
 ALTER TABLE `tickets_purchased`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=311;
 --
 -- Constraints for dumped tables
 --
