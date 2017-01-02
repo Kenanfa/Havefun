@@ -16,7 +16,7 @@ $price = $_POST["Price"];
 session_start();
 $username = $_SESSION['currentUser'];
 
-if($database->getPlaceEvents($place)->num_rows)
+if($database->getPlaceEvents($place)->num_rows==0)
     $database->createPlace($place,$city,$country);
 $database->createEvent($name,$date,$time,$place,$link,$category,$numticket,$username,$price);
 
