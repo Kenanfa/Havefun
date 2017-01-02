@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 02, 2017 at 07:40 PM
+-- Generation Time: Jan 02, 2017 at 07:48 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -138,8 +138,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`Username`, `Password`, `Name`, `Surname`, `Email`, `Phone_number`, `isAdmin`) VALUES
 ('Absusu', '254063a7f84bc87285b05da2d47a6411', 'Ab', 'Susu', 'Ab@susu', 588735171, 1),
-('kenan', '67fe3cd004b5e5d3265d49f447005135', 'kenan', 'kenan', 'kenan', NULL, 1),
-('root', '63a9f0ea7bb98050796b649e85481845', 'erk', 'Erk', 'ERK', NULL, 0);
+('kenan', '67fe3cd004b5e5d3265d49f447005135', 'Kenan', 'Fayoumi', 'kenan@fa3.com', 192873, 1),
+('root', '63a9f0ea7bb98050796b649e85481845', 'Erk', 'Aydogan', 'erk@aydogan.tr', 29989287, 0);
 
 --
 -- Indexes for dumped tables
