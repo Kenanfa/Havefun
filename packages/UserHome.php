@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-
+<html>
 
 <title>Havefun</title>
-<html>
+
 <title>Havefun</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +20,7 @@ $list_catgs_query = "Select Category from Event group by Category";
 ?>
 
 <ul class="w3-navbar w3-white w3-large">
-    <li class="shrift"><a href="UserHome.php" class="w3-black"></i>HaveFun</a></li>
+    <li class="shrift"><a href="UserHome.php" class="w3-black">HaveFun</a></li>
     <li class="w3-right w3-light-grey shrift"><a href="logout.php">Sign Out</a></li>
     <li class="w3-right w3-light-grey shrift"><a href="UserProfile.php">Profile</a></li>
    </ul>
@@ -54,7 +54,7 @@ $list_catgs_query = "Select Category from Event group by Category";
     </div>
 </header>
 
-<h2 style="font-family: Lobster; font-size: 45px; ">Featured Events</h2>
+<h2>Featured Events</h2>
 
 <div class="container" style="padding-top: 180px">
     <form  class="login-form" method="POST" action="EventForSignedIn.php">
@@ -91,7 +91,9 @@ $list_catgs_query = "Select Category from Event group by Category";
 
     </form>
 </div>
+
 <div class="footer">Havefun.com &copy; 2016</div>
+
 </body>
 </html>
 

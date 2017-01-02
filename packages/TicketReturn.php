@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <?php
 include 'Database.php';
 $database = new Database();
@@ -21,7 +22,7 @@ $nTicketsBought = $database->getTicketsBoughtForEvent($username, $eventID)
 
 <title> <?php echo $event["Name"]; ?> </title>
 
-<html>
+
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -33,6 +34,8 @@ $nTicketsBought = $database->getTicketsBoughtForEvent($username, $eventID)
     <li class="w3-right w3-light-grey shrift"><a href="logout.php">Sign Out</a></li>
 
 </ul>
+<body>
+
 <h2>Return your tickets</h2>
 
 <div class="login-page">
@@ -57,3 +60,6 @@ $nTicketsBought = $database->getTicketsBoughtForEvent($username, $eventID)
 </div>
 
 <div class="footer">Havefun.com &copy; 2016</div>
+
+</body>
+</html>

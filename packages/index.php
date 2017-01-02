@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+
+<html>
+
 <?php
 include 'Database.php';
 $database = new Database();
@@ -5,20 +9,20 @@ $randomEvents = $database->getRandomEvents();
 $list_catgs_query = "Select Category from Event group by Category";
 include 'Header.php';
 ?>
-<link href="../includes/css/Home.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
-<body>
 
+<link href="../includes/css/home.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+
+<body>
     <header class="w3-display-container w3-content  w3-padding-64" style="max-width:1500px">
            <div class="w3-container w3-padding-4 ">
-                <h3 align="center" style="font-family: Lobster; font-size:50px;">Search Your Event</h3>
-
+               <h3 align="center" style="font-family:Lobster;font-size:50px;">Search Your Event</h3>
         <form class="w3-row-padding" method="post" action="SearchIndex.php">
             <div class="w3-row-padding" align="center">
                 <div class="w3-rest">
                     <input class="inputstyle" name = "from" type="date" placeholder="Search from">
                     <input class="inputstyle" name = "to" type="date" placeholder="To">
-                    <input class="inputstyle" name = "city"type="text" placeholder="City">
+                    <input class="inputstyle" name = "city" type="text" placeholder="City">
                     <input class="inputstyle" name = "place" type="text" placeholder="Place">
                     <select  class="w3-dropdown-hover inputstyle" name="category"  id="inputs">
                         <option  value="All">All Categories</option>
@@ -68,7 +72,10 @@ include 'Header.php';
             </div>
         </form>
    </div>
+
     <div class="footer">Havefun.com &copy; 2016</div>
+
+
 </body>
 </html>
 

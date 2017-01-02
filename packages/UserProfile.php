@@ -24,10 +24,10 @@ $events = $database->getRelatedEvents($username);
     <li class="shrift"><a href="UserHome.php" class="w3-black">HaveFun</a></li>
     <li class="w3-right w3-light-grey shrift"><a href="logout.php">Sign Out</a></li>
     <li class="w3-right w3-light-grey shrift"><a href="UserProfile.php">Profile</a></li>
-   </ul>
+</ul>
 
 
-<link href="../includes/css/adminprofile.css" rel="stylesheet">
+<link href="../includes/css/userprofile.css" rel="stylesheet">
 
 <head>
 <body>
@@ -71,11 +71,9 @@ $events = $database->getRelatedEvents($username);
                       <?php
                     }
                     ?>
-
                 </table>
-              </div>
+    </form>
 </form>
-
 </body>
 </head>
 </html>

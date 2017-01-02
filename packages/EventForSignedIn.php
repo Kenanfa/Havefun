@@ -26,12 +26,13 @@ if ($database->isAdmin($_SESSION['currentUser'])) {
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="../includes/css/eventforsignedin.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+    <link href="../includes/css/header.css" rel="stylesheet">
 
     <ul class="w3-navbar w3-white w3-large">
         <li class="shrift"><a href="<?php echo $refH ?>" class="w3-black"></i>HaveFun</a></li>
-        <li class="shrift"><a href="<?php echo $refP ?>">Profile</a></li>
         <li class="w3-right w3-light-grey shrift"><a href="logout.php">Sign Out</a></li>
-
+        <li class="w3-right w3-light-grey shrift"><a href="<?php echo $refP ?>">Profile</a></li>
     </ul>
 <h2>Event Information</h2>
 

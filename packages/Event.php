@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <?php
 include 'Database.php';
 $database = new Database();
@@ -12,9 +13,9 @@ $_POST["event"]= $event;
 <title> <?php echo $event["Name"]; ?> </title>
 <?php include 'Header.php';?>
 
-<html>
-
 <link href="../includes/css/event.css" rel="stylesheet">
+
+<body>
 <h2>Event Information</h2>
 
     <div class="login-page">
@@ -37,3 +38,6 @@ $_POST["event"]= $event;
     </div>
 
 <div class="footer">Havefun.com &copy; 2016</div>
+
+</body>
+</html>

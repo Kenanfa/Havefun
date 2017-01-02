@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <title>Havefun</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,12 +11,13 @@
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 
 <ul class="w3-navbar w3-white w3-large">
-    <li class="shrift"><a href="AdminHomePage.php" class="w3-black"></i>HaveFun</a></li>
+    <li class="shrift"><a href="AdminHomePage.php" class="w3-black">HaveFun</a></li>
     <li class="w3-right w3-light-grey shrift"><a href="logout.php">Sign Out</a></li>
     <li class="w3-right w3-light-grey shrift"><a href="CreateEvent.php">Create An Event</a></li>
     <li class="w3-right w3-light-grey shrift"><a href="AdminProfile.php">Profile</a></li>
 </ul>
 <link href="../includes/css/createevent.css" rel="stylesheet">
+<body>
 
 <h5>Create Your Event To Show It To The World</h5>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
@@ -53,9 +55,14 @@
 
         <label id="icon" for="Price"><i class="icon-shield"></i></label>
         <input type="text" name="Price" id="price" placeholder="Price" required/>
-        <button type="submit" class="button" >Register</button>
+        <div align="center" style="padding:4px 20px">
+        <button  type="submit"> Register</button>
+        </div>
     </form>
 </div>
 
+</body>
+</html>
 
-    <?php include 'Footer.php';?>
+
+  <?php include 'Footer.php';?>
