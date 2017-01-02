@@ -61,7 +61,7 @@ th {
 }
 
 .footer {
-    position: absolute !important;
+    position: relative !important;
     right: 0;
     bottom: 0px;
     margin-bottom: -57px;
